@@ -8,5 +8,6 @@
 </head>
 <body>
   <h2>Hello world</h2>
+  <?php include './View/test.php'?>
 </body>
 </html>
