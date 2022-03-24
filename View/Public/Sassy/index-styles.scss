@@ -2,19 +2,24 @@
 
 // Introduction
   #intro-container{
-    grid-column: 1;
-    grid-row: 1;
+    @include grid-pos(1,1);
     @include grid-container(1fr 1fr 1fr, auto);
     min-height: 100vh;
   }
 
-  .btn-primary{
-    @include grid-pos(2,1);
-    @include btn();
-    @include btn-light();
-    @include btn-dark();
+  .fs-btn-primary{
+    // @include btn();
+
+    // @include btn-light();
+    // @include btn-dark();
+
+    // @include btn-light-hover(transparent, black);
     @include btn-light-hover();
     @include btn-dark-hover();
+
+    @include zachTest(purple){
+      color: orange;
+    }
 
     
     // @include light-theme{

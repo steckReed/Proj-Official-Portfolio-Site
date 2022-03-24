@@ -26,7 +26,7 @@
     grid-column:$grid-column;
     grid-row:$grid-row;
   }
-  @mixin grid-container($grid-columns, $grid-rows, $bg-color: transparent){
+  @mixin grid-container($grid-columns:unset, $grid-rows:unset, $bg-color: transparent){
     display: grid;
     grid-template-columns: $grid-columns;
     grid-template-rows: $grid-rows;
@@ -48,6 +48,7 @@
     white-space: $white-space;
     user-select: $user-select;
   }
+
   // Light
     @mixin btn-light($background-color:$light-secondary, $color:$light-font-primary){
       @media (prefers-color-scheme: light) {
@@ -119,3 +120,7 @@
 
 
 
+@mixin zachTest ($background-color:red){
+  background-color: $background-color;
+  @content
+}
