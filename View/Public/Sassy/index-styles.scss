@@ -1,3 +1,38 @@
-@import './_color-palette.scss';
+@import './_global-styles.scss';
 
-*{ box-sizing: border-box; }
+// Introduction
+  #intro-container{
+    grid-column: 1;
+    grid-row: 1;
+    @include grid-container(1fr 1fr 1fr, auto);
+    min-height: 100vh;
+  }
+
+  .btn-primary{
+    @include grid-pos(2,1);
+    @include btn();
+    @include btn-light();
+    @include btn-dark();
+    @include btn-light-hover();
+    @include btn-dark-hover();
+
+    
+    // @include light-theme{
+    //   @include btn-color();
+    //   @include btn-hover();
+    // }
+    // @include dark-theme{
+    //   @include btn-color();
+    //   @include btn-hover();
+    // }
+    transition: 300ms;
+  }
+// Introduction
+
+// Tech Stack
+  #tech-stack-container{
+    grid-column: 1;
+    grid-row: 2;
+    background-color: $dark-primary;
+  }
+// Tech Stack

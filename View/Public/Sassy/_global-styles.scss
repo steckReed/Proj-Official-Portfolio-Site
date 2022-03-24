@@ -1,0 +1,26 @@
+@import './_fs-mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{ 
+  box-sizing: border-box; 
+  font-family: 'Open Sans', sans-serif;
+}
+html, body{
+  margin: 0px;
+  scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
+}
+
+#page-container{
+  min-height: max-content;
+  @media (prefers-color-scheme: light) {
+    background-color: $light-primary;
+    color: $light-font-primary;
+  }
+  @media (prefers-color-scheme: dark) {
+    background-color: $dark-primary;
+    color: $dark-font-primary;
+  }
+}

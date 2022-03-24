@@ -1,0 +1,121 @@
+@import './_color-palette.scss';
+
+// Default Color Themes (Light/Dark)
+  @mixin light-theme {
+    @media (prefers-color-scheme: light) {
+      @content;
+      // background-color: $light-primary;
+      // color: $light-font-primary;
+      // border: $border;
+    }
+  }
+
+  @mixin dark-theme{
+    @media (prefers-color-scheme: dark) {
+      @content;
+        // background-color: $background-color;
+        // color: $dark-font-primary;
+        // border: $border;
+    }
+  }
+
+// Default Color Themes 
+
+// Grids
+  @mixin grid-pos($grid-column:unset, $grid-row:unset){
+    grid-column:$grid-column;
+    grid-row:$grid-row;
+  }
+  @mixin grid-container($grid-columns, $grid-rows, $bg-color: transparent){
+    display: grid;
+    grid-template-columns: $grid-columns;
+    grid-template-rows: $grid-rows;
+    background-color: $bg-color;
+  }
+// Grids
+
+// Buttons
+  @mixin btn($height:min-content,  $width:min-content, $padding:0.375rem 0.75rem, $margin:auto, $border:1px solid transparent, $border-radius:0.25rem, $font-weight:400, $text-align:center, $line-height:1.5, $white-space:nowrap, $user-select:none){
+    height: $height;
+    width: $width;
+    padding: $padding;
+    margin: $margin;
+    border: $border;
+    border-radius: $border-radius;
+    font-weight: $font-weight;
+    text-align: $text-align;
+    line-height: $line-height;
+    white-space: $white-space;
+    user-select: $user-select;
+  }
+  // Light
+    @mixin btn-light($background-color:$light-secondary, $color:$light-font-primary){
+      @media (prefers-color-scheme: light) {
+        background-color: $background-color;
+        color: $color;
+        // border: $border;
+      }
+    }
+    @mixin btn-light-hover($background-color:transparent, $color:$light-secondary, $border:1px solid $light-secondary, $cursor:pointer){
+        &:hover {
+          @media (prefers-color-scheme: light) {
+          background-color: $background-color;
+          color: $color;
+          border: $border;
+          cursor: $cursor;
+        }
+      }
+    }
+  // Light
+
+  // Dark
+    @mixin btn-dark($background-color:$dark-secondary, $color:$dark-font-primary){
+      @media (prefers-color-scheme: dark) {
+        background-color: $background-color;
+        color: $color;
+        // border: $border;
+      }
+    }
+    @mixin btn-dark-hover($background-color:transparent, $color:$dark-secondary, $border:1px solid $dark-secondary, $cursor:pointer){
+      &:hover {
+        @media (prefers-color-scheme: dark) {
+          background-color: $background-color;
+          color: $color;
+          border: $border;
+          cursor: $cursor;
+        }
+      }
+    }
+  // Dark
+
+
+
+  
+  @mixin btn-link($background-color, $color){
+    &:link {
+      background-color: $background-color;
+      color: $color;
+    }
+  }
+  @mixin btn-visited($background-color, $color){
+    &:visited {
+      background-color: $background-color;
+      color: $color;
+    }
+  }
+  @mixin btn-active($background-color, $color){
+    &:active {
+      background-color: $background-color;
+      color: $color;
+    } 
+  }
+  @mixin btn-focus($background-color, $color){
+    &:focus {
+      background-color: $background-color;
+      color: $color;
+    } 
+  }
+// Buttons
+
+
+

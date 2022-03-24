@@ -1,4 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  margin: 0px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#page-container {
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
+}
+
+@media (prefers-color-scheme: light) {
+  #page-container {
+    background-color: #ffffff;
+    color: #1c1c1c;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #page-container {
+    background-color: #2d3a4c;
+    color: #ffffff;
+  }
+}
+
+#intro-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+.btn-primary {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 0.375rem 0.75rem;
+  margin: auto;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.5;
+  white-space: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+@media (prefers-color-scheme: light) {
+  .btn-primary {
+    background-color: #f3ab26;
+    color: #1c1c1c;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary {
+    background-color: #2e79b3;
+    color: #ffffff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #f3ab26;
+    border: 1px solid #f3ab26;
+    cursor: pointer;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary:hover {
+    background-color: transparent;
+    color: #2e79b3;
+    border: 1px solid #2e79b3;
+    cursor: pointer;
+  }
+}
+
+#tech-stack-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  background-color: #2d3a4c;
 }
