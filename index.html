@@ -4,6 +4,7 @@
   <meta charset='UTF-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name='viewport'  content='width=device-width, initial-scale=1.0'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel='stylesheet' href='./View/Public/CSS/index-styles.css'>
 
   <title>Full-Steck Portfolio</title>
@@ -12,22 +13,56 @@
   <!-- Introduction -->
     <div id='intro-container'>
 
-      <!-- <div id='intro-message-container'>
-        <h5 id='intro-message-mini'>hello world</h5>
-        <h3 id='intro-message-title'>I'm Reed Steck, a Full-Stack Developer</h3>
-      </div> -->
-      <button class='btn-primary'>Hello world</button>
+      <div id='intro-message-container'>
+        <h3 id='intro-message-title-mini'>Hello World,</h3>
+        <h1 id='intro-message-title'>I'm Reed Steck, a {</h1>
+
+        <!-- Make box hoverable to open. Add href scroll to corisponding site sections -->
+        <span id='intro-message-title-text-container'>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Font-End Developer;</h1>
+          </a>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Back-End Developer;</h1>
+          </a>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Server-Side Dev;</h1>
+          </a>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Database Engineer;</h1>
+          </a>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Terminal Enthusiast;</h1>
+          </a>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Software Engineer;</h1>
+          </a>
+          <a herf="#" class='intro-message-title-text-a slide-in-top'>
+            <h1 class='intro-message-title-text'>Full-Stack Developer;</h1>
+          </a>
+        </span>
+        <h1 id='intro-message-title-squiggle'>}</h1>
+      </div>
+
+      <!-- <button class='btn-primary'>Hello world</button> -->
     </div>
   <!-- Introduction -->
+
+
+  <script>
+    $('html, body').animate({
+        scrollTop: $("#page-container").offset().top - 200 // Means Less header height
+    },400);
+  </script>
   
   <!-- Tech Stack -->
     <div id='tech-stack-container'>
       <!-- Make on hover effect displays -->
-      <h1>The Full-"Steck" Experience</h1>
+      <h1 id='tech-stack-container-title'>The Full-"Steck" Experience</h1>
 
       <!-- Front-end -->
-        <div id='tech-stack-front-end'>
-          <h2>Front-end</h2>
+        <div class='tech-stack-card' id='tech-stack-front-end'>
+          <h2 class='tech-stack-card-title'>Front-end</h2>
 
           <p>HTML</p>
           <p>CSS</p>
@@ -37,8 +72,8 @@
       <!-- Front-end -->
 
       <!-- Back-end -->
-        <div id='tech-stack-back-end'>
-          <h2>Back-end</h2>
+        <div class='tech-stack-card' id='tech-stack-back-end'>
+          <h2 class='tech-stack-card-title'>Back-end</h2>
 
           <p>JavaScript</p>
           <p>jQuery</p>
@@ -49,8 +84,8 @@
       <!-- Back-end -->
 
       <!-- Server-Side -->
-        <div id='tech-stack-server-side'>
-          <h2>Server-side</h2>
+        <div class='tech-stack-card' id='tech-stack-server-side'>
+          <h2 class='tech-stack-card-title'>Server-side</h2>
 
           <p>PHP</p>
           <p>C#</p>
@@ -58,8 +93,8 @@
       <!-- Server-Side -->
       
       <!-- Database Storage -->
-        <div id='tech-stack-database-storage'>
-          <h2>Database Storage</h2>
+        <div class='tech-stack-card' id='tech-stack-database-storage'>
+          <h2 class='tech-stack-card-title'>Database Storage</h2>
 
           <p>Microsoft SQL Server</p>
           <p>MySQL</p>
@@ -67,8 +102,8 @@
       <!-- Database Storage -->
 
       <!-- Server Hosting -->
-        <div id='tech-stack-server-hosting'>
-          <h2>Server Hosting</h2>
+        <div class='tech-stack-card' id='tech-stack-server-hosting'>
+          <h2 class='tech-stack-card-title'>Server Hosting</h2>
 
           <p>Microsoft Azure</p>
           <p>Docker</p>
@@ -79,8 +114,8 @@
       <!-- Server Hosting -->
       
       <!-- Editors/IDEs -->
-        <div id='tech-stack-code-environments'>
-          <h2>Editors/IDEs</h2>
+        <div class='tech-stack-card' id='tech-stack-code-environments'>
+          <h2 class='tech-stack-card-title'>Editors/IDEs</h2>
 
           <p>VS Code</p>
           <p>Visual Studio</p>
@@ -88,8 +123,8 @@
       <!-- Editors/IDEs -->
             
       <!-- Cloud Services -->
-        <div id='tech-stack-cloud-services'>
-          <h2>Cloud Services</h2>
+        <div class='tech-stack-card' id='tech-stack-cloud-services'>
+          <h2 class='tech-stack-card-title'>Cloud Services</h2>
 
           <p>Power Automate</p>
           <p>Azure Logic Apps</p>
@@ -99,8 +134,8 @@
       <!-- Cloud Services -->
 
       <!-- Version Control -->
-        <div id='tech-stack-version-control'>
-          <h2>Ensuring Version Control</h2>
+        <div class='tech-stack-card' id='tech-stack-version-control'>
+          <h2 class='tech-stack-card-title'>Ensuring Version Control</h2>
 
           <p>Github</p>
           <p>Microsoft Git</p>
@@ -108,8 +143,8 @@
       <!-- Version Control -->
             
       <!-- Ticketing Systems -->
-        <div id='tech-stack-ticketing-systems'>
-          <h2>Ticketing Systems</h2>
+        <div class='tech-stack-card' id='tech-stack-ticketing-systems'>
+          <h2 class='tech-stack-card-title'>Ticketing Systems</h2>
 
           <p>Jira</p>
           <p>Freshdesk</p>
@@ -117,8 +152,8 @@
       <!-- Ticketing Systems -->
       
       <!-- Misc -->
-        <div id='tech-stack-misc'>
-          <h2>Misc.</h2>
+        <div class='tech-stack-card' id='tech-stack-misc'>
+          <h2 class='tech-stack-card-title'>Misc.</h2>
 
           <p>Created Specialized Dynamic Ads for Dicks Sporting Goods & Nestle</p>
           <p>Excel</p>
