@@ -102,9 +102,9 @@
 // Tech Stack
   #tech-stack-container{
     @include grid-pos(1,2);
-    @include grid-container(1fr 1fr 1fr, min-content auto);
-    background-color: $dark-primary;
+    @include grid-container(1fr, min-content auto);
   }
+
   #tech-stack-container-title{
     grid-column: 1/-1;
     grid-row: 1;  
@@ -112,13 +112,31 @@
   }
   
   // Card
-    .tech-stack-card{
-      @include grid-container(8rem, min-content auto);
-      background-color: red;
-      margin: auto;
-    }
-    .tech-stack-title{
+    #tech-stack-card-contianer{
       @include grid-pos(1,2);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      width: 65vw;
+      min-width: min-content;
+      max-width: 1250px;
+      padding: 35px;
+      background-color: $dark-primary;
+      margin: auto;
+      gap: 20px;
+    }
+
+    .tech-stack-card{
+      flex-grow: 1;
+      min-width: 250px;
+      max-width: 250px;
+      background-color: $dark-secondary;
+      margin: auto;
+      margin-top: 0px;
+      border-radius: 6px;
+    }
+    .tech-stack-card-title{
       text-align: center;
 
       @include light-theme{
@@ -128,6 +146,13 @@
         color: $dark-font-primary;
         @include  fs-style($dark-primary, $dark-font-primary);
       }
+      font-family: 'Noto Sans', sans-serif !important;
+      padding: 10px;
+      margin: 6px 0px;
+    }
+
+    .tech-stack-card-item{
+      text-align: center;
     }
   // Card
 
