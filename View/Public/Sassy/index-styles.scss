@@ -17,6 +17,10 @@
   transition: 325ms;
 }
 
+.custom-comment{
+  color: #da4224;
+}
+
 // Introduction
   #intro-container{
     @include grid-pos(1, 1);
@@ -31,7 +35,7 @@
       column-gap: 1%;
       height: min-content;
       width: min-content;
-      margin: auto
+      margin: auto;
     }
 
     // Titles
@@ -57,15 +61,15 @@
         grid-column: 2;
         grid-row: 1/-1;
         display: grid;
-        padding: 0% 0.45%;
-        padding-bottom: 44px;
         height: 44px;
         width: min-content;
-        border-bottom: 1px solid $dark-secondary;
-        overflow: visible;
-        border-radius: 0.50rem;
         margin: auto;
         margin-bottom: clamp(0em, 0.3vw, 0.6em);
+        padding: 0% 0.45%;
+        padding-bottom: 44px;
+        border-bottom: 1px solid $dark-secondary;
+        border-radius: 0.50rem;
+        overflow: visible;
         transition: 450ms;
       }
       #intro-message-title-text-container:hover{
@@ -108,14 +112,71 @@
 
 
 // Front-End Developer
+  #front-end-dev-container{
+    @include grid-pos(1,2);
+    @include grid-container(min-content, min-content auto);
+    min-height: 100vh;
+    padding: 2rem;
+    margin: auto;
+  }
+
+  // Title
+    #front-end-dev-title-container{
+      grid-column: 1;
+      grid-row: 1/-1;
+      position: relative;
+      top: 45%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: min-content;
+      width: min-content;
+      transition: all 650ms;
+      transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    }
+    #front-end-dev-title{
+      font-size: clamp(2em, 2.6vw, 3em); 
+      text-align: center;
+      margin: auto;
+      white-space: nowrap;
+    }
+    #front-end-dev-title-sub{
+      // font-size: clamp(2em, 2.6vw, 3em); 
+      text-align: center;
+      width: min-content;
+      padding: 0rem 0.45rem;
+      margin: auto;
+      white-space: nowrap;
+    }
+
+    .slide-to-top{ top: 0px !important; }
+
+  // Title
+
+  // Content
+    #front-end-dev-content-container{
+      @include grid-pos(1,2);
+
+    }
+    
+  // Content
 // Front-End Developer
 
 // Back-End Developer
+  #back-end-dev-container{
+    
+  }
+// Back-End Developer
+
+// Software Engineer
+  #software-engineer-container{
+    
+  }
+// Software Engineer
 
 
 // Tech Stack
   #tech-stack-container{
-    @include grid-pos(1,2);
+    @include grid-pos(1);
     @include grid-container(1fr, min-content auto);
   }
 
@@ -123,6 +184,9 @@
     grid-column: 1/-1;
     grid-row: 1;  
     text-align: center;
+    font-size: clamp(2em, 2.6vw, 3em); 
+    margin: 0px;
+    white-space: nowrap;
   }
   
   // Card

@@ -1,9 +1,11 @@
 // Slide In Top
-  .slide-in-top-title-text:nth-child(1) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 0s; }
-  .slide-in-top-title-text:nth-child(2) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 1.35s; }
-  .slide-in-top-title-text:nth-child(3) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 2.7s; }
-  .slide-in-top-title-text:nth-child(4) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 4.05s; }
-
+  // Intro Message
+    .slide-in-top-title-text:nth-child(1) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 0s; }
+    .slide-in-top-title-text:nth-child(2) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 1.35s; }
+    .slide-in-top-title-text:nth-child(3) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 2.7s; }
+    .slide-in-top-title-text:nth-child(4) { animation: slide-in-top 950ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 4.05s; }
+  // Intro Message
+  
   @keyframes slide-in-top {
     0% {
       transform: translateY(-100px);
@@ -15,3 +17,15 @@
     }
   }
 // Slide In Top
+
+// Slide To Top
+  .slide-top { animation: slide-top 550ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both; animation-delay: 0s; }
+  @keyframes slide-top {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+// Slide To Top

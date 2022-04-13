@@ -16,6 +16,8 @@ body{
 
 #page-container{
   min-height: max-content;
+  @include grid-container();
+  
   @media (prefers-color-scheme: light) {
     background-color: $light-primary;
     color: $light-font-primary;
