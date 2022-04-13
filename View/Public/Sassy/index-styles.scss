@@ -17,9 +17,7 @@
   transition: 325ms;
 }
 
-.custom-comment{
-  color: #da4224;
-}
+.custom-comment{ color: #da4224; }
 
 // Introduction
   #intro-container{
@@ -44,6 +42,7 @@
         font-size: clamp(2em, 2.6vw, 3em); 
         margin: 0px;
         white-space: nowrap;
+        font-weight: 100;
       }
 
       #intro-message-title-mini{
@@ -73,8 +72,9 @@
         transition: 450ms;
       }
       #intro-message-title-text-container:hover{
-        height: 180px;
-        padding: 0% 1.2%;
+        height: 224px;
+        height: 268px;
+        padding: 4.5% 1.2%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
       .intro-message-title-text-a{
@@ -99,21 +99,49 @@
         cursor: pointer;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         padding: 0.15rem 0.25rem;
-        scale: 1.10;
+        transform: scale(1.10);
       }
       .intro-message-title-text{
         width: min-content;
         margin: auto;
         white-space:nowrap;
+        font-weight: 100;
       }
     // Sliding Text
   // Message Container
 // Introduction
 
 
+// Project Showcase
+  #project-showcase-container{
+    @include grid-pos(1);
+    @include grid-container(min-content, min-content auto);
+    min-height: 100vh;
+    padding: 2rem;
+    margin: auto;
+  }
+  
+  // Title
+    #project-showcase-title,
+    #project-showcase-title-sub{
+      text-align: center;
+      margin: auto;
+      white-space: nowrap;
+    }
+    #project-showcase-title{ @include sectionHeader(); }
+
+    #project-showcase-title-sub{
+      // font-size: clamp(2em, 2.6vw, 3em); 
+      width: min-content;
+      padding: 0rem 0.45rem;
+    }
+  // Title
+
+// Project Showcase
+
 // Front-End Developer
   #front-end-dev-container{
-    @include grid-pos(1,2);
+    @include grid-pos(1);
     @include grid-container(min-content, min-content auto);
     min-height: 100vh;
     padding: 2rem;
@@ -133,19 +161,18 @@
       transition: all 650ms;
       transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     }
-    #front-end-dev-title{
-      font-size: clamp(2em, 2.6vw, 3em); 
+    #front-end-dev-title,
+    #front-end-dev-title-sub{
       text-align: center;
       margin: auto;
       white-space: nowrap;
     }
+    #front-end-dev-title{ @include sectionHeader(); }
+
     #front-end-dev-title-sub{
       // font-size: clamp(2em, 2.6vw, 3em); 
-      text-align: center;
       width: min-content;
       padding: 0rem 0.45rem;
-      margin: auto;
-      white-space: nowrap;
     }
 
     .slide-to-top{ top: 0px !important; }
@@ -155,6 +182,10 @@
   // Content
     #front-end-dev-content-container{
       @include grid-pos(1,2);
+      @include grid-container(min-content, min-content auto);
+      min-height: 100vh;
+      padding: 2rem;
+      margin: auto;
 
     }
     
@@ -163,18 +194,62 @@
 
 // Back-End Developer
   #back-end-dev-container{
+    @include grid-pos(1);
+    @include grid-container(min-content, min-content auto);
+    min-height: 100vh;
+    padding: 2rem;
+    margin: auto;
     
   }
+  
+  // Title
+    #back-end-dev-title,
+    #back-end-dev-title-sub{
+      text-align: center;
+      margin: auto;
+      white-space: nowrap;
+    }
+    #back-end-dev-title{ @include sectionHeader(); }
+
+    #back-end-dev-title-sub{
+      // font-size: clamp(2em, 2.6vw, 3em); 
+      width: min-content;
+      padding: 0rem 0.45rem;
+    }
+  // Title
+
 // Back-End Developer
 
 // Software Engineer
   #software-engineer-container{
-    
+    @include grid-pos(1);
+    @include grid-container(min-content, min-content auto);
+    min-height: 100vh;
+    padding: 2rem;
+    margin: auto;
+
   }
+  
+  // Title
+    #software-engineer-title,
+    #software-engineer-title-sub{
+      text-align: center;
+      margin: auto;
+      white-space: nowrap;
+    }
+    #software-engineer-title{ @include sectionHeader(); }
+
+    #software-engineer-title-sub{
+      // font-size: clamp(2em, 2.6vw, 3em); 
+      width: min-content;
+      padding: 0rem 0.45rem;
+    }
+  // Title
+
 // Software Engineer
 
 
-// Tech Stack
+// Tech Stack (Full-Stack Development)
   #tech-stack-container{
     @include grid-pos(1);
     @include grid-container(1fr, min-content auto);
