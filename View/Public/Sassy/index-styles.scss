@@ -36,7 +36,11 @@
 
     // Titles
       #intro-message-title,
-      #intro-message-title-squiggle{ font-size: clamp(2em, 2.6vw, 3em); }
+      #intro-message-title-squiggle{ 
+        font-size: clamp(2em, 2.6vw, 3em); 
+        margin: 0px;
+        white-space: nowrap;
+      }
 
       #intro-message-title-mini{
         @include grid-pos(1, 1);
@@ -44,21 +48,12 @@
         margin-top: auto;
         white-space: nowrap;
       }
-      #intro-message-title{ 
-        @include grid-pos(1, 2);
-        margin: 0px;
-        white-space: nowrap;
-      }
-      #intro-message-title-squiggle{
-        @include grid-pos(3, 2);
-        margin: 0px;
-        white-space: nowrap;
-      }
+      #intro-message-title{ @include grid-pos(1, 2); }
+      #intro-message-title-squiggle{ @include grid-pos(3, 2); }
     // Titles
       
     // Sliding Text
       #intro-message-title-text-container{
-        // @include grid-pos(2, 2);
         grid-column: 2;
         grid-row: 1/-1;
         display: grid;
@@ -75,7 +70,6 @@
       }
       #intro-message-title-text-container:hover{
         height: 180px;
-        // height: 310px;
         padding: 0% 1.2%;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }

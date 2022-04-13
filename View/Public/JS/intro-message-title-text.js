@@ -5,7 +5,7 @@ $( document ).ready(function() {
     $('#intro-message-title-text-container').hover(
       function() {
         introMessageTitleTextA.css('grid-row', 'unset');           // Unset grid rows of items
-        introMessageTitleTextA.removeClass('slide-in-top');        // Remove Animation
+        introMessageTitleTextA.removeClass('slide-in-top-title-text');        // Remove Animation
       },
       function() { introMessageTitleTextA.css('grid-row', '1'); }, // Set grid rows of items
     );
