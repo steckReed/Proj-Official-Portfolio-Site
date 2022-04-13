@@ -84,11 +84,14 @@
         height: min-content;
         @media (prefers-color-scheme: light) {
           background-color: $light-primary;
+          color: $light-font-primary;
         }
         @media (prefers-color-scheme: dark) {
           background-color: $dark-primary;
+          color: $dark-font-primary;
         }
         margin: 0px;
+        text-decoration: none;
         border-radius: 0.65rem;
         white-space: nowrap;
         transition: 430ms;
@@ -106,9 +109,15 @@
         white-space:nowrap;
       }
     // Sliding Text
-
   // Message Container
 // Introduction
+
+
+// Front-End Developer
+// Front-End Developer
+
+// Back-End Developer
+
 
 // Tech Stack
   #tech-stack-container{

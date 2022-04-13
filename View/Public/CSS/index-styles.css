@@ -252,6 +252,7 @@ body {
   height: -moz-min-content;
   height: min-content;
   margin: 0px;
+  text-decoration: none;
   border-radius: 0.65rem;
   white-space: nowrap;
   -webkit-transition: 430ms;
@@ -265,12 +266,14 @@ body {
 @media (prefers-color-scheme: light) {
   .intro-message-title-text-a {
     background-color: #ffffff;
+    color: #1c1c1c;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .intro-message-title-text-a {
     background-color: #2d3a4c;
+    color: #ffffff;
   }
 }
 
