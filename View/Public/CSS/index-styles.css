@@ -268,6 +268,31 @@ body {
   top: 0px !important;
 }
 
+#project-showcase-title-container,
+#front-end-dev-title-container,
+#back-end-dev-title-container,
+#software-engineer-title-container,
+#tech-stack-title-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  grid-row: 1/-1;
+  position: relative;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  -webkit-transition: all 650ms;
+  transition: all 650ms;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) both;
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
 #intro-container {
   -ms-grid-column: 1;
   grid-column: 1;
@@ -429,10 +454,10 @@ body {
   -ms-grid-columns: min-content;
       grid-template-columns: -webkit-min-content;
       grid-template-columns: min-content;
-  -ms-grid-rows: min-content auto;
-      grid-template-rows: -webkit-min-content auto;
-      grid-template-rows: min-content auto;
+  -ms-grid-rows: 90px auto;
+      grid-template-rows: 90px auto;
   background-color: transparent;
+  row-gap: 2.5vmin;
   min-height: 100vh;
   padding: 2rem;
   margin: auto;
@@ -455,6 +480,24 @@ body {
   width: min-content;
   padding: 0rem 0.45rem;
   font-weight: 100;
+}
+
+#project-showcase-content-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  background-color: transparent;
+}
+
+.project-showcase-item {
+  margin: auto;
 }
 
 #front-end-dev-container {
