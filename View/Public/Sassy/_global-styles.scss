@@ -20,12 +20,12 @@ body{
       font-size: clamp(1.8em, 3.6vw, 3em);
     }
   // Section Headers
-  
+
 // Custom Mixins
 
 #page-container{
   min-height: max-content;
-  @include grid-container();
+  @include grid-container(1fr);
   
   @media (prefers-color-scheme: light) {
     background-color: $light-primary;
@@ -36,3 +36,66 @@ body{
     color: $dark-font-primary;
   }
 }
+
+// Smartphone Check
+#smartphone-check { display: block; height: 0px; width: 0px;}
+@media only screen and (max-width: 760px) { #smartphone-check { display: none; } }
+
+// Navbar
+  #navbar-container{
+    position: fixed;
+    top: 50%;
+    left: 3.5%;
+    transform: translateY(-50%);    
+    
+    @include grid-container();
+    row-gap: 2.5vmin;
+    height: min-content;
+    width: min-content;
+    margin: auto;
+    // background-color: white;
+  }
+
+  // Contents
+    .navbar-item-text-a{
+      // @include grid-pos(1, 1);
+      // height: min-content;
+      // @media (prefers-color-scheme: light) {
+      //   background-color: $light-primary;
+      //   color: $light-font-primary;
+      // }
+      // @media (prefers-color-scheme: dark) {
+      //   background-color: $dark-primary;
+      //   color: $dark-font-primary;
+      // }
+      // margin: 0px;
+      // text-decoration: none;
+      // border-radius: 0.65rem;
+      // white-space: nowrap;
+
+      height: 4vmin;
+      width: 4vmin;
+      margin: auto;
+      border-radius: 50%;
+      @media (prefers-color-scheme: light) {
+        background-color: $dark-primary;
+      }
+      @media (prefers-color-scheme: dark) {
+        background-color: $dark-font-primary;
+      }
+      text-decoration: none;
+      transition: 430ms;
+    }
+    .navbar-item-text-a:hover{
+      cursor: pointer;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transform: scale(1.30);
+    }
+    .intro-message-title-text{
+      width: min-content;
+      margin: auto;
+      white-space:nowrap;
+      font-weight: 100;
+    }
+  // Contents
+// Navbar

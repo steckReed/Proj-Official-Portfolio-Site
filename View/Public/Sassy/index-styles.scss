@@ -18,6 +18,7 @@
 }
 
 .custom-comment{ color: #da4224; }
+.slide-to-top{ top: 0px !important; }
 
 // Introduction
   #intro-container{
@@ -111,7 +112,6 @@
   // Message Container
 // Introduction
 
-
 // Project Showcase
   #project-showcase-container{
     @include grid-pos(1);
@@ -134,6 +134,7 @@
       // font-size: clamp(2em, 2.6vw, 3em); 
       width: min-content;
       padding: 0rem 0.45rem;
+      font-weight: 100;
     }
   // Title
 
@@ -173,10 +174,8 @@
       // font-size: clamp(2em, 2.6vw, 3em); 
       width: min-content;
       padding: 0rem 0.45rem;
+      font-weight: 100;
     }
-
-    .slide-to-top{ top: 0px !important; }
-
   // Title
 
   // Content
@@ -215,6 +214,7 @@
       // font-size: clamp(2em, 2.6vw, 3em); 
       width: min-content;
       padding: 0rem 0.45rem;
+      font-weight: 100;
     }
   // Title
 
@@ -243,26 +243,62 @@
       // font-size: clamp(2em, 2.6vw, 3em); 
       width: min-content;
       padding: 0rem 0.45rem;
+      font-weight: 100;
     }
   // Title
 
 // Software Engineer
 
-
 // Tech Stack (Full-Stack Development)
   #tech-stack-container{
     @include grid-pos(1);
     @include grid-container(1fr, min-content auto);
+    min-height: 100vh;
+    padding: 2rem;
+    margin: auto;
   }
 
-  #tech-stack-container-title{
-    grid-column: 1/-1;
-    grid-row: 1;  
-    text-align: center;
-    font-size: clamp(2em, 2.6vw, 3em); 
-    margin: 0px;
-    white-space: nowrap;
-  }
+  // Title
+    // #tech-stack-title-container{
+    //   grid-column: 1;
+    //   grid-row: 1/-1;
+    //   position: relative;
+    //   top: 45%;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   height: min-content;
+    //   width: min-content;
+    //   transition: all 650ms;
+    //   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    // }
+
+    // #tech-stack-title{
+    //   grid-column: 1/-1;
+    //   grid-row: 1;  
+    //   text-align: center;
+    //   font-size: clamp(1.6em, 2.6vw, 3em); 
+    //   margin: 0px;
+    //   white-space: nowrap;
+    // }
+    // #tech-stack-title-sub{
+
+    // }
+    
+    #tech-stack-title,
+    #tech-stack-title-sub{
+      text-align: center;
+      margin: auto;
+      white-space: nowrap;
+    }
+    #tech-stack-title{ font-size: clamp(1.6em, 2.6vw, 3em);  }
+
+    #tech-stack-title-sub{
+      // font-size: clamp(2em, 2.6vw, 3em); 
+      width: min-content;
+      padding: 0rem 0.45rem;
+      font-weight: 100;
+    }
+  // Title
   
   // Card
     #tech-stack-card-contianer{
@@ -308,8 +344,8 @@
       text-align: center;
     }
   // Card
-
 // Tech Stack
+
 
 
 // Media Queries
