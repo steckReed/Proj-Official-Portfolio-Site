@@ -703,6 +703,9 @@ body {
 }
 
 @media only screen and (max-width: 789px) {
+  #intro-container {
+    margin-left: 7.5%;
+  }
   #intro-message-container {
     -ms-grid-column: 1;
     grid-column: 1;
@@ -750,19 +753,6 @@ body {
     margin: 0px;
     white-space: nowrap;
   }
-  #intro-message-title-text-container {
-    -ms-grid-column: 1;
-    grid-column: 1;
-    -ms-grid-row: 3;
-    grid-row: 3;
-    margin: 15px;
-  }
-}
-
-@media only screen and (max-width: 760px) {
-  #intro-container {
-    margin-left: 5.5%;
-  }
   #intro-message-title-mobile-click {
     -ms-grid-column: 1;
     grid-column: 1;
@@ -773,5 +763,12 @@ body {
     margin: 15px;
     display: block;
     z-index: 111;
+  }
+  #intro-message-title-text-container {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 3;
+    grid-row: 3;
+    margin: 15px;
   }
 }

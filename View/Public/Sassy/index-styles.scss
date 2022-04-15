@@ -421,6 +421,10 @@
 // Media Queries
   // Introduction
     @media only screen and (max-width: 789px) {
+      #intro-container{
+        margin-left: 7.5%;
+      }
+
       // Message Container
             #intro-message-container{
               @include grid-pos(1, 1);
@@ -452,6 +456,14 @@
         // Titles
 
         // Sliding Text
+          #intro-message-title-mobile-click{
+            @include grid-pos(1, 3);
+            width: unset !important;
+            padding: 4.5% 47% !important;
+            margin: 15px;
+            display: block;
+            z-index: 111;
+          }
           #intro-message-title-text-container{
             @include grid-pos(1, 3);
             margin: 15px;
@@ -459,25 +471,6 @@
         // Sliding Text
         
       // Message Container
-    }
-    @media only screen and (max-width: 760px) {
-      #intro-container{
-        margin-left: 5.5%;
-      }
-
-      // Message Container
-        // Sliding Text
-        #intro-message-title-mobile-click{
-          @include grid-pos(1, 3);
-          width: unset !important;
-          padding: 4.5% 47% !important;
-          margin: 15px;
-          display: block;
-          z-index: 111;
-        }
-        // Sliding Text        
-      // Message Container
-
     }
   // Introduction
 
