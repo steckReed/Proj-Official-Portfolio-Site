@@ -20,7 +20,7 @@
 .custom-comment{ color: #da4224; }
 .slide-to-top{ top: 0px !important; }
 
-// Section Title Containers
+// Section Container Titles
   #project-showcase-title-container,
   #front-end-dev-title-container,
   #back-end-dev-title-container,
@@ -37,7 +37,7 @@
     transition: all 650ms;
     transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
   }
-// Section Title Containers
+// Section Container Titles
 
 // Introduction
   #intro-container{
@@ -76,6 +76,17 @@
     // Titles
       
     // Sliding Text
+      #intro-message-title-mobile-click{
+        @include grid-pos(2,2);
+        height: 45px;
+        width: 101.2%;
+        margin: auto;
+        margin-bottom: clamp(0em, 0.3vw, 0.6em);
+        padding: 0% 0.45%;
+        border-radius: 0.50rem;
+        display: none;
+        z-index: -111;
+      }
       #intro-message-title-text-container{
         grid-column: 2;
         grid-row: 1/-1;
@@ -91,10 +102,9 @@
         overflow: visible;
         transition: 450ms;
       }
-      #intro-message-title-text-container:hover{
-        height: 224px;
-        height: 268px;
-        padding: 4.5% 1.2%;
+      .intro-message-title-text-container-hover{
+        height: 268px !important;
+        padding: 4.5% 1.2% !important;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       }
       .intro-message-title-text-a{
@@ -420,6 +430,25 @@
         // Sliding Text
         
       // Message Container
+    }
+    @media only screen and (max-width: 760px) {
+      #intro-container{
+        margin-left: 4.5%;
+      }
+
+      // Message Container
+        // Sliding Text
+        #intro-message-title-mobile-click{
+          @include grid-pos(1, 3);
+          width: unset !important;
+          padding: 4.5% 47% !important;
+          margin: 15px;
+          display: block;
+          z-index: 111;
+        }
+        // Sliding Text        
+      // Message Container
+
     }
   // Introduction
 
