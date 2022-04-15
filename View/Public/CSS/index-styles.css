@@ -268,6 +268,28 @@ body {
   top: 0px !important;
 }
 
+#project-showcase-container,
+#front-end-dev-container,
+#back-end-dev-container,
+#software-engineer-container,
+#tech-stack-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  grid-row: unset;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content;
+      grid-template-columns: -webkit-min-content;
+      grid-template-columns: min-content;
+  -ms-grid-rows: clamp(5.8em, 3.6vw, 3.8em) auto;
+      grid-template-rows: clamp(5.8em, 3.6vw, 3.8em) auto;
+  background-color: transparent;
+  row-gap: 2.5vmin;
+  min-height: 100vh;
+  padding: 2rem;
+  margin: auto;
+}
+
 #project-showcase-title-container,
 #front-end-dev-title-container,
 #back-end-dev-title-container,
@@ -459,24 +481,6 @@ body {
   font-weight: 100;
 }
 
-#project-showcase-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-row: unset;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: min-content;
-      grid-template-columns: -webkit-min-content;
-      grid-template-columns: min-content;
-  -ms-grid-rows: 90px auto;
-      grid-template-rows: 90px auto;
-  background-color: transparent;
-  row-gap: 2.5vmin;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: auto;
-}
-
 #project-showcase-title,
 #project-showcase-title-sub {
   text-align: center;
@@ -512,45 +516,6 @@ body {
 
 .project-showcase-item {
   margin: auto;
-}
-
-#front-end-dev-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-row: unset;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: min-content;
-      grid-template-columns: -webkit-min-content;
-      grid-template-columns: min-content;
-  -ms-grid-rows: min-content auto;
-      grid-template-rows: -webkit-min-content auto;
-      grid-template-rows: min-content auto;
-  background-color: transparent;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: auto;
-}
-
-#front-end-dev-title-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-row: 1/-1;
-  position: relative;
-  top: 45%;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-  -webkit-transition: all 650ms;
-  transition: all 650ms;
-  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) both;
-          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) both;
 }
 
 #front-end-dev-title,
@@ -591,24 +556,6 @@ body {
   margin: auto;
 }
 
-#back-end-dev-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-row: unset;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: min-content;
-      grid-template-columns: -webkit-min-content;
-      grid-template-columns: min-content;
-  -ms-grid-rows: min-content auto;
-      grid-template-rows: -webkit-min-content auto;
-      grid-template-rows: min-content auto;
-  background-color: transparent;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: auto;
-}
-
 #back-end-dev-title,
 #back-end-dev-title-sub {
   text-align: center;
@@ -628,24 +575,6 @@ body {
   font-weight: 100;
 }
 
-#software-engineer-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-row: unset;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: min-content;
-      grid-template-columns: -webkit-min-content;
-      grid-template-columns: min-content;
-  -ms-grid-rows: min-content auto;
-      grid-template-rows: -webkit-min-content auto;
-      grid-template-rows: min-content auto;
-  background-color: transparent;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: auto;
-}
-
 #software-engineer-title,
 #software-engineer-title-sub {
   text-align: center;
@@ -663,23 +592,6 @@ body {
   width: min-content;
   padding: 0rem 0.45rem;
   font-weight: 100;
-}
-
-#tech-stack-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-row: unset;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: min-content auto;
-      grid-template-rows: -webkit-min-content auto;
-      grid-template-rows: min-content auto;
-  background-color: transparent;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: auto;
 }
 
 #tech-stack-title,

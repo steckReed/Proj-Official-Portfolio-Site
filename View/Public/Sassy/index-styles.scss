@@ -20,24 +20,39 @@
 .custom-comment{ color: #da4224; }
 .slide-to-top{ top: 0px !important; }
 
-// Section Container Titles
-  #project-showcase-title-container,
-  #front-end-dev-title-container,
-  #back-end-dev-title-container,
-  #software-engineer-title-container,
-  #tech-stack-title-container{
-    grid-column: 1;
-    grid-row: 1/-1;
-    position: relative;
-    top: 45%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: min-content;
-    width: min-content;
-    transition: all 650ms;
-    transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+// Section Container Defaults
+  #project-showcase-container,
+  #front-end-dev-container,
+  #back-end-dev-container,
+  #software-engineer-container,
+  #tech-stack-container{
+    @include grid-pos(1);
+    @include grid-container(min-content, clamp(5.8em, 3.6vw, 3.8em) auto);
+    row-gap: 2.5vmin;
+    min-height: 100vh;
+    padding: 2rem;
+    margin: auto;
   }
-// Section Container Titles
+
+  // Titles
+    #project-showcase-title-container,
+    #front-end-dev-title-container,
+    #back-end-dev-title-container,
+    #software-engineer-title-container,
+    #tech-stack-title-container{
+      grid-column: 1;
+      grid-row: 1/-1;
+      position: relative;
+      top: 45%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: min-content;
+      width: min-content;
+      transition: all 650ms;
+      transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    }
+  // Titles
+// Section Container Defaults
 
 // Introduction
   #intro-container{
@@ -142,15 +157,14 @@
 // Introduction
 
 // Project Showcase
-  #project-showcase-container{
-    @include grid-pos(1);
-    // @include grid-container(min-content, min-content auto);
-    @include grid-container(min-content, 90px auto);
-    row-gap: 2.5vmin;
-    min-height: 100vh;
-    padding: 2rem;
-    margin: auto;
-  }
+  // #project-showcase-container{
+  //   @include grid-pos(1);
+  //   @include grid-container(min-content, clamp(1.8em, 3.6vw, 3em) auto);
+  //   row-gap: 2.5vmin;
+  //   min-height: 100vh;
+  //   padding: 2rem;
+  //   margin: auto;
+  // }
   
   // Title
     #project-showcase-title,
@@ -182,27 +196,27 @@
 // Project Showcase
 
 // Front-End Developer
-  #front-end-dev-container{
-    @include grid-pos(1);
-    @include grid-container(min-content, min-content auto);
-    min-height: 100vh;
-    padding: 2rem;
-    margin: auto;
-  }
+  // #front-end-dev-container{
+  //   @include grid-pos(1);
+  //   @include grid-container(min-content, min-content auto);
+  //   min-height: 100vh;
+  //   padding: 2rem;
+  //   margin: auto;
+  // }
 
   // Title
-    #front-end-dev-title-container{
-      grid-column: 1;
-      grid-row: 1/-1;
-      position: relative;
-      top: 45%;
-      left: 50%;
-      transform: translateX(-50%);
-      height: min-content;
-      width: min-content;
-      transition: all 650ms;
-      transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
-    }
+    // #front-end-dev-title-container{
+    //   grid-column: 1;
+    //   grid-row: 1/-1;
+    //   position: relative;
+    //   top: 45%;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   height: min-content;
+    //   width: min-content;
+    //   transition: all 650ms;
+    //   transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+    // }
     #front-end-dev-title,
     #front-end-dev-title-sub{
       text-align: center;
@@ -233,14 +247,13 @@
 // Front-End Developer
 
 // Back-End Developer
-  #back-end-dev-container{
-    @include grid-pos(1);
-    @include grid-container(min-content, min-content auto);
-    min-height: 100vh;
-    padding: 2rem;
-    margin: auto;
-    
-  }
+  // #back-end-dev-container{
+  //   @include grid-pos(1);
+  //   @include grid-container(min-content, min-content auto);
+  //   min-height: 100vh;
+  //   padding: 2rem;
+  //   margin: auto;
+  // }
   
   // Title
     #back-end-dev-title,
@@ -262,14 +275,13 @@
 // Back-End Developer
 
 // Software Engineer
-  #software-engineer-container{
-    @include grid-pos(1);
-    @include grid-container(min-content, min-content auto);
-    min-height: 100vh;
-    padding: 2rem;
-    margin: auto;
-
-  }
+  // #software-engineer-container{
+  //   @include grid-pos(1);
+  //   @include grid-container(min-content, min-content auto);
+  //   min-height: 100vh;
+  //   padding: 2rem;
+  //   margin: auto;
+  // }
   
   // Title
     #software-engineer-title,
@@ -291,13 +303,13 @@
 // Software Engineer
 
 // Tech Stack (Full-Stack Development)
-  #tech-stack-container{
-    @include grid-pos(1);
-    @include grid-container(1fr, min-content auto);
-    min-height: 100vh;
-    padding: 2rem;
-    margin: auto;
-  }
+  // #tech-stack-container{
+  //   @include grid-pos(1);
+  //   @include grid-container(1fr, min-content auto);
+  //   min-height: 100vh;
+  //   padding: 2rem;
+  //   margin: auto;
+  // }
 
   // Title
     // #tech-stack-title-container{
