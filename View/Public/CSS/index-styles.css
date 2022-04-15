@@ -90,6 +90,37 @@
   }
 }
 
+.fade-in-center {
+  -webkit-animation: fade-in-center 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: fade-in-center 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes fade-in-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-center {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -116,6 +147,7 @@ body {
   -ms-grid-rows: auto;
       grid-template-rows: auto;
   background-color: transparent;
+  row-gap: 2.5vmin;
 }
 
 @media (prefers-color-scheme: light) {
@@ -281,13 +313,12 @@ body {
   -ms-grid-columns: min-content;
       grid-template-columns: -webkit-min-content;
       grid-template-columns: min-content;
-  -ms-grid-rows: clamp(5.8em, 3.6vw, 3.8em) auto;
-      grid-template-rows: clamp(5.8em, 3.6vw, 3.8em) auto;
+  -ms-grid-rows: clamp(4.8em, 3.6vw, 3em) auto;
+      grid-template-rows: clamp(4.8em, 3.6vw, 3em) auto;
   background-color: transparent;
-  row-gap: 2.5vmin;
   min-height: 100vh;
-  padding: 2rem;
   margin: auto;
+  padding: 1.5vmin;
 }
 
 #project-showcase-title-container,
@@ -299,7 +330,7 @@ body {
   grid-column: 1;
   grid-row: 1/-1;
   position: relative;
-  top: 45%;
+  top: 35%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -313,6 +344,26 @@ body {
   transition: all 650ms;
   -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) both;
           transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+#project-showcase-content-container,
+#front-end-dev-content-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: min-content;
+      grid-template-columns: -webkit-min-content;
+      grid-template-columns: min-content;
+  -ms-grid-rows: min-content auto;
+      grid-template-rows: -webkit-min-content auto;
+      grid-template-rows: min-content auto;
+  background-color: transparent;
+  min-height: 100%;
+  padding: 2rem;
+  margin: auto;
 }
 
 #intro-container {
@@ -500,20 +551,6 @@ body {
   font-weight: 100;
 }
 
-#project-showcase-content-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  background-color: transparent;
-}
-
 .project-showcase-item {
   margin: auto;
 }
@@ -535,25 +572,6 @@ body {
   width: min-content;
   padding: 0rem 0.45rem;
   font-weight: 100;
-}
-
-#front-end-dev-content-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: min-content;
-      grid-template-columns: -webkit-min-content;
-      grid-template-columns: min-content;
-  -ms-grid-rows: min-content auto;
-      grid-template-rows: -webkit-min-content auto;
-      grid-template-rows: min-content auto;
-  background-color: transparent;
-  min-height: 100vh;
-  padding: 2rem;
-  margin: auto;
 }
 
 #back-end-dev-title,
@@ -613,7 +631,7 @@ body {
   font-weight: 100;
 }
 
-#tech-stack-card-contianer {
+#tech-stack-content-container {
   -ms-grid-column: 1;
   grid-column: 1;
   -ms-grid-row: 2;
@@ -641,7 +659,7 @@ body {
   gap: 20px;
 }
 
-.tech-stack-card {
+.tech-stack-content {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -653,7 +671,7 @@ body {
   border-radius: 6px;
 }
 
-.tech-stack-card-title {
+.tech-stack-content-title {
   text-align: center;
   font-family: 'Noto Sans', sans-serif !important;
   padding: 10px;
@@ -661,21 +679,21 @@ body {
 }
 
 @media (prefers-color-scheme: light) {
-  .tech-stack-card-title {
+  .tech-stack-content-title {
     background-color: #f3ab26;
     color: #1c1c1c;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .tech-stack-card-title {
+  .tech-stack-content-title {
     color: #ffffff;
     background-color: #2d3a4c;
     color: #ffffff;
   }
 }
 
-.tech-stack-card-item {
+.tech-stack-content-item {
   text-align: center;
 }
 
@@ -738,7 +756,7 @@ body {
 
 @media only screen and (max-width: 760px) {
   #intro-container {
-    margin-left: 4.5%;
+    margin-left: 5.5%;
   }
   #intro-message-title-mobile-click {
     -ms-grid-column: 1;

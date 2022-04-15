@@ -1,24 +1,26 @@
 @import './_global-styles.scss';
 
-.btn-primary{
-  @include grid-pos(2,1);
-  @include btn();
-  
-  @include light-theme{
-    @include fs-style();
-    @include btn-hover();
+// Custom Classes
+  .btn-primary{
+    @include grid-pos(2,1);
+    @include btn();
+    
+    @include light-theme{
+      @include fs-style();
+      @include btn-hover();
+    }
+    @include dark-theme{
+      @include fs-style($dark-secondary, $dark-font-primary);
+      @include btn-hover(transparent, $dark-font-primary, 1px solid $dark-secondary){
+        border-radius: 4px 0px !important;
+      };
+    }
+    transition: 325ms;
   }
-  @include dark-theme{
-    @include fs-style($dark-secondary, $dark-font-primary);
-    @include btn-hover(transparent, $dark-font-primary, 1px solid $dark-secondary){
-      border-radius: 4px 0px !important;
-    };
-  }
-  transition: 325ms;
-}
 
-.custom-comment{ color: #da4224; }
-.slide-to-top{ top: 0px !important; }
+  .custom-comment{ color: #da4224; }
+  .slide-to-top{ top: 0px !important; }
+// Custom Classes
 
 // Section Container Defaults
   #project-showcase-container,
@@ -27,11 +29,12 @@
   #software-engineer-container,
   #tech-stack-container{
     @include grid-pos(1);
-    @include grid-container(min-content, clamp(5.8em, 3.6vw, 3.8em) auto);
-    row-gap: 2.5vmin;
+    // @include grid-container(min-content, clamp(5.8em, 3.6vw, 3.8em) auto);
+    @include grid-container(min-content, clamp(4.8em, 3.6vw, 3em) auto);
+    // row-gap: 2.5vmin;
     min-height: 100vh;
-    padding: 2rem;
     margin: auto;
+    padding: 1.5vmin;
   }
 
   // Titles
@@ -43,7 +46,7 @@
       grid-column: 1;
       grid-row: 1/-1;
       position: relative;
-      top: 45%;
+      top: 35%;
       left: 50%;
       transform: translateX(-50%);
       height: min-content;
@@ -52,6 +55,18 @@
       transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
     }
   // Titles
+
+  // Contents
+    #project-showcase-content-container,
+    #front-end-dev-content-container{
+      @include grid-pos(1,2);
+      @include grid-container(min-content, min-content auto);
+      min-height: 100%;
+      padding: 2rem;
+      margin: auto;
+    }  
+
+  // Contents
 // Section Container Defaults
 
 // Introduction
@@ -184,10 +199,10 @@
   // Title
 
   // Content
-    #project-showcase-content-container{
-      @include grid-pos(1,2);
-      @include grid-container();
-    }
+    // #project-showcase-content-container{
+    //   @include grid-pos(1,2);
+    //   @include grid-container();
+    // }
     .project-showcase-item{
       margin: auto;
     }
@@ -234,15 +249,13 @@
   // Title
 
   // Content
-    #front-end-dev-content-container{
-      @include grid-pos(1,2);
-      @include grid-container(min-content, min-content auto);
-      min-height: 100vh;
-      padding: 2rem;
-      margin: auto;
-
-    }
-    
+    // #front-end-dev-content-container{
+    //   @include grid-pos(1,2);
+    //   @include grid-container(min-content, min-content auto);
+    //   min-height: 100%;
+    //   padding: 2rem;
+    //   margin: auto;
+    // }    
   // Content
 // Front-End Developer
 
@@ -353,8 +366,8 @@
     }
   // Title
   
-  // Card
-    #tech-stack-card-contianer{
+  // Contents
+    #tech-stack-content-container{
       @include grid-pos(1,2);
       display: flex;
       flex-wrap: wrap;
@@ -369,7 +382,7 @@
       gap: 20px;
     }
 
-    .tech-stack-card{
+    .tech-stack-content{
       flex-grow: 1;
       min-width: 250px;
       max-width: 250px;
@@ -378,7 +391,7 @@
       margin-top: 0px;
       border-radius: 6px;
     }
-    .tech-stack-card-title{
+    .tech-stack-content-title{
       text-align: center;
 
       @include light-theme{
@@ -393,10 +406,10 @@
       margin: 6px 0px;
     }
 
-    .tech-stack-card-item{
+    .tech-stack-content-item{
       text-align: center;
     }
-  // Card
+  // Contents
 // Tech Stack
 
 
@@ -445,7 +458,7 @@
     }
     @media only screen and (max-width: 760px) {
       #intro-container{
-        margin-left: 4.5%;
+        margin-left: 5.5%;
       }
 
       // Message Container
