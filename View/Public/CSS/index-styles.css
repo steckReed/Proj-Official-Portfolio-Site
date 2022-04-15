@@ -91,8 +91,9 @@
 }
 
 .fade-in-center {
-  -webkit-animation: fade-in-center 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: fade-in-center 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  visibility: visible !important;
+  -webkit-animation: fade-in-center 850ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: fade-in-center 850ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @-webkit-keyframes fade-in-center {
@@ -347,7 +348,11 @@ body {
 }
 
 #project-showcase-content-container,
-#front-end-dev-content-container {
+#front-end-dev-content-container,
+#back-end-dev-content-container,
+#software-engineer-content-container,
+#tech-stack-content-container {
+  visibility: hidden;
   -ms-grid-column: 1;
   grid-column: 1;
   -ms-grid-row: 2;

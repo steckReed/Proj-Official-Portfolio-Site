@@ -8,10 +8,10 @@ $( document ).ready(function() {
   // Section Titles
 
   // Section Contents
-    setTimeout( function() { $('#project-showcase-content-container').addClass('fade-in-center'); }, 1350 );
-    setTimeout( function() { $('#front-end-dev-content-container').addClass('fade-in-center'); }, 1350 );
-    setTimeout( function() { $('#back-end-dev-content-container').addClass('fade-in-center'); }, 1350 );
-    setTimeout( function() { $('#software-engineer-content-container').addClass('fade-in-center'); }, 1350 );
-    // setTimeout( function() { $('#tech-stack-content-container').addClass('fade-in-center'); }, 1350 );
+    setTimeout( function() { $('#project-showcase-content-container').addClass('fade-in-center'); }, 2050 );
+    setTimeout( function() { $('#front-end-dev-content-container').addClass('fade-in-center'); }, 2050 );
+    setTimeout( function() { $('#back-end-dev-content-container').addClass('fade-in-center'); }, 2050 );
+    setTimeout( function() { $('#software-engineer-content-container').addClass('fade-in-center'); }, 2050 );
+    setTimeout( function() { $('#tech-stack-content-container').addClass('fade-in-center'); }, 2050 );
   // Section Contents
 });

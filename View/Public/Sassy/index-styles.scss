@@ -58,7 +58,11 @@
 
   // Contents
     #project-showcase-content-container,
-    #front-end-dev-content-container{
+    #front-end-dev-content-container,
+    #back-end-dev-content-container,
+    #software-engineer-content-container,
+    #tech-stack-content-container{
+      visibility: hidden;
       @include grid-pos(1,2);
       @include grid-container(min-content, min-content auto);
       min-height: 100%;
