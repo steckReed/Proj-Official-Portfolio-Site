@@ -34,12 +34,12 @@
 // Fade In Center
   .fade-in-center {
     visibility: visible !important;
-    animation: fade-in-center 850ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: fade-in-center 800ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
   @keyframes fade-in-center {
     0% {
-      transform: scale(0.5);
-      opacity: 1;
+      transform: scale(0.75);
+      opacity: 0.55;
     }
     100% {
       transform: scale(1);

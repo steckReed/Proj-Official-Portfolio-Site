@@ -64,7 +64,7 @@
     #tech-stack-content-container{
       visibility: hidden;
       @include grid-pos(1,2);
-      @include grid-container(min-content, min-content auto);
+      @include grid-container(min-content, auto);
       min-height: 100%;
       padding: 2rem;
       margin: auto;
@@ -177,12 +177,12 @@
 
 // Project Showcase
   // #project-showcase-container{
-  //   @include grid-pos(1);
-  //   @include grid-container(min-content, clamp(1.8em, 3.6vw, 3em) auto);
-  //   row-gap: 2.5vmin;
-  //   min-height: 100vh;
-  //   padding: 2rem;
-  //   margin: auto;
+    // @include grid-pos(1);
+    // @include grid-container(min-content, clamp(1.8em, 3.6vw, 3em) auto);
+    // row-gap: 2.5vmin;
+    // min-height: 100vh;
+    // padding: 2rem;
+    // margin: auto;
   // }
   
   // Title
@@ -203,12 +203,30 @@
   // Title
 
   // Content
-    // #project-showcase-content-container{
-    //   @include grid-pos(1,2);
-    //   @include grid-container();
-    // }
+    #project-showcase-content-container{
+      min-height: auto;
+    }
+    .project-showcase-item-container{
+      grid-row: 1;
+      flex-grow: 1;
+      height: 75vmin;
+      width: min-content;
+      border-radius: 0.50rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
     .project-showcase-item{
-      margin: auto;
+      height: 100%;
+      width: 6vw;
+      border-radius: 0.50rem;
+      transition: all 450ms;
+    }
+    .project-showcase-item:hover{
+      // @include grid-pos(1,1);
+      width: 75vmin;
+    }
+    .project-showcase-item-mini{
+      width: 3vw;
     }
   // Content
 
@@ -384,6 +402,7 @@
       background-color: $dark-primary;
       margin: auto;
       gap: 20px;
+      z-index: -1;
     }
 
     .tech-stack-content{
@@ -419,6 +438,20 @@
 
 
 // Media Queries
+  // Mobile Click
+    // Introduction
+      #intro-message-title-mobile-click{
+        @include grid-pos(1, 3);
+        width: unset !important;
+        padding: 4.5% 47% !important;
+        margin: 15px;
+        display: block;
+        z-index: 111;
+      }
+    // Introduction
+
+  // Mobile Click
+
   // Introduction
     @media only screen and (max-width: 789px) {
       #intro-container{
@@ -456,20 +489,11 @@
         // Titles
 
         // Sliding Text
-          #intro-message-title-mobile-click{
-            @include grid-pos(1, 3);
-            width: unset !important;
-            padding: 4.5% 47% !important;
-            margin: 15px;
-            display: block;
-            z-index: 111;
-          }
           #intro-message-title-text-container{
             @include grid-pos(1, 3);
             margin: 15px;
           }
-        // Sliding Text
-        
+        // Sliding Text  
       // Message Container
     }
   // Introduction
