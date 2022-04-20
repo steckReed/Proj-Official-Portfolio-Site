@@ -221,8 +221,8 @@
 
     .project-showcase-item{
       height: 100%;
-      width: 6vw;
-      min-width: 4rem;
+      // width: 6vw;
+      width: clamp(5em, 13.5vw, 9em);
       // border-radius: 0.50rem;
       border-radius: 1.25rem;
       transition: all 450ms;
@@ -232,7 +232,8 @@
       width: 75vmin;
     }
     .project-showcase-item-mini{
-      width: 3vw;
+      width: 4.5vw;
+      min-width: unset;
     }
   // Content
 

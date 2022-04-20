@@ -584,8 +584,7 @@ body {
 
 .project-showcase-item {
   height: 100%;
-  width: 6vw;
-  min-width: 4rem;
+  width: clamp(5em, 13.5vw, 9em);
   border-radius: 1.25rem;
   -webkit-transition: all 450ms;
   transition: all 450ms;
@@ -596,7 +595,8 @@ body {
 }
 
 .project-showcase-item-mini {
-  width: 3vw;
+  width: 4.5vw;
+  min-width: unset;
 }
 
 #front-end-dev-title,
