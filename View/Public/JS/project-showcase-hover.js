@@ -5,6 +5,7 @@ $( document ).ready(function() {
   // Event Listeners
     projectShowcaseItemContainer.hover(
       function() { 
+        console.log('hello')
         projectShowcaseItem.addClass('project-showcase-item-mini');
         projectShowcaseItemContainer.css('z-index', 'unset');
         $( this ).css('z-index', '2'); 
