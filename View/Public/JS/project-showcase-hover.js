@@ -7,20 +7,29 @@ $( document ).ready(function() {
   // Event Listeners
     projectShowcaseItemContainer.hover(
       function() { 
-        var thisElement = $( this );
-        var thisProjectShowcaseItem = thisElement.children('iframe');
-        var thisProjectShowcaseItemDescContainer = thisElement.children('div');
-        
-        thisProjectShowcaseItemDescContainer.addClass('slide-in-right-showcase');
-        projectShowcaseItem.addClass('project-showcase-item-mini');
-        thisProjectShowcaseItem.addClass('project-showcase-item-hover');
-        thisElement.css('z-index', '2');
+        // iFrame Expand
+          var thisElement = $( this );
+          var thisProjectShowcaseItem = thisElement.children('iframe');
+          projectShowcaseItem.addClass('project-showcase-item-mini');
+          thisProjectShowcaseItem.addClass('project-showcase-item-hover');
+        // iFrame Expand
+
+        // Display Description
+          var thisProjectShowcaseItemDescContainer = thisElement.children('div');
+          thisProjectShowcaseItemDescContainer.addClass('slide-in-right-showcase');
+        // Display Description
+
+        // z-index Showcase Update
+          var nextShowcaseContainers = thisElement.nextAll('.project-showcase-item-container');
+          var i = nextShowcaseContainers.length;
+          thisElement.css('z-index', i+1);
+          nextShowcaseContainers.each(function() { $(this).css('z-index',i); i--; });
+        // z-index Showcase Update
       },
       function() {
+        // Reset To Default
         projectShowcaseItemDescContainer.removeClass('slide-in-right-showcase');
         projectShowcaseItemDescContainer.css('width', '0px');
-        // projectShowcaseItemDescContainer.css('display', 'none');
-        // projectShowcaseItemDescContainer.css('z-index', '-1');
         projectShowcaseItem.removeClass('project-showcase-item-mini project-showcase-item-hover');
         projectShowcaseItemContainer.css('z-index', 'unset');
       }
