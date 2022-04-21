@@ -177,12 +177,12 @@
 
 // Project Showcase
   // #project-showcase-container{
-    // @include grid-pos(1);
-    // @include grid-container(min-content, clamp(1.8em, 3.6vw, 3em) auto);
-    // row-gap: 2.5vmin;
-    // min-height: 100vh;
-    // padding: 2rem;
-    // margin: auto;
+  //   // @include grid-pos(1);
+  //   // @include grid-container(min-content, clamp(1.8em, 3.6vw, 3em) auto);
+  //   // row-gap: 2.5vmin;
+  //   grid-template-columns: 100vw;
+  //   // padding: 2rem;
+  //   // margin: auto;
   // }
   
   // Title
@@ -210,13 +210,12 @@
     }
     .project-showcase-item-container{
       grid-row: 1;
-      flex-grow: 1;
       height: 75vmin;
       width: min-content;
-      // border-radius: 0.50rem;
       border-radius: 1.25rem;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       margin-left: -1rem;
+      overflow: hidden;
     }
 
     .project-showcase-item{
@@ -227,13 +226,46 @@
       border-radius: 1.25rem;
       transition: all 450ms;
     }
-    .project-showcase-item:hover{
+    .project-showcase-item-hover{
       // @include grid-pos(1,1);
-      width: 75vmin;
+      width: 75vmin !important;
     }
     .project-showcase-item-mini{
       width: 4.5vw;
       min-width: unset;
+    }
+
+    .project-showcase-item-desc-container{
+      position: relative;
+      bottom: 20%;
+      left: 100%;
+      transform: translateX(-100%);
+      display: grid;
+      visibility: hidden;
+      width: 0px;
+      transition: all 450ms;
+    }
+    .project-showcase-item-desc,
+    .project-showcase-item-desc-github-a{      
+      @media (prefers-color-scheme: light) {
+        background-color: $light-primary;
+        color: $light-font-primary;
+      }
+      @media (prefers-color-scheme: dark) {
+        background-color: $dark-primary;
+        color: $dark-font-primary;
+      }
+      margin: 0px;
+      margin-left: auto;
+      padding: 0.2rem 0.75rem;
+      text-align: right;
+      white-space: nowrap;
+      user-select: none;
+      text-decoration: none;
+    }
+    .project-showcase-item-desc-github-a{
+      border-bottom: 1px solid #2e79b3;
+      margin-top: 0.35rem;
     }
   // Content
 

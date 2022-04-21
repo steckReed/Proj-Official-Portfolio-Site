@@ -22,6 +22,29 @@
   }
 // Slide In Top
 
+// Slide In Right 
+  // Intro Message
+    .slide-in-right-showcase { 
+      visibility: visible !important;
+      animation: slide-in-right-showcase 850ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 300ms;
+    }
+  // Intro Message
+  
+  @keyframes slide-in-right-showcase {
+    0% {
+      transform: translateX(150%);
+      opacity: 0.55;
+      z-index: 2;
+    }
+    100% {
+      width: unset;
+      transform: translateX(-100%);
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+// Slide In Right
+
 // Slide To Top
   .slide-top { animation: slide-top 550ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both; animation-delay: 0s; }
   @keyframes slide-top {

@@ -5,5 +5,5 @@ $( document ).ready(function() {
   // if (isMobile == true) {
     // // Execute on Mobile
   // }
-  console.log(isMobile);
+  // console.log(isMobile);
 });
