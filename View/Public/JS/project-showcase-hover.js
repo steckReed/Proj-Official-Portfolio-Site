@@ -2,6 +2,7 @@ $( document ).ready(function() {
   var projectShowcaseItemContainer     = $('.project-showcase-item-container');
   var projectShowcaseItem              = $('.project-showcase-item');
   var projectShowcaseItemDescContainer = $('.project-showcase-item-desc-container');
+  var projectShowcaseItemStackRibbon   = $('.project-showcase-item-stack-ribbon');
   
 
   // Event Listeners
@@ -13,9 +14,14 @@ $( document ).ready(function() {
           projectShowcaseItem.addClass('project-showcase-item-mini');
           thisProjectShowcaseItem.addClass('project-showcase-item-hover');
         // iFrame Expand
+        
+        // Display Stack Ribbon
+          var thisProjectShowcaseItemStackRibbon = thisElement.children('div.project-showcase-item-stack-ribbon');
+          thisProjectShowcaseItemStackRibbon.addClass('slide-in-top-stack-ribbon');
+        // Display Stack Ribbon
 
         // Display Description
-          var thisProjectShowcaseItemDescContainer = thisElement.children('div');
+          var thisProjectShowcaseItemDescContainer = thisElement.children('div.project-showcase-item-desc-container');
           thisProjectShowcaseItemDescContainer.addClass('slide-in-right-showcase');
         // Display Description
 
@@ -32,6 +38,8 @@ $( document ).ready(function() {
         projectShowcaseItemDescContainer.css('width', '0px');
         projectShowcaseItem.removeClass('project-showcase-item-mini project-showcase-item-hover');
         projectShowcaseItemContainer.css('z-index', 'unset');
+        projectShowcaseItemStackRibbon.removeClass('slide-in-top-stack-ribbon');
+        projectShowcaseItemDescContainer.css('width', '0px');
       }
     );
   // Event Listeners

@@ -9,7 +9,6 @@
   
   @keyframes slide-in-top {
     0% {
-      // transform: translateY(-100px);
       transform: translateY(-250%);
       opacity: 0;
       z-index: 2;
@@ -20,6 +19,26 @@
       z-index: 2;
     }
   }
+  
+  // Project Showcase (Stack Ribbon)
+    .slide-in-top-stack-ribbon { 
+      visibility: visible !important;
+      animation: slide-in-top-stack-ribbon 1.35s cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 800ms; 
+    }
+    @keyframes slide-in-top-stack-ribbon {
+      0% {
+        transform: translateY(-250%);
+        opacity: 0;
+        z-index: 2;
+      }
+      100% {
+        width: min-content;
+        transform: translateY(0);
+        opacity: 1;
+        z-index: 2;
+      }
+    }
+  // Project Showcase (Stack Ribbon)
 // Slide In Top
 
 // Slide In Right 
