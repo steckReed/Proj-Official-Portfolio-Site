@@ -69,8 +69,8 @@
   visibility: visible !important;
   -webkit-animation: slide-in-top-stack-ribbon 1s cubic-bezier(0.19, 1, 0.22, 1) both;
           animation: slide-in-top-stack-ribbon 1s cubic-bezier(0.19, 1, 0.22, 1) both;
-  -webkit-animation-delay: 250ms;
-          animation-delay: 250ms;
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
 
 @-webkit-keyframes slide-in-top-stack-ribbon {
@@ -120,8 +120,8 @@
   visibility: visible !important;
   -webkit-animation: slide-in-right-showcase 850ms cubic-bezier(0.19, 1, 0.22, 1) both;
           animation: slide-in-right-showcase 850ms cubic-bezier(0.19, 1, 0.22, 1) both;
-  -webkit-animation-delay: 800ms;
-          animation-delay: 800ms;
+  -webkit-animation-delay: 650ms;
+          animation-delay: 650ms;
 }
 
 @-webkit-keyframes slide-in-right-showcase {

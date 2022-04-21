@@ -23,8 +23,7 @@
   // Project Showcase (Stack Ribbon)
     .slide-in-top-stack-ribbon { 
       visibility: visible !important;
-      // animation: slide-in-top-stack-ribbon 1.35s cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 800ms; 
-      animation: slide-in-top-stack-ribbon 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 250ms; 
+      animation: slide-in-top-stack-ribbon 1s cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 300ms; 
     }
     @keyframes slide-in-top-stack-ribbon {
       0% {
@@ -50,8 +49,7 @@
   // Intro Message
     .slide-in-right-showcase { 
       visibility: visible !important;
-      // animation: slide-in-right-showcase 850ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 300ms;
-      animation: slide-in-right-showcase 850ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 800ms;
+      animation: slide-in-right-showcase 850ms cubic-bezier(0.190, 1.000, 0.220, 1.000) both; animation-delay: 650ms;
     }
   // Intro Message
   
