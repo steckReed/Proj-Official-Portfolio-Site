@@ -609,6 +609,8 @@ body {
 .project-showcase-item-container {
   -ms-grid-row: 1;
   grid-row: 1;
+  display: -ms-grid;
+  display: grid;
   height: 75vmin;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -620,7 +622,34 @@ body {
   overflow: hidden;
 }
 
+.project-showcase-item-stack-ribbon {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+@media (prefers-color-scheme: light) {
+  .project-showcase-item-stack-ribbon {
+    background-color: #ffffff;
+    color: #1c1c1c;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .project-showcase-item-stack-ribbon {
+    background-color: #2d3a4c;
+    color: #ffffff;
+  }
+}
+
 .project-showcase-item {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
   height: 100%;
   width: clamp(5em, 13.5vw, 9em);
   border-radius: 1.25rem;
@@ -638,21 +667,32 @@ body {
 }
 
 .project-showcase-item-desc-container {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
   position: relative;
-  bottom: 20%;
+  bottom: 5%;
   left: 100%;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   display: -ms-grid;
   display: grid;
   visibility: hidden;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   width: 0px;
+  margin-top: auto;
   -webkit-transition: all 450ms;
   transition: all 450ms;
 }
 
 .project-showcase-item-desc,
 .project-showcase-item-desc-github-a {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   margin: 0px;
   margin-left: auto;
   padding: 0.2rem 0.75rem;
