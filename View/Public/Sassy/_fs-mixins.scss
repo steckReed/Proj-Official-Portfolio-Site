@@ -82,3 +82,39 @@
     } 
   }
 // Buttons
+
+// Fonts
+  @mixin text(){ padding: 0px; margin: 0px; }
+  @mixin text-no-break(){
+    width: min-content;
+    white-space: nowrap;
+  }
+
+  // Titles
+    // Headers
+    // @mixin title-header-lg(){  }
+    @mixin title-header(){ font-size: clamp(1.8em, 4.6vw, 3em); }
+    // @mixin title-header-sm(){  }
+    // @mixin title-header-xs(){  }
+
+    // Sub Headers
+    // @mixin title-sub-lg(){  }
+    // @mixin title-sub(){ font-size: clamp(1.8em, 3.6vw, 3em); }
+    // @mixin title-sub-sm(){  }
+    // @mixin title-sub-xs(){  }
+  // Titles
+
+  // Descriptions
+    // Headers
+    // @mixin desc-header-lg(){  }
+    @mixin desc-header(){ font-size: clamp(0.75em, 2.6vw, 1em); }
+    // @mixin desc-header-sm(){  }
+    // @mixin desc-header-xs(){  }
+    
+    // Sub Headers
+    // @mixin desc-header-lg(){  }
+    @mixin desc-sub(){ font-size: clamp(0.62em, 2.1vw, 0.82em); }
+    // @mixin desc-sub-sm(){  }
+    // @mixin desc-sub-xs(){  }
+  // Descriptions
+// Font

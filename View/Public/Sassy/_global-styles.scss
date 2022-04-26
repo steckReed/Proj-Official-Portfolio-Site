@@ -14,15 +14,6 @@ body{
   overflow-x: hidden;
 }
 
-// Custom Mixins
-  // Section Headers
-    @mixin sectionHeader() {
-      font-size: clamp(1.8em, 3.6vw, 3em);
-    }
-  // Section Headers
-
-// Custom Mixins
-
 #page-container{
   min-height: max-content;
   @include grid-container(1fr);
