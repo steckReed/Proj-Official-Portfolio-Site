@@ -461,6 +461,7 @@ body {
 #back-end-dev-title-sub,
 #software-engineer-title-sub,
 #tech-stack-title-sub {
+  font-size: clamp(0.8em, 2.6vw, 1.15em);
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -809,6 +810,13 @@ body {
 .project-showcase-item-desc-github-a {
   border-bottom: 1px solid #2e79b3;
   margin-top: 0.35rem;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.project-showcase-item-desc-github-a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #tech-stack-content-container {

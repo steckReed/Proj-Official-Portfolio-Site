@@ -29,9 +29,7 @@
   #software-engineer-container,
   #tech-stack-container{
     @include grid-pos(1);
-    // @include grid-container(min-content, clamp(5.8em, 3.6vw, 3.8em) auto);
     @include grid-container(min-content, clamp(4.8em, 3.6vw, 3em) auto);
-    // row-gap: 2.5vmin;
     min-height: 100vh;
     margin: auto;
     padding: 1.5vmin;
@@ -71,6 +69,7 @@
     #back-end-dev-title-sub,
     #software-engineer-title-sub,
     #tech-stack-title-sub{
+      @include title-sub();
       @include text-no-break();
       text-align: center;
       margin: auto;
@@ -300,6 +299,10 @@
       .project-showcase-item-desc-github-a{
         border-bottom: 1px solid #2e79b3;
         margin-top: 0.35rem;
+        transition: 300ms;
+      }
+      .project-showcase-item-desc-github-a:hover{
+        transform: scale(1.10);
       }
     // Item Description
   // Content
