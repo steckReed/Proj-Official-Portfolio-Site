@@ -70,16 +70,18 @@
 // Slide In Right
 
 // Slide To Top
-  @keyframes slide-top {
+  @keyframes slide-to-top {
     0% {
       transform: translateY(0);
     }
     100% {
-      transform: translateY(-100%);
+      transform: translateY(-300%);
     }
   }
   
-  .slide-top { animation: slide-top 550ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both; animation-delay: 0s; }
+  .slide-to-top { animation: slide-to-top 550ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both; animation-delay: 0s; }
+  
+  .slide-to-top-title-container{ top: 0px !important; }
 // Slide To Top
 
 // Fade In Center
@@ -97,5 +99,6 @@
   .fade-in-center {
     visibility: visible !important;
     animation: fade-in-center 800ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: 0s;
   }
 // Fade In Center

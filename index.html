@@ -15,8 +15,51 @@
       onscroll="
         scrollAnimationActivate();
         // Scroll Animation
-          scrollAnimation('#project-showcase-title-container', '#project-showcase-container', 'body', 'slide-to-top', 1350);
-          scrollAnimation('#project-showcase-content-container', '#project-showcase-container', 'body', 'fade-in-center', 2050);
+          // Section Title Containers
+            scrollAnimation(
+              '#project-showcase-title-container', 
+              '#project-showcase-content-container', 
+              'slide-to-top-title-container', 1350);
+            scrollAnimation(
+              '#front-end-dev-title-container', 
+              '#front-end-dev-content-container', 
+              'slide-to-top-title-container', 1350);
+            scrollAnimation(
+              '#back-end-dev-title-container', 
+              '#back-end-dev-content-container', 
+              'slide-to-top-title-container', 1350);
+            scrollAnimation(
+              '#software-engineer-title-container', 
+              '#software-engineer-content-container', 
+              'slide-to-top-title-container', 1350);
+            scrollAnimation(
+              '#tech-stack-title-container', 
+              '#tech-stack-content-container', 
+              'slide-to-top-title-container', 1350);
+          // Section Title Containers
+
+          // Section Content Containers
+            scrollAnimation(
+              '#project-showcase-content-container', 
+              '#project-showcase-content-container', 
+              'fade-in-center', 2050);
+            scrollAnimation(
+              '#front-end-content-container', 
+              '#front-end-content-container', 
+              'fade-in-center', 2050);
+            scrollAnimation(
+              '#back-end-dev-content-container', 
+              '#back-end-dev-content-container', 
+              'fade-in-center', 2050);
+            scrollAnimation(
+              '#software-engineer-content-container', 
+              '#software-engineer-content-container', 
+              'fade-in-center', 2050);
+            scrollAnimation(
+              '#tech-stack-content-container', 
+              '#tech-stack-content-container', 
+              'fade-in-center', 2050);
+          // Section Content Containers
         // Scroll Animation
   ">
 
@@ -310,7 +353,6 @@
   <!-- Job Experiense -->
 
   <div id='smartphone-check'></div>
-  <script src='./View/Public/JS/animation.js'></script>
   <script src='./View/Public/JS/intro-message-title-text.js'></script>
   <script src='./View/Public/JS/project-showcase-hover.js'></script>
   <script src='./View/Public/JS/smartphone-check.js'></script>

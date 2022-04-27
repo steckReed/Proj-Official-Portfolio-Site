@@ -19,7 +19,6 @@
   }
 
   .custom-comment{ color: #da4224; }
-  .slide-to-top{ top: 0px !important; }
 // Custom Classes
 
 // Section Container Defaults
@@ -51,6 +50,7 @@
       width: min-content;
       transition: all 650ms;
       transition-timing-function: cubic-bezier(0.190, 1.000, 0.220, 1.000) both;
+      z-index: 333;
     }
 
     #project-showcase-title,
