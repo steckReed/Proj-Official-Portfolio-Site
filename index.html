@@ -6,10 +6,20 @@
   <meta name='viewport'  content='width=device-width, initial-scale=1.0'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel='stylesheet' href='./View/Public/CSS/index-styles.css?version=1.02'>
+  <script src='./View/Public/JS/fs-scroll-animations.js'></script>
 
   <title>Full-Steck Portfolio</title>
 </head>
-<body id='page-container'>
+<body id='page-container'
+      onload="scrollAnimationActivate();"
+      onscroll="
+        scrollAnimationActivate();
+        // Scroll Animation
+          scrollAnimation('#project-showcase-title-container', '#project-showcase-container', 'body', 'slide-to-top', 1350);
+          scrollAnimation('#project-showcase-content-container', '#project-showcase-container', 'body', 'fade-in-center', 2050);
+        // Scroll Animation
+  ">
+
   <!-- Navbar -->
     <div id='navbar-container'>
       <a href="#intro-container" class='navbar-item-text-a'>
@@ -33,7 +43,6 @@
 
     </div>
   <!-- Navbar -->
-
 
   <!-- Introduction -->
     <div id='intro-container'>
