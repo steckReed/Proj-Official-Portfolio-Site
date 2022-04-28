@@ -17,7 +17,7 @@ body{
 #page-container{
   min-height: max-content;
   @include grid-container(1fr);
-  row-gap: 2.5vmin;
+  // row-gap: 2.5vmin;
   
   @media (prefers-color-scheme: light) {
     background-color: $light-primary;
