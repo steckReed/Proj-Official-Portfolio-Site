@@ -97,26 +97,24 @@
 
   // Contents
 // Section Container Defaults
+// Wave SVG
+  #intro-container-wave-container{
+    position: absolute;
+    top: -0.1vw;
+    transform:rotate(180deg); 
+    transition:300ms;
+  }
+  #sw-gradient-0-stop{
+    @include light-theme(){ stop-color: $light-primary; }
+    @include dark-theme(){ stop-color: $dark-primary; }
+  }
+  #sw-gradient-1-stop{
+    @include light-theme(){ stop-color: $dark-secondary; }
+    @include dark-theme(){ stop-color: $light-font-secondary; }
+  }
+// Wave SVG
 
 // Introduction
-  // Wave SVG
-    #intro-container-wave-container{
-      grid-column:1; 
-      grid-row:1; 
-      margin-top: -0.1vw;
-      transform:rotate(180deg); 
-      transition:300ms;
-    }
-    #sw-gradient-0-stop{
-      @include light-theme(){ stop-color: $light-primary; }
-      @include dark-theme(){ stop-color: $dark-primary; }
-    }
-    #sw-gradient-1-stop{
-      @include light-theme(){ stop-color: $dark-secondary; }
-      @include dark-theme(){ stop-color: $light-font-secondary; }
-    }
-  // Wave SVG
-
   #intro-container{
     @include grid-pos(1, 1);
     @include grid-container(1fr, auto);

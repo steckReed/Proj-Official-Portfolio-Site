@@ -512,11 +512,8 @@ body {
 }
 
 #intro-container-wave-container {
-  -ms-grid-column: 1;
-  grid-column: 1;
-  -ms-grid-row: 1;
-  grid-row: 1;
-  margin-top: -0.1vw;
+  position: absolute;
+  top: -0.1vw;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-transition: 300ms;
