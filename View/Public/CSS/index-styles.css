@@ -873,11 +873,11 @@ body {
 }
 
 .project-showcase-item-desc {
-  font-size: clamp(0.75em, 2.6vw, 1em);
+  font-size: clamp(0.75em, 2.6vmin, 1em);
 }
 
 .project-showcase-item-desc-mini {
-  font-size: clamp(0.62em, 2.1vw, 0.82em);
+  font-size: clamp(0.62em, 2.1vmin, 0.82em);
 }
 
 .project-showcase-item-desc-github-a {

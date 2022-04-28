@@ -106,13 +106,13 @@
   // Descriptions
     // Headers
     // @mixin desc-header-lg(){  }
-    @mixin desc-header(){ font-size: clamp(0.75em, 2.6vw, 1em); }
+    @mixin desc-header(){ font-size: clamp(0.75em, 2.6vmin, 1em); }
     // @mixin desc-header-sm(){  }
     // @mixin desc-header-xs(){  }
     
     // Sub Headers
     // @mixin desc-header-lg(){  }
-    @mixin desc-sub(){ font-size: clamp(0.62em, 2.1vw, 0.82em); }
+    @mixin desc-sub(){ font-size: clamp(0.62em, 2.1vmin, 0.82em); }
     // @mixin desc-sub-sm(){  }
     // @mixin desc-sub-xs(){  }
   // Descriptions
