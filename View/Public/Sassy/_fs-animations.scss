@@ -102,3 +102,11 @@
     animation-delay: 0s;
   }
 // Fade In Center
+
+// Text Gradient
+  @keyframes text-gradient {
+    to {
+      background-position: 100% center;
+    }
+  }
+// Text Gradient

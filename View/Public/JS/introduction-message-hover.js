@@ -33,10 +33,14 @@ $( document ).ready(function() {
 
     // Display Last Hovered Item
       introMessageTitleTextA.hover(
-        function() { $( this ).css('z-index', '3'); },
+        function() { 
+          $( this ).css('z-index', '3');
+          $( this ).children().addClass('intro-message-title-text-gradient');
+        },
         function() {
           introMessageTitleTextA.css('z-index', 'unset');
           $( this ).css('z-index', '2');
+          $( this ).children().removeClass('intro-message-title-text-gradient');
         }
       );
       introMessageTitleTextA.click(

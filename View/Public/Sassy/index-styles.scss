@@ -19,6 +19,8 @@
   }
 
   .custom-comment{ color: #da4224; }
+  
+  .slide-to-top-title-container{ top: 0px !important; }
 // Custom Classes
 
 // Section Container Defaults
@@ -166,11 +168,11 @@
       .intro-message-title-text-a{
         @include grid-pos(1, 1);
         height: min-content;
-        @media (prefers-color-scheme: light) {
+        @include light-theme(){
           background-color: $light-primary;
           color: $light-font-primary;
         }
-        @media (prefers-color-scheme: dark) {
+        @include dark-theme(){
           background-color: $dark-primary;
           color: $dark-font-primary;
         }
@@ -192,6 +194,20 @@
         margin: auto;
         white-space: nowrap;
         font-weight: 100;
+      }
+      .intro-message-title-text-gradient{
+        @include light-theme(){
+          background: linear-gradient(to right,$light-tertiary 0%,$dark-secondary 33%,$light-tertiary 66%,$dark-secondary 100%);
+          background-size: 400% auto;
+          background-clip: text;
+        }
+        @include dark-theme(){
+          background: linear-gradient(to right,$light-tertiary 0%,$dark-secondary 33%,$light-tertiary 66%,$dark-secondary 100%);
+          background-size: 400% auto;
+          background-clip: text;
+        }
+        color: transparent !important;
+        animation: text-gradient  7s alternate infinite;
       }
     // Sliding Text
   // Message Container
@@ -221,11 +237,11 @@
     // Stack Ribbon
       .project-showcase-item-stack-ribbon{
         @include grid-pos(1,1);
-        @media (prefers-color-scheme: light) {
+        @include light-theme(){
           background-color: $light-primary;
           color: $light-font-primary;
         }
-        @media (prefers-color-scheme: dark) {
+        @include dark-theme(){
           background-color: $dark-primary;
           color: $dark-font-primary;
         }
@@ -277,11 +293,11 @@
       .project-showcase-item-desc,
       .project-showcase-item-desc-mini,
       .project-showcase-item-desc-github-a{
-        @media (prefers-color-scheme: light) {
+        @include light-theme(){
           background-color: $light-primary;
           color: $light-font-primary;
         }
-        @media (prefers-color-scheme: dark) {
+        @include dark-theme(){
           background-color: $dark-primary;
           color: $dark-font-primary;
         }

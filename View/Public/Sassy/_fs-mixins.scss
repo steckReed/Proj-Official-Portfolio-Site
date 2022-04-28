@@ -2,8 +2,10 @@
 @import './_fs-animations';
 
 // Default Color Themes (Light/Dark)
-  @mixin light-theme { @media (prefers-color-scheme: light) { @content; } }
-  @mixin dark-theme{ @media (prefers-color-scheme: dark) { @content; } }
+  @mixin light-theme() { 
+    @media (prefers-color-scheme: light) { @content; } }
+  @mixin dark-theme()  { 
+    @media (prefers-color-scheme: dark) { @content; } }
 
   @mixin fs-style($background-color:$light-secondary, $color:$light-font-primary){
     background-color: $background-color;

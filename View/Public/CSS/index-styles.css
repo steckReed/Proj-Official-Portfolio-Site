@@ -222,6 +222,18 @@
           animation-delay: 0s;
 }
 
+@-webkit-keyframes text-gradient {
+  to {
+    background-position: 100% center;
+  }
+}
+
+@keyframes text-gradient {
+  to {
+    background-position: 100% center;
+  }
+}
+
 *, ::after, ::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -396,6 +408,10 @@ body {
 
 .custom-comment {
   color: #da4224;
+}
+
+.slide-to-top-title-container {
+  top: 0px !important;
 }
 
 #project-showcase-container,
@@ -662,6 +678,30 @@ body {
   margin: auto;
   white-space: nowrap;
   font-weight: 100;
+}
+
+.intro-message-title-text-gradient {
+  color: transparent !important;
+  -webkit-animation: text-gradient  7s alternate infinite;
+          animation: text-gradient  7s alternate infinite;
+}
+
+@media (prefers-color-scheme: light) {
+  .intro-message-title-text-gradient {
+    background: -webkit-gradient(linear, left top, right top, from(#0ce1a1), color-stop(33%, #2e79b3), color-stop(66%, #0ce1a1), to(#2e79b3));
+    background: linear-gradient(to right, #0ce1a1 0%, #2e79b3 33%, #0ce1a1 66%, #2e79b3 100%);
+    background-size: 400% auto;
+    background-clip: text;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .intro-message-title-text-gradient {
+    background: -webkit-gradient(linear, left top, right top, from(#0ce1a1), color-stop(33%, #2e79b3), color-stop(66%, #0ce1a1), to(#2e79b3));
+    background: linear-gradient(to right, #0ce1a1 0%, #2e79b3 33%, #0ce1a1 66%, #2e79b3 100%);
+    background-size: 400% auto;
+    background-clip: text;
+  }
 }
 
 #project-showcase-content-container {
