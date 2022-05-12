@@ -222,6 +222,32 @@
           animation-delay: 0s;
 }
 
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  visibility: visible !important;
+  -webkit-animation: fade-out 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: fade-out 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
 @-webkit-keyframes text-gradient {
   to {
     background-position: 100% center;
@@ -512,12 +538,18 @@ body {
 }
 
 #intro-container-wave-container {
-  position: absolute;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  position: -webkit-sticky;
+  position: sticky;
   top: -0.1vw;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
   -webkit-transition: 300ms;
   transition: 300ms;
+  z-index: -1;
 }
 
 @media (prefers-color-scheme: light) {

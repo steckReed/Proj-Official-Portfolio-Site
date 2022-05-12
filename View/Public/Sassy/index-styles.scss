@@ -97,12 +97,16 @@
 
   // Contents
 // Section Container Defaults
+
 // Wave SVG
   #intro-container-wave-container{
-    position: absolute;
+    @include grid-pos(1,1);
+    // position: absolute;
+    position: sticky;
     top: -0.1vw;
     transform:rotate(180deg); 
-    transition:300ms;
+    transition: 300ms;
+    z-index: -1;
   }
   #sw-gradient-0-stop{
     @include light-theme(){ stop-color: $light-primary; }
