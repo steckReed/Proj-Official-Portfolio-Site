@@ -542,8 +542,7 @@ body {
   grid-column: 1;
   -ms-grid-row: 1;
   grid-row: 1;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: -0.1vw;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -743,27 +742,15 @@ body {
 }
 
 .intro-message-title-text-gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#0ce1a1), color-stop(33%, #2e79b3), color-stop(66%, #0ce1a1), to(#2e79b3));
+  background: linear-gradient(to right, #0ce1a1 0%, #2e79b3 33%, #0ce1a1 66%, #2e79b3 100%);
+  background-size: 400% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
   color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
   -webkit-animation: text-gradient  7s alternate infinite;
           animation: text-gradient  7s alternate infinite;
-}
-
-@media (prefers-color-scheme: light) {
-  .intro-message-title-text-gradient {
-    background: -webkit-gradient(linear, left top, right top, from(#0ce1a1), color-stop(33%, #2e79b3), color-stop(66%, #0ce1a1), to(#2e79b3));
-    background: linear-gradient(to right, #0ce1a1 0%, #2e79b3 33%, #0ce1a1 66%, #2e79b3 100%);
-    background-size: 400% auto;
-    background-clip: text;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .intro-message-title-text-gradient {
-    background: -webkit-gradient(linear, left top, right top, from(#0ce1a1), color-stop(33%, #2e79b3), color-stop(66%, #0ce1a1), to(#2e79b3));
-    background: linear-gradient(to right, #0ce1a1 0%, #2e79b3 33%, #0ce1a1 66%, #2e79b3 100%);
-    background-size: 400% auto;
-    background-clip: text;
-  }
 }
 
 #project-showcase-content-container {

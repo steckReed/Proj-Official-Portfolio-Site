@@ -101,8 +101,7 @@
 // Wave SVG
   #intro-container-wave-container{
     @include grid-pos(1,1);
-    // position: absolute;
-    position: sticky;
+    position: fixed;
     top: -0.1vw;
     transform:rotate(180deg); 
     transition: 300ms;
@@ -217,17 +216,12 @@
         font-weight: 100;
       }
       .intro-message-title-text-gradient{
-        @include light-theme(){
-          background: linear-gradient(to right,$light-tertiary 0%,$dark-secondary 33%,$light-tertiary 66%,$dark-secondary 100%);
-          background-size: 400% auto;
-          background-clip: text;
-        }
-        @include dark-theme(){
-          background: linear-gradient(to right,$light-tertiary 0%,$dark-secondary 33%,$light-tertiary 66%,$dark-secondary 100%);
-          background-size: 400% auto;
-          background-clip: text;
-        }
+        background: linear-gradient(to right,$light-tertiary 0%,$dark-secondary 33%,$light-tertiary 66%,$dark-secondary 100%);
+        background-size: 400% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
         color: transparent !important;
+        -webkit-text-fill-color: transparent !important;
         animation: text-gradient  7s alternate infinite;
       }
     // Sliding Text
