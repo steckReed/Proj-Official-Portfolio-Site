@@ -2,7 +2,6 @@
 
 // Custom Classes
   .btn-primary{
-    @include grid-pos(2,1);
     @include btn();
     
     @include light-theme{
@@ -17,9 +16,25 @@
     }
     transition: 325ms;
   }
-
+  .btn-primary-wide-round{
+    @include btn();
+    
+    @include light-theme{
+      @include fs-style();
+      @include btn-hover();
+    }
+    @include dark-theme{
+      @include fs-style(transparent, $dark-font-primary);
+      @include btn-hover(transparent, $dark-font-primary, 1px solid $dark-secondary){
+        padding: 0.25rem 3.75rem;
+      };
+      border: 0.1px solid $dark-secondary-2;
+    }
+    border-radius: 1rem 1rem ;
+    padding: 0.25rem 2.75rem;
+    transition: 325ms;
+  }
   .custom-comment{ color: #da4224; }
-  
   .slide-to-top-title-container{ top: 0px !important; }
 // Custom Classes
 
@@ -39,11 +54,12 @@
 
   // Titles
     #project-showcase-title-container,
+    #project-showcase-fs-mixin-cover-title-container,
     #front-end-dev-title-container,
     #back-end-dev-title-container,
     #software-engineer-title-container,
     #tech-stack-title-container{
-      grid-column: 1;
+      grid-column: 1/-1;
       grid-row: 1/-1;
       position: relative;
       top: 35%;
@@ -57,6 +73,7 @@
     }
 
     #project-showcase-title,
+    #project-showcase-fs-mixin-cover-title,
     #front-end-dev-title,
     #back-end-dev-title,
     #software-engineer-title,
@@ -68,6 +85,7 @@
     }
     
     #project-showcase-title-sub,
+    #project-showcase-fs-mixin-cover-title-sub,
     #front-end-dev-title-sub,
     #back-end-dev-title-sub,
     #software-engineer-title-sub,
@@ -89,7 +107,7 @@
     #tech-stack-content-container{
       visibility: hidden;
       @include grid-pos(1,2);
-      @include grid-container(min-content, auto);
+      @include grid-container(1fr, auto);
       min-height: 100%;
       padding: 2rem;
       margin: auto;
@@ -237,10 +255,11 @@
       position: relative;
       left: 0.5rem;
       min-height: auto;
+      row-gap: 9vmin;
     }
     .project-showcase-item-container{
-      grid-row: 1;
-      display: grid;
+      @include grid-pos(unset,1);
+      @include grid-container();
       height: 75vmin;
       width: min-content;
       border-radius: 1.25rem;
@@ -249,95 +268,230 @@
       overflow: hidden;
     }
 
-    // Stack Ribbon
-      .project-showcase-item-stack-ribbon{
-        @include grid-pos(1,1);
-        @include light-theme(){
-          background-color: $light-primary;
-          color: $light-font-primary;
-        }
-        @include dark-theme(){
-          background-color: $dark-primary;
-          color: $dark-font-primary;
-        }
-        visibility: hidden;
-        height: min-content;
-        width: 0px;
-        white-space: nowrap;
-        position: relative;
-        left: 5%;
-        padding: 0px;
-        border-radius: 0px 0px .5rem 0.5rem;
-        font-weight: bold;
-        border-bottom: 1px solid #da4224;
-        user-select: none;
+    // Sites (Sub-Section)
+      #project-showcase-sites-contianer{
+        @include grid-container(min-content,auto);
+        margin: auto;
       }
-    // Stack Ribbon
+      // Stack Ribbon
+        .project-showcase-item-stack-ribbon{
+          @include grid-pos(1,1);
+          @include light-theme(){
+            background-color: $light-primary;
+            color: $light-font-primary;
+          }
+          @include dark-theme(){
+            background-color: $dark-primary;
+            color: $dark-font-primary;
+          }
+          visibility: hidden;
+          height: min-content;
+          width: 0px;
+          white-space: nowrap;
+          position: relative;
+          left: 5%;
+          padding: 0px;
+          border-radius: 0px 0px .5rem 0.5rem;
+          font-weight: bold;
+          border-bottom: 1px solid #da4224;
+          user-select: none;
+        }
+      // Stack Ribbon
 
-    // Showcase Item
-      .project-showcase-item{
-        @include grid-pos(1,1);
-        height: 100%;
-        width: clamp(5em, 13.5vw, 9em);
-        border-radius: 1.25rem;
-        transition: all 450ms;
-      }
-      .project-showcase-item-hover{
-        width: 75vmin !important;
-      }
-      .project-showcase-item-mini{
-        width: 4.5vw;
-        min-width: unset;
-      }
-    // Showcase Item
+      // Showcase Item
+        .project-showcase-item{
+          @include grid-pos(1,1);
+          height: 100%;
+          width: clamp(5em, 13.5vw, 9em);
+          border-radius: 1.25rem;
+          transition: all 450ms;
+        }
+        .project-showcase-item-hover{
+          width: 75vmin !important;
+        }
+        .project-showcase-item-mini{
+          width: 4.5vw;
+          min-width: unset;
+        }
+      // Showcase Item
 
-    // Item Description
-      .project-showcase-item-desc-container{
-        @include grid-pos(1,1);
-        position: relative;
-        bottom: 5%;
-        left: 100%;
-        transform: translateX(-100%);
-        display: grid;
-        visibility: hidden;
-        height: min-content;
-        width: 0px;
-        margin-top: auto;
-        transition: all 450ms;
-      }
-      .project-showcase-item-desc,
-      .project-showcase-item-desc-mini,
-      .project-showcase-item-desc-github-a{
-        @include light-theme(){
-          background-color: $light-primary;
-          color: $light-font-primary;
+      // Item Description
+        .project-showcase-item-desc-container{
+          @include grid-pos(1,1);
+          position: relative;
+          bottom: 5%;
+          left: 100%;
+          transform: translateX(-100%);
+          display: grid;
+          visibility: hidden;
+          height: min-content;
+          width: 0px;
+          margin-top: auto;
+          transition: all 450ms;
         }
-        @include dark-theme(){
-          background-color: $dark-primary;
-          color: $dark-font-primary;
+        .project-showcase-item-desc,
+        .project-showcase-item-desc-mini,
+        .project-showcase-item-desc-github-a{
+          @include light-theme(){
+            background-color: $light-primary;
+            color: $light-font-primary;
+          }
+          @include dark-theme(){
+            background-color: $dark-primary;
+            color: $dark-font-primary;
+          }
+          height: min-content;
+          margin: 0px;
+          margin-left: auto;
+          padding: 0.2rem 0.75rem;
+          text-align: right;
+          white-space: nowrap;
+          user-select: none;
+          text-decoration: none;
         }
-        height: min-content;
-        margin: 0px;
-        margin-left: auto;
-        padding: 0.2rem 0.75rem;
-        text-align: right;
-        white-space: nowrap;
-        user-select: none;
-        text-decoration: none;
-      }
-      .project-showcase-item-desc{ @include desc-header(); }
-      .project-showcase-item-desc-mini{ @include desc-sub(); }
-      .project-showcase-item-desc-github-a{
-        border-bottom: 1px solid #2e79b3;
-        margin-top: 0.35rem;
-        transition: 300ms;
-      }
-      .project-showcase-item-desc-github-a:hover{
-        transform: scale(1.10);
-      }
-    // Item Description
+        .project-showcase-item-desc{ @include desc-header(); }
+        .project-showcase-item-desc-mini{ @include desc-sub(); }
+        .project-showcase-item-desc-github-a{
+          border-bottom: 1px solid #2e79b3;
+          margin-top: 0.35rem;
+          transition: 300ms;
+        }
+        .project-showcase-item-desc-github-a:hover{
+          transform: scale(1.10);
+        }
+      // Item Description
+    // Sites
+
+    // Full-Steck Tech (Sub-Section)
+        #project-showcase-fs-mixin-contianer{
+          @include grid-container();
+        }
+
+        // Cover Container
+          #project-showcase-fs-mixin-cover-container{
+            @include grid-pos(1,1);
+            @include grid-container(2fr);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            width: 80vw;
+            border-radius: 0.45rem;
+            overflow: hidden;
+            background-color: $dark-tertiary-2;
+          }
+
+          // Title
+            #project-showcase-fs-mixin-cover-title-container{
+              grid-column: 1/-1;
+              grid-row: 1;
+            }
+            #project-showcase-fs-mixin-cover-title-sub{
+              background: linear-gradient(to right,$light-tertiary 0%,$dark-secondary-2 33%,$light-tertiary 66%,$dark-secondary-2 100%);
+              background-size: 400% auto;
+              background-clip: text;
+              -webkit-background-clip: text;
+              color: transparent !important;
+              -webkit-text-fill-color: transparent !important;
+              animation: text-gradient  7s alternate infinite;
+            }
+          // Title
+        
+          // Navbar
+            #project-showcase-fs-mixin-cover-navbar-container{
+              @include grid-pos(2,1);
+              @include grid-container();
+              grid-gap: 4.5%;
+              overflow-y: scroll;
+              background-color: $dark-primary;
+              padding: 1.15rem 2rem;
+              border-radius: 0px 0.45rem 0.45rem 0px;
+            }
+          // Navbar
+        // Cover Container
+
+        // Content Container
+          #project-showcase-fs-mixin-content-container{
+            @include grid-pos(1,1);
+            @include grid-container(1fr 1.5fr 1fr,  clamp(4.8em, 3.6vw, 3em) 80vh);
+          }
+
+          // Navbar
+            #project-showcase-fs-mixin-navbar-container{
+              @include grid-container(1fr);
+              @include grid-pos(1,2);
+              background-color: white;
+              width: 100%; 
+              padding: 1.2rem 0.65rem;
+              margin: auto;
+            }
+
+            .btn-navbar{
+              @include btn();
+              
+              @include light-theme{
+                @include fs-style();
+                @include btn-hover();
+              }
+              @include dark-theme{
+                @include fs-style($dark-secondary, $dark-font-primary);
+                @include btn-hover(transparent, $dark-font-primary, 1px solid $dark-secondary){
+                  border-radius: 4px 0px !important;
+                };
+              }
+              width: 100% !important;
+              transition: 325ms;
+            }
+          // Navbar
+
+          // Elements
+            #project-showcase-fs-mixin-elements-container{
+              @include grid-container();
+              @include grid-pos(2, 2);
+              margin: auto;
+            }
+          // Elements
+
+          // Code Gists
+            #project-showcase-fs-mixin-gist-container{
+              @include grid-container(auto, min-content, auto);
+              @include grid-pos(3, 2);
+              margin: auto;
+            }
+
+            // Card
+              .project-showcase-fs-mixin-gist-card{
+                @include grid-container();
+                @include grid-pos(1, 2);
+              }
+              
+              // GitHub Gist Styles
+                .gist {
+                  width:500px !important;
+                  @include light-theme{ background-color: $light-primary; }
+                  @include dark-theme{ background-color: $dark-primary; }
+                }
+                .gist-file,
+                .gist-data {
+                  max-height: 500px;
+                  min-height: min-content;
+                  max-width: 500px;
+                  @include light-theme{ background-color: $light-primary; }
+                  @include dark-theme{ background-color: $dark-primary; }
+                }
+              // GitHub Gist Styles
+
+              .project-showcase-fs-mixin-gist-include{
+                @include grid-pos(1, 1);
+              }
+              .project-showcase-fs-mixin-gist-mixin{
+                @include grid-pos(1, 1);
+              }
+
+              // #project-showcase-fs-mixin-gist-card-button,
+              
+            // Card
+          // Code Gists
+        // Content Containers
+    // Full-Steck Tech
   // Content
-
 // Project Showcase
 
 // Front-End Developer
@@ -345,6 +499,7 @@
   // Title
 
   // Content
+      
   // Content
 // Front-End Developer
 

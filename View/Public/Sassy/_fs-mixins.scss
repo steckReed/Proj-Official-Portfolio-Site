@@ -83,7 +83,7 @@
 // Buttons
 
 // Fonts
-  @mixin text(){ padding: 0px; margin: 0px; }
+  @mixin text($padding:0px, $margin:0px){ padding: $padding; margin: $margin; }
   @mixin text-no-break(){
     width: min-content;
     white-space: nowrap;
