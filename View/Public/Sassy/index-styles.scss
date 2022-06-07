@@ -1,6 +1,7 @@
 @import './_global-styles.scss';
 
 // Custom Classes
+  .dis-none{ display: none; }
   .btn-primary{
     @include btn();
     
@@ -45,11 +46,9 @@
   #software-engineer-container,
   #tech-stack-container{
     @include grid-pos(1);
-    // @include grid-container(min-content, clamp(4.8em, 3.6vw, 3em) auto);
     @include grid-container(1fr, clamp(4.8em, 3.6vw, 3em) auto);
     min-height: 100vh;
-    // margin: auto;
-    padding: 1.5vmin;
+    padding: 4.5vmin;
   }
 
   // Titles
@@ -255,12 +254,13 @@
       position: relative;
       left: 0.5rem;
       min-height: auto;
-      row-gap: 9vmin;
+      row-gap: 26vmin;
     }
     .project-showcase-item-container{
       @include grid-pos(unset,1);
       @include grid-container();
       height: 75vmin;
+      min-height: 600px;
       width: min-content;
       border-radius: 1.25rem;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -298,6 +298,13 @@
         }
       // Stack Ribbon
 
+      .project-showcase-recreations-toggle{
+        @include grid-pos(1,1);
+        margin: auto;
+        margin-top: 30px;
+        // margin-right: 0px;
+        z-index: 2;
+      }
       // Showcase Item
         .project-showcase-item{
           @include grid-pos(1,1);
@@ -314,6 +321,17 @@
           min-width: unset;
         }
       // Showcase Item
+      
+
+      // Showcase Reference Image
+        .project-showcase-item-reference-img{
+          @include grid-pos(1,1);
+          height: 100%;
+          width: clamp(5em, 13.5vw, 9em);
+          border-radius: 1.25rem;
+          transition: all 450ms;
+        }
+      // Showcase Reference Image
 
       // Item Description
         .project-showcase-item-desc-container{
@@ -376,6 +394,7 @@
             border-radius: 0.45rem;
             overflow: hidden;
             background-color: $dark-tertiary-2;
+            max-width: 1400px;
           }
 
           // Title

@@ -378,6 +378,10 @@ body {
   font-weight: 100;
 }
 
+.dis-none {
+  display: none;
+}
+
 .btn-primary {
   height: -webkit-min-content;
   height: -moz-min-content;
@@ -505,7 +509,7 @@ body {
       grid-template-rows: clamp(4.8em, 3.6vw, 3em) auto;
   background-color: transparent;
   min-height: 100vh;
-  padding: 1.5vmin;
+  padding: 4.5vmin;
 }
 
 #project-showcase-title-container,
@@ -808,7 +812,7 @@ body {
   position: relative;
   left: 0.5rem;
   min-height: auto;
-  row-gap: 9vmin;
+  row-gap: 26vmin;
 }
 
 .project-showcase-item-container {
@@ -823,6 +827,7 @@ body {
       grid-template-rows: auto;
   background-color: transparent;
   height: 75vmin;
+  min-height: 600px;
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
@@ -882,6 +887,16 @@ body {
   }
 }
 
+.project-showcase-recreations-toggle {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin: auto;
+  margin-top: 30px;
+  z-index: 2;
+}
+
 .project-showcase-item {
   -ms-grid-column: 1;
   grid-column: 1;
@@ -901,6 +916,18 @@ body {
 .project-showcase-item-mini {
   width: 4.5vw;
   min-width: unset;
+}
+
+.project-showcase-item-reference-img {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  height: 100%;
+  width: clamp(5em, 13.5vw, 9em);
+  border-radius: 1.25rem;
+  -webkit-transition: all 450ms;
+  transition: all 450ms;
 }
 
 .project-showcase-item-desc-container {
@@ -1009,6 +1036,7 @@ body {
   border-radius: 0.45rem;
   overflow: hidden;
   background-color: #1e1e1e;
+  max-width: 1400px;
 }
 
 #project-showcase-fs-mixin-cover-title-container {
