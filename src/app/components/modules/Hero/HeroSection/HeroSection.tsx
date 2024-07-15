@@ -3,15 +3,17 @@
 import Image from "next/image";
 import ResponsiveImage from '../../../elements/ResponsiveImage';
 import { motion } from "framer-motion"
+import OptimizedVideo from '@/app/components/elements/OptimizedVideo';
 
 
 const HeroSection =() =>{
 
-  return (<>
+  return (
     <div 
       style={{ 
         display:'flex',
         flexWrap:'wrap',
+        width:'fit-content',
         margin: 'auto',
         userSelect: 'none'
       }}
@@ -23,20 +25,33 @@ const HeroSection =() =>{
         exit        = {{ opacity: 0 }}
         transition  = {{ duration: 1.5, ease:'backInOut' }}
 
-        style={{ position: 'relative', bottom: '14px', display:'grid', height:'min-content', margin:'auto' }}
+        style       = {{ position: 'relative', bottom: '14px', display:'grid', height:'min-content', margin:'auto' }}
       >
         
         <motion.div 
           initial     = {{ opacity: 0, left:'100px' }}
-          animate     = {{ opacity: 1, left:'unset', right:'1.5vw' }}
+          animate     = {{ opacity: 1, left:'unset', right:'2vw' }}
           exit        = {{ opacity: 0 }}
           transition  = {{ duration: 1.25, ease: 'backInOut', delay:0.15 }}
 
-          style={{ position: 'relative', marginLeft:'0' }}
+          style       = {{ position: 'relative' }}
         >
-          <h5 style={{ fontSize:'24px', fontWeight:400 }}>Hello world</h5>
+          <h5 style={{ fontSize:'24px', fontWeight:400 }}>
+            Hello world
+          </h5>
         </motion.div>
-        <h1 style={{ textTransform: 'uppercase', fontSize: 'clamp(32px, 95vw, 128px)', textAlign: 'right', padding:'0',margin:'0', lineHeight:'69%' }}>{"I\'m"}</h1>
+
+        <h1 
+          style={{ 
+            textTransform: 'uppercase', 
+            fontSize: 'clamp(32px, 95vw, 128px)', 
+            textAlign: 'right', padding:'0',
+            margin:'0', 
+            lineHeight:'69%'
+          }}
+        >
+          {"I\'m"}
+        </h1>
       </motion.div>
 
       {/* Picture of me */}
@@ -45,7 +60,7 @@ const HeroSection =() =>{
         animate     = {{ opacity: 1 }}
         exit        = {{ opacity: 0 }}
         transition  = {{ duration: 0.5, ease:'backInOut' }}
-        style={{ zIndex:1 }}
+        style       = {{ margin:'auto', zIndex:1 }}
       >
         <ResponsiveImage src="/images/rs-headshot.png">
           <Image
@@ -70,11 +85,22 @@ const HeroSection =() =>{
         transition  = {{ duration: 1.5, ease:'backInOut' }}
         style       = {{ position: 'relative', top: '15px', display: 'grid', margin: 'auto', zIndex: 1 }}
       >
-        <h1 style={{ textTransform: 'uppercase', fontSize: 'clamp(32px, 95vw, 128px)', padding: '0', margin: '0', lineHeight: '69%' }}>Reed</h1>
+        <h1 
+          style={{ 
+            textTransform: 'uppercase', 
+            fontSize: 'clamp(32px, 95vw, 128px)', 
+            padding: '0', 
+            margin: '0', 
+            lineHeight: '69%',
+            mixBlendMode: 'screen'
+          }}
+        >
+          Reed
+        </h1>
 
         <motion.div
           initial    = {{ opacity: 0, right: '100px' }}
-          animate    = {{ opacity: 1, right: 'unset', left: '1.5vw' }}
+          animate    = {{ opacity: 1, right: 'unset', left: '2vw' }}
           exit       = {{ opacity: 0 }}
           transition = {{ duration: 1.25, ease: 'backInOut', delay:0.15 }}
 
@@ -84,8 +110,7 @@ const HeroSection =() =>{
         </motion.div>
       </motion.div>
     </div>
-  
-  </>)
+  )
 }
 
 export default HeroSection;
