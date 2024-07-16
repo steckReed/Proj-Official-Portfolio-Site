@@ -15,7 +15,7 @@ const HeroSection = () => {
   useEffect(() => {
     async function sequence() {
       // Load in 'center' of page
-      await controls.start({ opacity: 1, top: '25vh', transition: { duration: 1 } });
+      await controls.start({ opacity: 1, top: '20vh', transition: { duration: 1 } });
 
       // Move up to default position
       await controls.start({ top:'0', transition: { duration: 0.5, delay:0.75 } });
@@ -26,7 +26,7 @@ const HeroSection = () => {
 
   return (
     <motion.div
-      initial     = {{ opacity: 0, top: '25vh' }}
+      initial     = {{ opacity: 0, top: '20vh' }}
       animate     = {controls}
       exit        = {{ opacity: 0 }}
       transition  = {{ duration: 1.5, ease: 'backInOut' }}
@@ -36,7 +36,8 @@ const HeroSection = () => {
         flexWrap:'wrap',
         width:'fit-content',
         margin: 'auto',
-        userSelect: 'none'
+        userSelect: 'none',
+        paddingTop:'40px'
       }}
     >
       {/* Left-hand text */}
