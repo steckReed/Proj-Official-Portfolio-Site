@@ -51,44 +51,55 @@ const ProjectsCarousel = () => {
     },
   ]
 
+  const projectAnimDelay = 2.15;
+
   return (
-    <div style={{ height: 'min-content'}}>
-      <Swiper 
-        grabCursor={true}
-        loop={true}
-        spaceBetween={50} 
-        onSlideChange={() => console.log('slide change')} 
-        onSwiper={(swiper) => console.log(swiper)}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 10,
-          },
-          500: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          900: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          1400: {
-            slidesPerView: 4,
-            spaceBetween: 40,
-          },
-        }}
-      >
-        {myProjects.map((project: ProjectsProps, i:number)=>{ return(
-          <SwiperSlide 
+    <Swiper 
+      grabCursor={true}
+      loop={true}
+      spaceBetween={50} 
+      onSlideChange={() => console.log('slide change')} 
+      onSwiper={(swiper) => console.log(swiper)}
+      breakpoints={{
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        500: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1400: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+      }}
+      style={{ display: 'inherit' }}
+    >
+      {myProjects.map((project: ProjectsProps, i:number)=>{ return(
+        <SwiperSlide
+          key={i} 
+          style={{ display: 'inherit', height: '450px', width: 'clamp(150px, 85vw, 200px)', userSelect: 'none'}}
+        >
+          <motion.div
             key={i} 
-            style={{ 
-              display:'grid',
-              gridTemplateRows:'min-content auto',
-              height: '450px', 
-              width: 'clamp(150px, 85vw, 200px)', 
-              backgroundColor: 'white', 
+            initial     = {{ opacity: 0, bottom:'-100px' }}
+            animate     = {{ opacity: 1, bottom:'0' }}
+            exit        = {{ opacity: 0 }}
+            transition  = {{ duration: 0.75, ease: 'backInOut', delay: projectAnimDelay + i/6, type: 'spring', bounce:0 }}
+            style={{
+              display: 'grid',
+              gridTemplateRows: 'min-content auto',
+              position: 'relative',
+              height: '100%',
+              width:'100%',
+              backgroundColor: 'white',
+              boxShadow: '0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)',
               borderRadius: '14px',
-              boxShadow:'0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)',
               overflow: 'hidden'
             }}
           >
@@ -111,7 +122,7 @@ const ProjectsCarousel = () => {
                   initial={{ opacity: 0, right: '-100%', top: '-100%' }}
                   animate={{ opacity: 1, right: '-38%', top: '32%' }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 1, ease: 'backInOut', delay: 1.5, type: 'spring', bounce: 0 }}
+                  transition={{ duration: 1, ease: 'backInOut', delay: projectAnimDelay + 0.75, type: 'spring', bounce: 0 }}
                   style={{
                     gridColumn: 1,
                     gridRow: 1,
@@ -141,7 +152,7 @@ const ProjectsCarousel = () => {
                 initial     = {{ opacity: 0, right:'-100px' }}
                 animate     = {{ opacity: 1, right:'0' }}
                 exit        = {{ opacity: 0 }}
-                transition  = {{ duration: 0.75, ease: 'backInOut', delay:1, type: 'spring', bounce:0 }}
+                transition={{ duration: 0.75, ease: 'backInOut', delay:projectAnimDelay + 0.5, type: 'spring', bounce:0 }}
                 style = {{ 
                   gridColumn:1, 
                   gridRow:1, 
@@ -158,10 +169,10 @@ const ProjectsCarousel = () => {
               {/* Site Iframe */}
               <iframe src={project.url} style={{ gridColumn: 1, gridRow: 1, height: '100%', width: '100%' }} frameBorder="0"></iframe>
             </Box>
-          </SwiperSlide>
-        )})}
-      </Swiper>
-    </div>
+          </motion.div>
+        </SwiperSlide>
+      )})}
+    </Swiper>
   );
 };
 

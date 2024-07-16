@@ -4,11 +4,14 @@ import ProjectsCarousel from './components/modules/ProjectsCarousel/ProjectsCaro
 
 export default function Home() {
   return (
-    <div style={{ minHeight: '100vh' }} >
-      <Box sx={{ display: 'flex', height:'100vh' }}>
-        <HeroSection/>
+    <div style={{ minHeight: '100vh'}} >
+      <Box sx={{ display: 'flex', minHeight:'100vh', flexWrap:'wrap', alignContent:'center', gap:'5.5vh'}}>
+        <Box sx={{ width:'100%' }}>
+          <HeroSection />
+        </Box>
+        
+        <ProjectsCarousel />
       </Box>
-        <ProjectsCarousel/>
     </div>
   );
 }

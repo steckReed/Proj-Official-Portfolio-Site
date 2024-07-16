@@ -2,15 +2,36 @@
 
 import Image from "next/image";
 import ResponsiveImage from '../../../elements/ResponsiveImage';
-import { motion } from "framer-motion"
-import OptimizedVideo from '@/app/components/elements/OptimizedVideo';
+import { motion, useAnimation } from "framer-motion"
+import { useEffect } from 'react';
+import useIsMobile from '@/functions/useIsMobile';
 
 
-const HeroSection =() =>{
+const HeroSection = () => {
+  const isMobile = useIsMobile();
+  const controls = useAnimation();
+
+
+  useEffect(() => {
+    async function sequence() {
+      // Load in 'center' of page
+      await controls.start({ opacity: 1, top: '25vh', transition: { duration: 1 } });
+
+      // Move up to default position
+      await controls.start({ top:'0', transition: { duration: 0.5, delay:0.75 } });
+    }
+
+    sequence();
+  }, [controls]);
 
   return (
-    <div 
-      style={{ 
+    <motion.div
+      initial     = {{ opacity: 0, top: '25vh' }}
+      animate     = {controls}
+      exit        = {{ opacity: 0 }}
+      transition  = {{ duration: 1.5, ease: 'backInOut' }}
+      style = {{ 
+        position:'relative',
         display:'flex',
         flexWrap:'wrap',
         width:'fit-content',
@@ -20,12 +41,11 @@ const HeroSection =() =>{
     >
       {/* Left-hand text */}
       <motion.div 
-        initial     = {{ opacity: 0, left:'100px' }}
-        animate     = {{ opacity: 1, left:'15px' }}
+        initial     = {{ opacity: 0, left: '100px' }}
+        animate     = {{ opacity: 1, left: isMobile ?(0) :'15px' }}
         exit        = {{ opacity: 0 }}
         transition  = {{ duration: 1.5, ease:'backInOut' }}
-
-        style       = {{ position: 'relative', bottom: '14px', display:'grid', height:'min-content', margin:'auto' }}
+        style       = {{ position: 'relative', bottom: isMobile ?(0) :('14px'), display:'grid', height:'min-content', margin:'auto' }}
       >
         
         <motion.div 
@@ -79,11 +99,11 @@ const HeroSection =() =>{
 
       {/* Right-hand text */}
       <motion.div 
-        initial     = {{ opacity: 0, right:'100px' }}
-        animate     = {{ opacity: 1, right:'25px' }}
+        initial     = {{ opacity: 0, right: '100px' }}
+        animate     = {{ opacity: 1, right: isMobile ?(0) :'25px' }}
         exit        = {{ opacity: 0 }}
         transition  = {{ duration: 1.5, ease:'backInOut' }}
-        style       = {{ position: 'relative', top: '15px', display: 'grid', margin: 'auto', zIndex: 1 }}
+        style={{ position: 'relative', top: isMobile ?('-15px'): '15px', display: 'grid', margin: 'auto', zIndex: 1 }}
       >
         <h1 
           style={{ 
@@ -108,7 +128,7 @@ const HeroSection =() =>{
           <h5 style={{ fontSize: '24px', textAlign:'right', fontWeight:400 }}>a Full Stack Developer</h5>
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   )
 }
 
