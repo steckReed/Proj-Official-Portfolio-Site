@@ -33,7 +33,7 @@ const NavBar = () => {
         style={{ position: 'relative' }}
       >
         <Link href={'https://www.linkedin.com/in/reed-steck-993b48286/'} target='_blank'>
-          <LinkedInIcon sx={{ fontSize: '2rem' }} />
+          <LinkedInIcon sx={{ fontSize: '2rem', color:'#0077b5' }} />
         </Link>
       </motion.div>
 
