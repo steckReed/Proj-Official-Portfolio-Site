@@ -1,16 +1,14 @@
-import OptimizedVideo from './components/elements/OptimizedVideo';
+import { Box } from '@mui/material';
 import HeroSection from './components/modules/Hero/HeroSection/HeroSection';
+import ProjectsCarousel from './components/modules/ProjectsCarousel/ProjectsCarousel';
 
 export default function Home() {
   return (
-    <div style={{ display: 'grid', width: '100vw', minHeight: '100vh', backgroundColor: '#F9F7F4' }} >
-      {/* <div style={{ gridColumn:1, gridRow:1 }}> */}
+    <div style={{ minHeight: '100vh' }} >
+      <Box sx={{ display: 'flex', height:'100vh' }}>
         <HeroSection/>
-      {/* </div> */}
-
-      {/* <div style={{ gridColumn: 1, gridRow: 1 }}>
-        <OptimizedVideo />
-      </div> */}
+      </Box>
+        <ProjectsCarousel/>
     </div>
   );
 }
