@@ -91,8 +91,7 @@ const HeroSection =() =>{
             fontSize: 'clamp(32px, 95vw, 128px)', 
             padding: '0', 
             margin: '0', 
-            lineHeight: '69%',
-            mixBlendMode: 'screen'
+            lineHeight: '69%'
           }}
         >
           Reed
