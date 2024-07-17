@@ -1,16 +1,15 @@
 'use client'
+
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { Box, Stack } from '@mui/material';
+import { Box } from '@mui/material';
 import { ProjectsProps } from '@/types/types';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import LaunchIcon from '@mui/icons-material/Launch';
 
 const ProjectsCarousel = () => {
-
-
   const myProjects: ProjectsProps[] = [
     { name:'Planets Wallpaper',
       desc:'Pure HTML, SCSS, JS Image Re-Creation',
@@ -54,30 +53,33 @@ const ProjectsCarousel = () => {
   const projectAnimDelay = 2.15;
 
   return (
-    <Swiper 
+    <Swiper
       grabCursor={true}
       loop={true}
-      spaceBetween={50} 
-      onSlideChange={() => console.log('slide change')} 
-      onSwiper={(swiper) => console.log(swiper)}
+      spaceBetween={50}
       breakpoints={{
         320: {
-          slidesPerView: 1,
+          slidesPerView: 1.25,
           spaceBetween: 10,
+          centeredSlides:true,
         },
         500: {
-          slidesPerView: 2,
+          slidesPerView: 1.5,
           spaceBetween: 20,
+          centeredSlides: true,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 2.75,
           spaceBetween: 30,
+          centeredSlides: false,
         },
         1400: {
-          slidesPerView: 4,
+          slidesPerView: 3.75,
           spaceBetween: 40,
+          centeredSlides: false,
         },
       }}
+
       style={{ display: 'inherit' }}
     >
       {myProjects.map((project: ProjectsProps, i:number)=>{ return(
