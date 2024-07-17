@@ -9,7 +9,7 @@ export default function Home() {
 
       <NavBar />
 
-      <Box sx={{ display: 'flex', minHeight:'100vh', flexWrap:'wrap', alignContent:'center', gap:'5.5vh'}}>
+      <Box sx={{ display: 'flex', minHeight:'100vh', flexWrap:'wrap', alignContent:'center', gap:'5.5vh', paddingBottom:'calc(2.5vh + 1rem)'}}>
 
 
         <Box sx={{ width:'100%' }}>
