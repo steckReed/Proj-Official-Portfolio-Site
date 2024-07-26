@@ -1,7 +1,6 @@
 import { Box } from '@mui/material';
 import HeroSection from '../components/modules/Hero/HeroSection/HeroSection';
 import ProjectsCarousel from '../components/modules/ProjectsCarousel/ProjectsCarousel';
-import NavBar from '../components/modules/NavBar/NavBar';
 
 export default function Home() {
   return (<>
