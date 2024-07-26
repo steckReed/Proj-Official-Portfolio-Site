@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { ReactQueryProvider } from './ReactQueryProvider';
 import montserrat from '@/fonts/montserrat';
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dev Reed Steck",
@@ -13,8 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>{children}</body>
-    </html>
+    <ReactQueryProvider>
+      <html lang="en">
+        <body className={montserrat.className}>{children}</body>
+      </html>
+    </ReactQueryProvider>
   );
 }
