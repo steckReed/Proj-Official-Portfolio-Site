@@ -20,7 +20,7 @@ const ProjectsCarousel = () => {
     },
     {
       name: 'D&D Character Creator',
-      desc: 'Next.js Web App to Assits in Creation of D&D Character Sheets',
+      desc: 'Next.js Web App to Assist in Creation of D&D Character Sheets',
       ribbon: 'Full-stack',
       status: 'In Development',
       url: 'https://dnd-character-builder-3eb70.web.app/characters/new',
