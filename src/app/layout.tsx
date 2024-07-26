@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ReactQueryProvider } from './ReactQueryProvider';
 import montserrat from '@/fonts/montserrat';
 import "./globals.css";
+import NavBar from '@/components/modules/NavBar/NavBar';
 
 export const metadata: Metadata = {
   title: "Dev Reed Steck",
@@ -16,7 +17,11 @@ export default function RootLayout({
   return (
     <ReactQueryProvider>
       <html lang="en">
-        <body className={montserrat.className}>{children}</body>
+        <body className={montserrat.className} style={{ minHeight: '100vh' }} >
+          <NavBar />
+
+          {children}
+        </body>
       </html>
     </ReactQueryProvider>
   );
