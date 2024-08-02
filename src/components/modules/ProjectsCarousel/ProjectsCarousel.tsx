@@ -1,13 +1,13 @@
 'use client'
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import React from 'react';
+import Link from 'next/link';
+import LaunchIcon from '@mui/icons-material/Launch';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Box } from '@mui/material';
 import { ProjectsProps } from '@/types/types';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
-import LaunchIcon from '@mui/icons-material/Launch';
 
 const ProjectsCarousel = () => {
   const myProjects: ProjectsProps[] = [
