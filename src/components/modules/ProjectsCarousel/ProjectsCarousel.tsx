@@ -1,6 +1,5 @@
 'use client'
 
-import 'swiper/css';
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import LaunchIcon from '@mui/icons-material/Launch';
