@@ -11,7 +11,13 @@ body {
 }
 
 /* ProjectCarousel.tsx */
-.slick-list{ padding-bottom:6px !important}
+.slick-list { 
+  padding-bottom:6px !important;
+}
 .slick-slide {
   padding: 0 clamp(0.5rem, 1vw, 16px);
+  
+  &:hover{
+    cursor: pointer;
+  }
 }
