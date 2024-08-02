@@ -3,7 +3,7 @@ export interface ProjectsProps {
   desc          : string;
   ribbon        : string;
   url           : string;
-  github        : string;
+  github        ?: string;
   status        ?: string;
   referenceLink ?: string;
 }

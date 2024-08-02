@@ -24,7 +24,7 @@ const ProjectsCarousel = () => {
       ribbon: 'Full-stack',
       status: 'In Development',
       url: 'https://dnd-character-builder-3eb70.web.app/characters/new',
-      github: 'https://github.com/steckReed/dnd-character-creator',
+      // github: 'https://github.com/steckReed/dnd-character-creator',
     },
     {
       name: 'Adventure Niagara Falls',
@@ -150,23 +150,26 @@ const ProjectsCarousel = () => {
             <Box sx={{ display:'grid', borderRadius: 4, overflow:'hidden' }}>
 
               {/* GitHub Link */}
-              <motion.div 
-                initial     = {{ opacity: 0, right:'-100px' }}
-                animate     = {{ opacity: 1, right:'0' }}
-                exit        = {{ opacity: 0 }}
-                transition={{ duration: 0.75, ease: 'backInOut', delay:projectAnimDelay + 0.5, type: 'spring', bounce:0 }}
-                style = {{ 
-                  gridColumn:1, 
-                  gridRow:1, 
-                  position:'absolute', 
-                  bottom:15, 
-                  backgroundColor:'white', 
-                  borderRadius:'6px 0 0 6px',
-                  padding:'0.5rem'
-                }}
-              >
-                <Link href={project.github} target='_blank' style={{ textDecoration:'none', color:'black' }}>GitHub Link 🎉</Link>
-              </motion.div>
+              {(project.github) && 
+                <motion.div 
+                  initial     = {{ opacity: 0, right:'-100px' }}
+                  animate     = {{ opacity: 1, right:'0' }}
+                  exit        = {{ opacity: 0 }}
+                  transition={{ duration: 0.75, ease: 'backInOut', delay:projectAnimDelay + 0.5, type: 'spring', bounce:0 }}
+                  style = {{ 
+                    gridColumn:1, 
+                    gridRow:1, 
+                    position:'absolute', 
+                    bottom:15, 
+                    backgroundColor:'white', 
+                    borderRadius:'6px 0 0 6px',
+                    padding:'0.5rem'
+                  }}
+                >
+                  <Link href={project.github} target='_blank' style={{ textDecoration:'none', color:'black' }}>GitHub Link 🎉</Link>
+                </motion.div>
+              }
+              
 
               {/* Site Iframe */}
               <iframe src={project.url} style={{ gridColumn: 1, gridRow: 1, height: '100%', width: '100%' }} frameBorder="0"></iframe>
