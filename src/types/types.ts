@@ -14,6 +14,7 @@ export interface MTGCardProps {
   oracle_id: string;
   multiverse_ids: number[];
   mtgo_id: number;
+  arena_id:number;
   tcgplayer_id: number;
   cardmarket_id: number;
   name: string;
@@ -41,7 +42,6 @@ export interface MTGCardProps {
   colors: string[];
   color_identity: string[];
   keywords: string[];
-  all_parts: RelatedMTGCardProps[];
   legalities: {
     [key: string]: string;
   };
@@ -73,6 +73,7 @@ export interface MTGCardProps {
   border_color: string;
   frame: string;
   frame_effects: string[];
+  security_stamp:string;
   full_art: boolean;
   textless: boolean;
   booster: boolean;
@@ -102,6 +103,8 @@ export interface MTGCardProps {
     cardmarket: string;
     cardhoarder: string;
   };
+  
+  all_parts?: RelatedMTGCardProps[];
 }
 
 interface RelatedMTGCardProps {

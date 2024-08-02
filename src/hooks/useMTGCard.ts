@@ -4,12 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 export const fetchMTGCard = async (): Promise<MTGCardProps[]> => {
   const response  = await fetch('https://api.scryfall.com/cards/random?q=is%3Acommander');
   const data      = await response.json();
-  return data.results;
+  return data;
 };
 
 export const useMTGCard = () => {
   return useQuery<MTGCardProps[]>({
     queryKey  : ['mtgCard'],
-    queryFn   : fetchMTGCard
+    queryFn   : fetchMTGCard,
+    staleTime: Infinity,  // Data never becomes stale during the session
   });
 };
