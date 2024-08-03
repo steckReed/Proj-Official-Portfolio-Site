@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import LaunchIcon from '@mui/icons-material/Launch';
+import statusColors from '@/functions/statusColors';
 import { Box } from '@mui/material';
 import { ProjectsProps } from '@/types/types';
 import { motion } from 'framer-motion';
@@ -25,6 +26,14 @@ const ProjectsCarousel = () => {
       status: 'In Development',
       url: 'https://dnd-character-builder-3eb70.web.app/characters/new',
       // github: 'https://github.com/steckReed/dnd-character-creator',
+    },
+    {
+      name: 'Funky Color Picker Game',
+      desc: 'Vite & React Random Color Guesser Game',
+      ribbon: 'Front-end',
+      status: 'New',
+      url: 'https://funky-color-picker-game.web.app/',
+      github: 'https://github.com/steckReed/funky-color-picker-game',
     },
     { name:'Planets Wallpaper',
       desc:'Pure HTML, SCSS, JS Image Re-Creation',
@@ -171,7 +180,7 @@ const ProjectsCarousel = () => {
                       right: '-100px', top: '-100px',
                       height: 'min-content',
                       width: '100%',
-                      backgroundColor: '#ef5555',
+                      backgroundColor: statusColors.get(project.status),
                       color: 'white',
                       borderRadius: '0 0 6px 6px',
                       padding: '0.5rem',
@@ -181,7 +190,7 @@ const ProjectsCarousel = () => {
                       textAlign:'center'
                     }}
                   >
-                    <p> {project?.status} </p>
+                    <p> {project.status} </p>
                   </motion.div>
                 )}
               </Box>
