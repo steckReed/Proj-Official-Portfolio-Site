@@ -65,7 +65,7 @@ const HeroSection = () => {
         <h1 
           style={{ 
             textTransform: 'uppercase', 
-            fontSize: 'clamp(32px, 95vw, 128px)', 
+            fontSize: '128px', 
             textAlign: 'right', padding:'0',
             margin:'0', 
             lineHeight:'69%'

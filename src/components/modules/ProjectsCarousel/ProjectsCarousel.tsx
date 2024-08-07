@@ -185,7 +185,7 @@ const ProjectsCarousel = () => {
                       borderRadius: '0 0 6px 6px',
                       padding: '0.5rem',
                       whiteSpace: 'nowrap',
-                      transform: 'rotate(45deg) translate(50%, -50%);',
+                      transform: 'rotate(45deg) translate(50%, -50%)',
                       transformOrigin: 'top right',
                       textAlign:'center'
                     }}
