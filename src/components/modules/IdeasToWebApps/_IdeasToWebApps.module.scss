@@ -1,0 +1,24 @@
+.agile-timeline-container{
+    display: flex;
+    flex-direction:column; 
+    gap:25px;
+    padding: 0 1rem;
+
+  .ticket-container{
+    display: flex;
+    flex-direction:column; 
+    gap:25px;
+    overflow: hidden; // Nasty fix...
+
+    // & > :nth-child(3),
+    // & > :nth-child(4){
+    //   position:relative;
+    //   left:11%
+    // }
+    
+    // & > :nth-child(5){
+    //   position:relative;
+    //   left:26%
+    // }
+  }
+}
