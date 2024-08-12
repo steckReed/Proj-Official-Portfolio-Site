@@ -1,3 +1,5 @@
+import { AnimationDefinition, Target, TargetAndTransition, VariantLabels } from 'framer-motion';
+
 export interface ProjectsProps {
   name          : string;
   desc          : string;
@@ -115,3 +117,57 @@ interface RelatedMTGCardProps {
   type_line: string;
   uri: string;
 }
+
+interface AnimationStep {
+  animate     ?: AnimationDefinition;
+  transition  ?: any; // Transition$1
+}
+
+export interface AnimationSequence {
+  animStartOn : string;
+  animations  : AnimationStep[]
+  id          ?: string;
+  initial     ?: boolean | Target | VariantLabels;
+  exit        ?: TargetAndTransition | VariantLabels;
+}
+
+
+export interface AgileTimelineTicketsProps {
+  size    : TicketSizes;
+  status  : TicketTypes;
+  text    : string;
+  loadingBar: {
+    distance  : number | string
+    delay     : number | string // MotionValue<number>
+  };
+
+  animationSequence: AnimationSequence;
+}
+
+
+export type TicketTypes = 'not started' | 'working on it' | 'on hold' | 'completed';
+export type TicketSizes = 'lg' | 'sm';
+
+interface TicketStatusInfo {
+  color : string;
+  desc  : string;
+}
+
+export const TicketStatusMap: Record<TicketTypes, TicketStatusInfo> = {
+  'not started': {
+    color : '#F9F7F4',
+    desc  : 'Not Started ⏳',
+  },
+  'working on it': {
+    color : '#F7630C',
+    desc  : 'Working on it 🚀',
+  },
+  'on hold': {
+    color : '#E81224',
+    desc  : 'On Hold ⛔',
+  },
+  'completed': {
+    color : '#16C60C',
+    desc  : 'Completed 🎉',
+  },
+};
