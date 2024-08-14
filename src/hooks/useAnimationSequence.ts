@@ -1,72 +1,75 @@
-import { AgileTimelineTicketsProps } from '@/types/types';
-import { AnimationControls, AnimationDefinition } from 'framer-motion';
+import { AnimationSequence } from '@/types/types';
+import { AnimationDefinition
+        ,AnimationScope
+        ,animate as animateFn 
+} from 'framer-motion';
 import { useRef, useEffect } from 'react';
 
 const useAnimationSequence = (
-  controlsArray: AnimationControls[],
-  agileTimelineTickets: AgileTimelineTicketsProps[],
+  scope: AnimationScope<any>,
+  animate: typeof animateFn,
+  animationSequence: AnimationSequence[],
   startAnimOn: Map<string, boolean>
 ) => {
   const previousShouldStartAnimation = useRef<{ [key: string]: boolean }>({});
 
   useEffect(() => {
-    async function runAnimationSequence(ele: AgileTimelineTicketsProps, controls: AnimationControls) {
-      const eleAnimSequence = ele.animationSequence;
-
+    async function runAnimationSequence(eleAnimSequence: AnimationSequence, eleRef: string) {
       if (eleAnimSequence.animations) {
         for (const step of eleAnimSequence.animations) {
           if (step.animate) {
-            await controls.start(step.animate, step.transition);
+            await animate(eleRef, step.animate, step.transition);
           }
         }
       }
     }
 
-    agileTimelineTickets.forEach((ele, index) => {
-      const eleAnimSequence = ele.animationSequence;
+    animationSequence.forEach((eleAnimSequence, index) => {
+      const eleRef = (eleAnimSequence?.id) ?(`#${eleAnimSequence.id}`) :(scope.current)
 
       // Validate that animStartOn is set correctly
       if (!eleAnimSequence.animStartOn || !startAnimOn.has(eleAnimSequence.animStartOn)) {
-        console.warn('Warning: Please set `animStartOn` correctly when using useAnimationSequence');
+        console.warn(`Warning: Please set \`animStartOn\` when using useAnimationSequence\nIssue Element: ${eleRef}\nUsed Start: ${eleAnimSequence.animStartOn}`);
         return;
       }
 
       const shouldStartAnimation  = startAnimOn.get(eleAnimSequence.animStartOn) ?? false;
       const previousState         = previousShouldStartAnimation.current[index] || false;
-
+      
       if (shouldStartAnimation !== previousState) {
-        const controls = controlsArray[index];
+        // Update the previous state for this specific element's animation sequence
+        previousShouldStartAnimation.current[index] = shouldStartAnimation;
 
-        // Handle transitioning from false to true
+          
+        // Handle transitioning from false to true (scrolling down)
         if (shouldStartAnimation) {
           if (eleAnimSequence.initial) {
-            controls.start(eleAnimSequence.initial as AnimationDefinition);
+            animate(eleRef, eleAnimSequence.initial as AnimationDefinition);
             
           } else {
-            controls.start({ opacity: 1 });
+            animate(eleRef, { opacity: 1 });
           }
 
-          runAnimationSequence(ele, controls);
+          runAnimationSequence(eleAnimSequence, eleRef);
         }
 
-        // Handle transitioning from true to false
+        // Handle transitioning from true to false (scrolling up)
         else {
           if (eleAnimSequence.exit) {
-            controls.start(eleAnimSequence.exit);
+            animate(eleRef, eleAnimSequence.exit);
 
           } else if (eleAnimSequence.initial) {
-            controls.start(eleAnimSequence.initial as AnimationDefinition);
+            animate(eleRef, eleAnimSequence.initial as AnimationDefinition);
             
           } else {
-            controls.start({ opacity: 0 });
+            animate(eleRef, { opacity: 0 });
           }
         }
-
-        // Update the previous state for this specific element's animation sequence
-        previousShouldStartAnimation.current[eleAnimSequence.animStartOn] = shouldStartAnimation;
+        
       }
     });
-  }, [controlsArray, agileTimelineTickets, startAnimOn]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [animationSequence, startAnimOn]);
 };
 
 export default useAnimationSequence;
