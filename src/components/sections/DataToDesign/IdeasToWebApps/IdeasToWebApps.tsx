@@ -1,29 +1,29 @@
 import CustomChip from '@/components/elements/CustomChip/CustomChip';
-import LegendContainer from '../LegendContainer/LegendContainer';
+import LegendContainer from '../../../modules/LegendContainer/LegendContainer';
 import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
-import { Box } from '@mui/material';
-import { AnimationDefinition, distance, motion, useAnimate, useAnimation } from 'framer-motion';
-import { useEffect, useRef } from 'react';
 import ResponsiveImage from '@/components/elements/ResponsiveImage';
 import Image from "next/image";
 import TicketContainer from '@/components/elements/TicketContainer/TicketContainer';
-import { AgileTimelineTicketsProps, AnimationSequence } from '@/types/types';
 import useAnimationSequence from '@/hooks/useAnimationSequence';
+import { useRef } from 'react';
+import { Box } from '@mui/material';
+import { motion, useAnimate } from 'framer-motion';
+import { AgileTimelineTicketsProps, AnimationSequence } from '@/types/types';
 
 
 const IdeasToWebApps = () => {
   // Container Ref
   const containerRef      = useRef<HTMLDivElement>(null);
   const scrollPercentage1 = useRefScrollPercentage(containerRef);
+  const [scope, animate]  = useAnimate();
+  const animDelay         = 0.75;
 
   // Map Containing Animation Trigger Points
-  const animDelay = 0.75;
   const startAnimOn = new Map([
     ['item1', scrollPercentage1 > 0],
     ['item2', scrollPercentage1 > 40],
     ['item3', scrollPercentage1 > 70],
   ])
-
   
   // Settings for carousel items animations
   const carouselItemAnimSettings = {
@@ -32,7 +32,7 @@ const IdeasToWebApps = () => {
     transition  : { duration: 0.85, ease: 'backInOut', delay: 1 / 3, type: 'spring', bounce: 0 }
   }
   
-  const [scope, animate] = useAnimate();
+  // Components Animation Sequence
   const animationSequence: AnimationSequence[] = [
     // Carousel Items
       { 'id': 'carouselItem_Idea',
@@ -200,10 +200,8 @@ const IdeasToWebApps = () => {
     // Version Control
 
   ]
-
-
-  useAnimationSequence(scope, animate, animationSequence, startAnimOn);
-
+  
+  // Agile timeline ticket objects
   const agileTimelineTickets: AgileTimelineTicketsProps[] = [
     { 'id': 'ticket1',
       'size':'sm',
@@ -237,7 +235,11 @@ const IdeasToWebApps = () => {
     },
   ]
 
-  
+
+  // Animation Sequence Hook
+  useAnimationSequence(scope, animate, animationSequence, startAnimOn);
+
+
   return(<>
     <Box ref={containerRef} sx={{ minHeight:'300vh' }}>
       <Box ref={scope} sx={{ position: 'sticky', top: '9vh', display: 'grid', gap: '50px', }}>

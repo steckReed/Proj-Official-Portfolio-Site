@@ -12,7 +12,7 @@ import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
-import IdeasToWebApps from '@/components/modules/IdeasToWebApps/IdeasToWebApps';
+import IdeasToWebApps from '@/components/sections/DataToDesign/IdeasToWebApps/IdeasToWebApps';
 
 const SectionDataToDesign = () => {
   // const { data: mtgCard, isLoading, error } = useMTGCard()
