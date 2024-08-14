@@ -7,8 +7,7 @@ import { useEffect, useRef } from 'react';
 import ResponsiveImage from '@/components/elements/ResponsiveImage';
 import Image from "next/image";
 import TicketContainer from '@/components/elements/TicketContainer/TicketContainer';
-import styles from './_IdeasToWebApps.module.scss';
-import { AgileTimelineTicketsProps } from '@/types/types';
+import { AgileTimelineTicketsProps, AnimationSequence } from '@/types/types';
 import useAnimationSequence from '@/hooks/useAnimationSequence';
 
 
@@ -17,7 +16,8 @@ const IdeasToWebApps = () => {
   const containerRef      = useRef<HTMLDivElement>(null);
   const scrollPercentage1 = useRefScrollPercentage(containerRef);
 
-  // change to map
+  // Map Containing Animation Trigger Points
+  const animDelay = 0.75;
   const startAnimOn = new Map([
     ['item1', scrollPercentage1 > 0],
     ['item2', scrollPercentage1 > 40],
@@ -27,134 +27,220 @@ const IdeasToWebApps = () => {
   
   // Settings for carousel items animations
   const carouselItemAnimSettings = {
-    initial: { opacity: 0, bottom: '-125px', transform: 'scale(0.85)' },
-    animate: { opacity: 1, bottom: '0', transform: 'scale(1)' }
+    initial     : { opacity: 0, bottom: '-125px', transform: 'scale(0.85)' },
+    animate     : { opacity: 1, bottom: '0', transform: 'scale(1)' },
+    transition  : { duration: 0.85, ease: 'backInOut', delay: 1 / 3, type: 'spring', bounce: 0 }
   }
-
-  // Animation control based on scroll percentage
-  const carouselItem1 = (startAnimOn.get('item1'))  ?(carouselItemAnimSettings.animate) :(carouselItemAnimSettings.initial);
-  const carouselItem2 = (startAnimOn.get('item2'))  ?(carouselItemAnimSettings.animate) :(carouselItemAnimSettings.initial);
-  const carouselItem3 = (startAnimOn.get('item3'))  ?(carouselItemAnimSettings.animate) :(carouselItemAnimSettings.initial);
-
-
   
-  const agileTimelineTicketsDelay = 0.9;
-  const controlsArray = [ useAnimation(), useAnimation(), useAnimation(), useAnimation(), useAnimation() ];
   const [scope, animate] = useAnimate();
+  const animationSequence: AnimationSequence[] = [
+    // Carousel Items
+      { 'id': 'carouselItem_Idea',
+        'animStartOn': 'item1',
 
-  const agileTimelineTickets: AgileTimelineTicketsProps[] = [
-    {
-      'size':'sm',
-      'status':'on hold',
-      'text':'Drag & Drop Package',
-      'loadingBar':{'distance': '11%', 'delay': 1},
+        'initial': carouselItemAnimSettings.initial,
+        'animations': [
+          {
+            animate: carouselItemAnimSettings.animate,
+            transition: carouselItemAnimSettings.transition
+          }
+        ],
+      },
+      { 'id': 'carouselItem_Wireframe',
+        'animStartOn': 'item2',
 
-      'animationSequence':{
-        'id': 'ticket1',
+        'initial': carouselItemAnimSettings.initial,
+        'animations': [
+          {
+            animate: carouselItemAnimSettings.animate,
+            transition: carouselItemAnimSettings.transition
+          }
+        ],
+      },
+
+      { 'id': 'carouselItem_AgileTimeline',
         'animStartOn': 'item3',
 
-        'initial' : { opacity: 0, left: '0%'  },
+        'initial': carouselItemAnimSettings.initial,
+        'animations': [
+          {
+            animate: carouselItemAnimSettings.animate,
+            transition: carouselItemAnimSettings.transition
+          }
+        ],
+      },
+
+
+
+    // Agile Timeline
+      { 'id': 'ticket1',
+        'animStartOn': 'item3',
+
+        'initial': { opacity: 0, left: '0%' },
         'animations': [
           {
             animate: { opacity: 1, },
-            transition: { duration: 0.75, ease: 'backInOut', delay: agileTimelineTicketsDelay },
+            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay },
           }
         ],
-      }
-    },
-    // {
-    //   'size': 'sm',
-    //   'status': 'completed',
-    //   'text': 'Charting Package',
-    //   'loadingBar': { 'distance': '7%', 'delay': 1 },
+      },
+      { 'id': 'ticket2',
+        'animStartOn': 'item3',
+
+        'initial': { opacity: 0, left: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, },
+            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.1 },
+          },
+        ],
+      },
+      { 'id': 'ticket3',
+        'animStartOn': 'item3',
+
+        'initial': { opacity: 0, left: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, },
+            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.15 },
+          },
+          {
+            animate: { left: '11%' },
+            transition: { duration: 0.5, delay: 0.5 },
+          },
+        ],
+      },
+      { 'id': 'ticket4',
+        'animStartOn': 'item3',
+
+        'initial': { opacity: 0, left: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, },
+            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.2},
+          },
+          {
+            animate: { left: '11%' },
+            transition: { duration: 0.5, delay: 0.5 },
+          },
+        ],
+      },
+      { 'id': 'ticket5',
+        'animStartOn': 'item3',
+
+        'initial': { opacity: 0, left: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, },
+            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.25 },
+          },
+          {
+            animate: { left: '26%' },
+            transition: { duration: 0.75, delay: 0.5 },
+          },
+        ],
+      },
       
-    //   'animationSequence':{
-    //     'animStartOn': 'item3',
+      { 'id': 'ticket1LoadingBar',
+        'animStartOn': 'item3',
 
-    //     'initial' : { opacity: 0, left: '0%'  },
-    //     'animations': [
-    //       {
-    //         animate: { opacity: 1, },
-    //         transition: { duration: 0.75, ease: 'backInOut', delay: agileTimelineTicketsDelay + 0.2 },
-    //       },
-    //     ],
-    //   }
-    // },
-    // {
-    //   'size': 'sm',
-    //   'status': 'working on it',
-    //   'text': 'Fetch Data From Source',
-    //   'loadingBar': { 'distance': '15%', 'delay': 1 },
+        'initial': { opacity: 0, width: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, width: '11%'},
+            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.2 },
+          }
+        ],
+      },
+      { 'id': 'ticket2LoadingBar',
+        'animStartOn': 'item3',
 
-    //   'animationSequence': {
-    //     'animStartOn': 'item3',
+        'initial': { opacity: 0, width: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, width: '7%'},
+            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.25 },
+          }
+        ],
+      },
+      { 'id': 'ticket3LoadingBar',
+        'animStartOn': 'item3',
 
-    //     'initial': { opacity: 0, left: '0%' },
-    //     'animations': [
-    //       {
-    //         animate: { opacity: 1, },
-    //         transition: { duration: 0.75, ease: 'backInOut', delay: agileTimelineTicketsDelay + 0.4 },
-    //       },
-    //       {
-    //         animate: { left: '11%' },
-    //         transition: { duration: 0.5, delay: 0.5 },
-    //       },
-    //     ],
-    //   }
-    // },
-    // {
-    //   'size': 'sm',
-    //   'status': 'completed',
-    //   'text': 'Build Drag & Drop Layout',
-    //   'loadingBar': { 'distance': '89%', 'delay': 1 },
+        'initial': { opacity: 0, width: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, width: '15%'},
+            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.3 },
+          }
+        ],
+      },
+      { 'id': 'ticket4LoadingBar',
+        'animStartOn': 'item3',
 
-    //   'animationSequence': {
-    //     'animStartOn': 'item3',
+        'initial': { opacity: 0, width: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, width: '89%'},
+            transition: { duration: 3.5, ease: 'backInOut', delay: animDelay + 0.35 },
+          }
+        ],
+      },
+      { 'id': 'ticket5LoadingBar',
+        'animStartOn': 'item3',
 
-    //     'initial': { opacity: 0, left: '0%' },
-    //     'animations': [
-    //       {
-    //         animate: { opacity: 1, },
-    //         transition: { duration: 0.75, ease: 'backInOut', delay: agileTimelineTicketsDelay + 0.6 },
-    //       },
-    //       {
-    //         animate: { left: '11%' },
-    //         transition: { duration: 0.5, delay: 0.5 },
-    //       },
-    //     ],
-    //   }
-    // },
-    // {
-    //   'size': 'sm',
-    //   'status': 'working on it',
-    //   'text': 'Implement Charts in Layout',
-    //   'loadingBar': { 'distance': '74%', 'delay': 1 },
+        'initial': { opacity: 0, width: '0%' },
+        'animations': [
+          {
+            animate: { opacity: 1, width: '74%'},
+            transition: { duration: 3, ease: 'backInOut', delay: animDelay + 0.4 },
+          }
+        ],
+      },
 
-    //   'animationSequence': {
-    //     'animStartOn': 'item3',
+    // Version Control
 
-    //     'initial': { opacity: 0, left: '0%' },
-    //     'animations': [
-    //       {
-    //         animate: { opacity: 1, },
-    //         transition: { duration: 0.75, ease: 'backInOut', delay: agileTimelineTicketsDelay + 1 },
-    //       },
-    //       {
-    //         animate: { left: '26%' },
-    //         transition: { duration: 0.75, delay: 0.5 },
-    //       },
-    //     ],
-    //   }
-    // },
   ]
 
 
-  useAnimationSequence(controlsArray, agileTimelineTickets, startAnimOn);
+  useAnimationSequence(scope, animate, animationSequence, startAnimOn);
+
+  const agileTimelineTickets: AgileTimelineTicketsProps[] = [
+    { 'id': 'ticket1',
+      'size':'sm',
+      'status':'on hold',
+      'text':'Drag & Drop Package',
+      'loadingBarId': 'ticket1LoadingBar'
+    },
+    { 'id': 'ticket2',
+      'size': 'sm',
+      'status': 'completed',
+      'text': 'Charting Package',
+      'loadingBarId': 'ticket2LoadingBar'
+    },
+    { 'id': 'ticket3',
+      'size': 'sm',
+      'status': 'working on it',
+      'text': 'Fetch Data From Source',
+      'loadingBarId': 'ticket3LoadingBar'
+    },
+    { 'id': 'ticket4',
+      'size': 'sm',
+      'status': 'completed',
+      'text': 'Build Drag & Drop Layout',
+      'loadingBarId': 'ticket4LoadingBar'
+    },
+    { 'id': 'ticket5',
+      'size': 'sm',
+      'status': 'working on it',
+      'text': 'Implement Charts in Layout',
+      'loadingBarId': 'ticket5LoadingBar'
+    },
+  ]
 
   
   return(<>
     <Box ref={containerRef} sx={{ minHeight:'300vh' }}>
-      <Box sx={{ position: 'sticky', top: '10%', display: 'grid', gap: '50px', }}>
+      <Box ref={scope} sx={{ position: 'sticky', top: '9vh', display: 'grid', gap: '50px', }}>
 
         {/* Section Title */}
         <Box>
@@ -168,6 +254,7 @@ const IdeasToWebApps = () => {
           >
             I Turn <CustomChip>Ideas</CustomChip> into
           </h4>
+
           <h1
             style={{ 
               position:'relative',
@@ -184,10 +271,9 @@ const IdeasToWebApps = () => {
 
         {/* Idea */}
         <motion.div
-          initial     = {carouselItemAnimSettings.initial}
-          animate     = {carouselItem1}
-          transition  = {{ duration: 0.85, ease: 'backInOut', delay: 1 / 3, type: 'spring', bounce: 0 }}
-          style={{ position: 'relative', gridColumn: 1, gridRow:2 }}
+          id      = 'carouselItem_Idea'
+          initial = {carouselItemAnimSettings.initial}
+          style   = {{ position: 'relative', gridColumn: 1, gridRow: 2 }}
         >
           <LegendContainer title={'Idea'}>
             <p style={{ textAlign: 'center', fontSize:'24px', padding:'0 2rem' }}>
@@ -198,10 +284,9 @@ const IdeasToWebApps = () => {
 
         {/* Wireframe */}
         <motion.div
-          initial     = {carouselItemAnimSettings.initial}
-          animate     = {carouselItem2}
-          transition  = {{ duration: 0.85, ease: 'backInOut', delay: 1 / 3, type: 'spring', bounce: 0 }}
-          style={{ position: 'relative', gridColumn: 1, gridRow:2 }}
+          id      = 'carouselItem_Wireframe'
+          initial = {carouselItemAnimSettings.initial}
+          style   = {{ position: 'relative', gridColumn: 1, gridRow:2 }}
         >
           <LegendContainer title={'Wireframe'}>
             <Box sx={{ display:'flex', justifyContent:'center', alignItems:'center' }}>
@@ -218,7 +303,8 @@ const IdeasToWebApps = () => {
                   maxWidth:'415px',
                   height: 'auto',
                   objectFit: 'contain',
-                  margin:'auto'
+                  margin:'auto',
+                  padding:'2vh 0 1.25vh'
                 }}
               />
             </ResponsiveImage>
@@ -229,15 +315,21 @@ const IdeasToWebApps = () => {
 
         {/* Agile Timeline */}
         <motion.div
-          initial     = {carouselItemAnimSettings.initial}
-          animate     = {carouselItem3}
-          transition  = {{ duration: 0.85, ease: 'backInOut', delay: 1 / 3, type: 'spring', bounce: 0 }}
-          style={{ position: 'relative', gridColumn: 1, gridRow:2 }}
+          id      = 'carouselItem_AgileTimeline'
+          initial = {carouselItemAnimSettings.initial}
+          style   = {{ position: 'relative', gridColumn: 1, gridRow:2 }}
         >
           <LegendContainer title={'Agile Timeline'} width='clamp(250px, 85vw, 815px)'>
-            <Box className={styles['agile-timeline-container']}>
+            <Box 
+              sx={{ 
+                display: 'flex',
+                flexDirection:'column',
+                gap: 'clamp(16px, 2.5vh, 25px)',
+                padding: '0 1rem',
+              }}
+              >
               {/* Title */}
-              <Box sx={{ paddingTop:'15px' }}>
+              <Box sx={{ paddingTop:'2vh' }}>
                 <p style={{ textAlign: 'center', fontSize: '24px' }}>
                   Deliverables In
                 </p>
@@ -247,31 +339,37 @@ const IdeasToWebApps = () => {
               </Box>
 
               {/* Timeline */}
-              <Box sx={{ display:'flex' }}>
-                <span style={{ display: 'inline-block', height:'50px', border:'2px dashed #242424'}}/>
+              <Box sx={{ display:'flex', }}>
+                <span style={{ display: 'inline-block', height:'clamp(26px, 5vh, 50px)', border:'2px dashed #242424'}}/>
 
                 <span style={{ display: 'inline-block', border: '2px dashed #242424', width:'100%', height:'0px', margin:'auto'}}/>
 
-                <span style={{ display: 'inline-block', height: '50px', border: '2px dashed #242424' }} />
+                <span style={{ display: 'inline-block', height: 'clamp(26px, 5vh, 50px)', border: '2px dashed #242424' }} />
               </Box>
 
               {/* Tickets */}
-              <Box ref={scope} className={styles['ticket-container']}>
+              <Box 
+                sx={{ 
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 'clamp(16px, 2.5vh, 25px)',
+                  overflow: 'hidden'
+                }}
+              >
                 {agileTimelineTickets.map((val, key) => {
                   return(
                     <motion.div
                       key         = { key }
-                      id          = { val.animationSequence.id }
-                      animate     = { controlsArray[key] }
+                      id          = { val.id }
                       transition  = {{ duration: 0.75, ease: 'backInOut' }}
                       style       = {{ position:'relative' }}
                     >
                       <TicketContainer 
-                        ticketNum   = {key + 1}
-                        size        = {val.size}
-                        status      = {val.status}
-                        text        = {val.text}
-                        loadingBar  = {val.loadingBar} 
+                        ticketNum     = {key + 1}
+                        size          = {val.size}
+                        status        = {val.status}
+                        text          = {val.text}
+                        loadingBarId  = {val.loadingBarId} 
                       />
                     </motion.div>
                   )
@@ -282,7 +380,6 @@ const IdeasToWebApps = () => {
         </motion.div>
 
       </Box>
-        
     </Box>
   </>)
 }
