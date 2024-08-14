@@ -133,15 +133,11 @@ export interface AnimationSequence {
 
 
 export interface AgileTimelineTicketsProps {
-  size    : TicketSizes;
-  status  : TicketTypes;
-  text    : string;
-  loadingBar: {
-    distance  : number | string
-    delay     : number | string // MotionValue<number>
-  };
-
-  animationSequence: AnimationSequence;
+  id            : string;
+  size          : TicketSizes;
+  status        : TicketTypes;
+  text          : string;
+  loadingBarId  ?: string;
 }
 
 

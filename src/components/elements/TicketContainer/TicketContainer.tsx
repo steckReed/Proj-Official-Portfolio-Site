@@ -1,16 +1,14 @@
-import { TicketSizes, TicketStatusMap, TicketTypes } from '@/types/types';
+import useIsMobile from '@/functions/useIsMobile';
+import { AgileTimelineTicketsProps, TicketSizes, TicketStatusMap, TicketTypes } from '@/types/types';
 import { Box, Tooltip } from '@mui/material';
 import { MotionValue } from 'framer-motion';
 
 interface Props {
-  ticketNum : string | number,
-  text      : string,
-  status    ?: TicketTypes,
-  size      ?: TicketSizes,
-  loadingBar ?: {
-    distance  : number | string
-    delay     : number | string // MotionValue<number>
-  },
+  ticketNum     : string | number,
+  text          : string,
+  status        ?: TicketTypes,
+  size          ?: TicketSizes,
+  loadingBarId  ?: AgileTimelineTicketsProps['loadingBarId']
 }
 
 const TicketContainer = ({
@@ -18,10 +16,9 @@ const TicketContainer = ({
   text,
   status      = 'not started',
   size        = 'lg',
-  loadingBar  = undefined,
+  loadingBarId  = undefined,
 }: Props) => {
-
-  // "Media Query" for mobile to remove ticket text, but keep status & number
+  const isMobile = useIsMobile();
   
   const ticketStatusInfo = TicketStatusMap[status];
 
@@ -64,7 +61,7 @@ const TicketContainer = ({
 
   return (<>
     <Box sx={{ display:'flex', flexDirection:'column' }}>
-      <Tooltip title={ticketStatusInfo.desc} placement='top' arrow disableInteractive>
+      <Tooltip title={(isMobile) && (text)} placement='right' arrow disableInteractive>
         <Box 
           sx={{ 
             display:'flex',
@@ -78,22 +75,29 @@ const TicketContainer = ({
         >
           {/* Ticket status & number */}
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ...statusNumContainerStyle[size] }}>
+
+            <Tooltip title={ticketStatusInfo.desc} placement='top' arrow disableInteractive>
               <span style={{ backgroundColor: ticketStatusInfo.color, borderRadius: '50%', ...statusDotStyle[size] }}/>
+            </Tooltip>
+
             <p>#{ticketNum}</p>
           </Box>
 
-          {/* Ticket Name */}
-          <p>{text}</p>
+          {(!isMobile) && (<>
+            {/* Ticket Name */}
+            <p>{text}</p>
+          </>)}
         </Box>
       </Tooltip>
 
-      {(loadingBar) && (<>
+      {(loadingBarId) && (<>
         <span 
+          id={loadingBarId}
           style={{ 
             height: '6px', 
             backgroundColor: ticketStatusInfo.color, 
             borderRadius: '25px',
-            width: loadingBar.distance
+            width: 0
           }} 
         />
       </>)}
