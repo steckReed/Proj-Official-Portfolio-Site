@@ -1,7 +1,6 @@
 'use client';
 
 import CustomChip from '@/components/elements/CustomChip/CustomChip';
-import DisplayData from '@/components/elements/DisplayData/DisplayData';
 import Image from "next/image";
 import ResponsiveImage from '@/components/elements/ResponsiveImage';
 import LegendContainer from '@/components/modules/LegendContainer/LegendContainer';
