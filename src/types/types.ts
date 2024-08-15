@@ -167,3 +167,15 @@ export const TicketStatusMap: Record<TicketTypes, TicketStatusInfo> = {
     desc  : 'Completed 🎉',
   },
 };
+
+export interface VersionControlTicket {
+  ticketNum: string;
+  text: string;
+  triggerKey: string;
+  triggerDelay: number;
+  status: TicketTypes[];
+}
+
+export interface VersionControlTickets {
+  [key: string]: VersionControlTicket;
+}

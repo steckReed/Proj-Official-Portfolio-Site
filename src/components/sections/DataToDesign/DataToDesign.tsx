@@ -1,18 +1,9 @@
 'use client';
 
-import CustomChip from '@/components/elements/CustomChip/CustomChip';
-import Image from "next/image";
-import ResponsiveImage from '@/components/elements/ResponsiveImage';
 import LegendContainer from '@/components/modules/LegendContainer/LegendContainer';
-import { useMTGCard } from '@/hooks/useMTGCard';
 import { MTGCardProps } from '@/types/types';
 import { Box } from '@mui/material';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { motion, useMotionValue, useScroll, useTransform } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
-import IdeasToWebApps from '@/components/sections/DataToDesign/IdeasToWebApps/IdeasToWebApps';
+import DevelopmentVersionControl from './DevelopmentVersionControl/DevelopmentVersionControl';
 
 const SectionDataToDesign = () => {
   // const { data: mtgCard, isLoading, error } = useMTGCard()
@@ -23,42 +14,29 @@ const SectionDataToDesign = () => {
 
 
   return(<>
-    <Box sx={{ display:'flex', alignItems:'center', flexDirection:'column', margin:'0 auto', gap:'clamp(45px, 25vh, 125px)' }}>
+    <Box sx={{ display:'flex', alignItems:'center', flexDirection:'column', margin:'0 auto', gap:'clamp(45px, 10vh, 125px)' }}>
 
       {/* Ideas to Web Apps (Vertical Carousel) */}
-      <IdeasToWebApps/>
+      {/* <IdeasToWebApps/> */}
       
       {/* Development & Version Control */}
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems:'center', minHeight:'300vh' }}>
-        <motion.div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-          <GitHubIcon sx={{ fontSize: 'clamp(175px, 45vw, 300px)', color: '#202328' }} />
+      <DevelopmentVersionControl/>
 
-          <h1
-            style={{
-              textAlign: 'center',
-              letterSpacing: '-1px',
-              fontWeight: 'bold',
-              fontSize: 'clamp(48px, 8vw, 60px)',
-            }}
-          >
-            Version Control
-          </h1>
-          <h4
-            style={{
-              position: 'relative',
-              top: '-2px',
-              textAlign: 'center',
-              letterSpacing: '2px',
-              fontWeight: 'normal',
-              fontSize: 'clamp(22px, 5vw, 26px)'
-            }}
-          >
-            Git Good
-          </h4>
-        </motion.div>
+      {/* Dashboard */}
 
-        
-      </Box>
+      <LegendContainer title={'Release'} width='clamp(250px, 85vw, 1800px)'>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'clamp(16px, 2.5vh, 25px)',
+            padding: '0 1rem',
+            height:'100vh'
+          }}
+        >
+          dashboard
+        </Box>
+      </LegendContainer>
     </Box>
   </>)
 }
