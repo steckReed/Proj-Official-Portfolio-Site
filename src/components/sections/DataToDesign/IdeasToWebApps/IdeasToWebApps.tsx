@@ -14,15 +14,15 @@ import { AgileTimelineTicketsProps, AnimationSequence } from '@/types/types';
 const IdeasToWebApps = () => {
   // Container Ref
   const containerRef      = useRef<HTMLDivElement>(null);
-  const scrollPercentage1 = useRefScrollPercentage(containerRef);
+  const scrollPercentage  = useRefScrollPercentage(containerRef);
   const [scope, animate]  = useAnimate();
   const animDelay         = 0.75;
 
   // Map Containing Animation Trigger Points
   const startAnimOn = new Map([
-    ['item1', scrollPercentage1 > 0],
-    ['item2', scrollPercentage1 > 40],
-    ['item3', scrollPercentage1 > 70],
+    ['item1', scrollPercentage > 0],
+    ['item2', scrollPercentage > 38],
+    ['item3', scrollPercentage > 72],
   ])
   
   // Settings for carousel items animations
