@@ -4,6 +4,7 @@ import LegendContainer from '@/components/modules/LegendContainer/LegendContaine
 import { MTGCardProps } from '@/types/types';
 import { Box } from '@mui/material';
 import DevelopmentVersionControl from './DevelopmentVersionControl/DevelopmentVersionControl';
+import IdeasToWebApps from './IdeasToWebApps/IdeasToWebApps';
 
 const SectionDataToDesign = () => {
   // const { data: mtgCard, isLoading, error } = useMTGCard()
@@ -17,7 +18,7 @@ const SectionDataToDesign = () => {
     <Box sx={{ display:'flex', alignItems:'center', flexDirection:'column', margin:'0 auto', gap:'clamp(45px, 10vh, 125px)' }}>
 
       {/* Ideas to Web Apps (Vertical Carousel) */}
-      {/* <IdeasToWebApps/> */}
+      <IdeasToWebApps/>
       
       {/* Development & Version Control */}
       <DevelopmentVersionControl/>
