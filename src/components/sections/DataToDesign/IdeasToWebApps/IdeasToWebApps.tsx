@@ -21,15 +21,15 @@ const IdeasToWebApps = () => {
   // Map Containing Animation Trigger Points
   const startAnimOn = new Map([
     ['item1', scrollPercentage > 0],
-    ['item2', scrollPercentage > 38],
-    ['item3', scrollPercentage > 72],
+    ['item2', scrollPercentage > 33],
+    ['item3', scrollPercentage > 66],
   ])
   
   // Settings for carousel items animations
   const carouselItemAnimSettings = {
     initial     : { opacity: 0, bottom: '-125px', transform: 'scale(0.85)' },
     animate     : { opacity: 1, bottom: '0', transform: 'scale(1)' },
-    transition  : { duration: 0.85, ease: 'backInOut', delay: 1 / 3, type: 'spring', bounce: 0 }
+    transition  : { duration: 0.85, ease: 'easeInOut', delay: 1 / 3, type: 'spring', bounce: 0 }
   }
   
   // Components Animation Sequence
@@ -80,7 +80,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, },
-            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay },
+            transition: { duration: 0.75, ease: 'easeInOut', delay: animDelay },
           }
         ],
       },
@@ -91,7 +91,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, },
-            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.1 },
+            transition: { duration: 0.75, ease: 'easeInOut', delay: animDelay + 0.1 },
           },
         ],
       },
@@ -102,7 +102,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, },
-            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.15 },
+            transition: { duration: 0.75, ease: 'easeInOut', delay: animDelay + 0.15 },
           },
           {
             animate: { left: '11%' },
@@ -117,7 +117,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, },
-            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.2},
+            transition: { duration: 0.75, ease: 'easeInOut', delay: animDelay + 0.2},
           },
           {
             animate: { left: '11%' },
@@ -132,7 +132,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, },
-            transition: { duration: 0.75, ease: 'backInOut', delay: animDelay + 0.25 },
+            transition: { duration: 0.75, ease: 'easeInOut', delay: animDelay + 0.25 },
           },
           {
             animate: { left: '26%' },
@@ -148,7 +148,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '11%'},
-            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.2 },
+            transition: { duration: 1.75, ease: 'easeInOut', delay: animDelay + 0.2 },
           }
         ],
       },
@@ -159,7 +159,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '7%'},
-            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.25 },
+            transition: { duration: 1.75, ease: 'easeInOut', delay: animDelay + 0.25 },
           }
         ],
       },
@@ -170,7 +170,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '15%'},
-            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.3 },
+            transition: { duration: 1.75, ease: 'easeInOut', delay: animDelay + 0.3 },
           }
         ],
       },
@@ -181,7 +181,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '89%'},
-            transition: { duration: 3.5, ease: 'backInOut', delay: animDelay + 0.35 },
+            transition: { duration: 3.5, ease: 'easeInOut', delay: animDelay + 0.35 },
           }
         ],
       },
@@ -192,7 +192,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '74%'},
-            transition: { duration: 3, ease: 'backInOut', delay: animDelay + 0.4 },
+            transition: { duration: 3, ease: 'easeInOut', delay: animDelay + 0.4 },
           }
         ],
       },
@@ -241,7 +241,7 @@ const IdeasToWebApps = () => {
 
 
   return(<>
-    <Box ref={containerRef} sx={{ minHeight:'300vh' }}>
+    <Box ref={containerRef} sx={{ minHeight: '4000px', height: '300vh', }}>
       <Box ref={scope} sx={{ position: 'sticky', top: '9vh', display: 'grid', gap: '50px', }}>
 
         {/* Section Title */}
@@ -363,7 +363,7 @@ const IdeasToWebApps = () => {
                     <motion.div
                       key         = { key }
                       id          = { val.id }
-                      transition  = {{ duration: 0.75, ease: 'backInOut' }}
+                      transition  = {{ duration: 0.75, ease: 'easeInOut' }}
                       style       = {{ position:'relative' }}
                     >
                       <TicketContainer 
