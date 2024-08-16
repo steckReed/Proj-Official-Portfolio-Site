@@ -6,9 +6,15 @@ interface Props{
   title: string;
   width?: string;
   children: ReactNode;
+  animateBorder?: boolean;
 }
 
-const LegendContainer = ({ title, width='clamp(250px, 85vw, 544px)', children }: Props) => {
+const LegendContainer = ({ 
+  title, 
+  width='clamp(250px, 85vw, 544px)', 
+  children,
+  animateBorder
+}: Props) => {
 
   return (<>
     <Box 

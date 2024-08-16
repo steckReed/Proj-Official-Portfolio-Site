@@ -1,14 +1,16 @@
-import CustomChip from '@/components/elements/CustomChip/CustomChip';
-import LegendContainer from '../../../modules/LegendContainer/LegendContainer';
-import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
-import ResponsiveImage from '@/components/elements/ResponsiveImage';
-import Image from "next/image";
-import TicketContainer from '@/components/elements/TicketContainer/TicketContainer';
-import useAnimationSequence from '@/hooks/useAnimationSequence';
+'use client';
+
 import { useRef } from 'react';
 import { Box } from '@mui/material';
 import { motion, useAnimate } from 'framer-motion';
 import { AgileTimelineTicketsProps, AnimationSequence } from '@/types/types';
+import Image from "next/image";
+import LegendContainer from '../LegendContainer/LegendContainer';
+import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
+import useAnimationSequence from '@/hooks/useAnimationSequence';
+import CustomChip from '@/components/elements/CustomChip/CustomChip';
+import ResponsiveImage from '@/components/elements/ResponsiveImage';
+import TicketContainer from '@/components/elements/TicketContainer/TicketContainer';
 
 
 const IdeasToWebApps = () => {

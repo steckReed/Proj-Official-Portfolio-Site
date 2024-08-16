@@ -1,13 +1,12 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
-import LaunchIcon from '@mui/icons-material/Launch';
-import statusColors from '@/functions/statusColors';
 import { Box } from '@mui/material';
 import { ProjectsProps } from '@/types/types';
 import { motion } from 'framer-motion';
-
+import Link from 'next/link';
+import LaunchIcon from '@mui/icons-material/Launch';
+import statusColors from '@/functions/statusColors';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -19,16 +18,14 @@ interface SliderExtended extends Slider {
 
 const ProjectsCarousel = () => {
   const myProjects: ProjectsProps[] = [
-    {
-      name: 'D&D Character Creator',
+    { name: 'D&D Character Creator',
       desc: 'Next.js Web App to Assist in Creation of D&D Character Sheets',
       ribbon: 'Full-stack',
       status: 'In Development',
       url: 'https://dnd-character-builder-3eb70.web.app/characters/new',
       // github: 'https://github.com/steckReed/dnd-character-creator',
     },
-    {
-      name: 'Funky Color Picker Game',
+    { name: 'Funky Color Picker Game',
       desc: 'Vite & React Random Color Guesser Game',
       ribbon: 'Front-end',
       status: 'New',
@@ -42,22 +39,19 @@ const ProjectsCarousel = () => {
       github:'https://github.com/steckReed/ReCreations/tree/Minimalistic/Planets%20Wallpaper',
       referenceLink:'https://steckreed.github.io/ReCreations/Planets%20Wallpaper/reference-img.html',
     },
-    {
-      name: 'Adventure Niagara Falls',
+    { name: 'Adventure Niagara Falls',
       desc: 'Pure HTML, SCSS, JS Image Re-Creation of Niagara Falls Logo Found On Mug',
       ribbon: 'Front-end',
       url: 'https://steckreed.github.io/ReCreations/Adventure%20Niagara%20Falls/',
       github: 'https://github.com/steckReed/ReCreations/tree/Minimalistic/Adventure%20Niagara%20Falls',
     },
-    {
-      name: 'Casette Tape',
+    { name: 'Casette Tape',
       desc: 'Pure HTML, SCSS, JS Image Re-Creation of a Casette',
       ribbon: 'Front-end',
       url: 'https://steckreed.github.io/ReCreations/Cassette%20Tape/',
       github: 'https://steckreed.github.io/ReCreations/Cassette%20Tape/',
     },
-    {
-      name: 'Abstract Boho',
+    { name: 'Abstract Boho',
       desc: 'Pure HTML, SCSS, JS Image Re-Creation',
       ribbon: 'Front-end',
       url: 'https://steckreed.github.io/ReCreations/Abstract%20Boho%201/',

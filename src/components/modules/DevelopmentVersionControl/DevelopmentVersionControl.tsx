@@ -1,11 +1,13 @@
+'use client';
+
 import { Box } from '@mui/material';
 import { motion, useAnimate, useScroll, useTransform } from 'framer-motion';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
-import { AnimationSequence, VersionControlTickets } from '@/types/types';
+import { AnimationSequence } from '@/types/types';
 import useAnimationSequence from '@/hooks/useAnimationSequence';
-import TicketContainer from '@/components/elements/TicketContainer/TicketContainer';
+import useRefScrollPercentage from '@/hooks/useRefScrollPercentage';
 import useIsMobile from '@/functions/useIsMobile';
+import TicketContainer from '@/components/elements/TicketContainer/TicketContainer';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 const DevelopmentVersionControl = () => {

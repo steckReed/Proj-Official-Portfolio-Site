@@ -1,7 +1,6 @@
-import useIsMobile from '@/functions/useIsMobile';
 import { AgileTimelineTicketsProps, TicketSizes, TicketStatusMap, TicketTypes } from '@/types/types';
 import { Box, Tooltip } from '@mui/material';
-import { MotionValue } from 'framer-motion';
+import useIsMobile from '@/functions/useIsMobile';
 
 interface Props {
   ticketNum     : string | number,
@@ -20,8 +19,10 @@ const TicketContainer = ({
 }: Props) => {
   const isMobile = useIsMobile();
   
+  // Pull Status Info Via Map
   const ticketStatusInfo = TicketStatusMap[status];
 
+  // Ticket Size Container Styles
   const ticketContainerStyle = {
     'lg': { 
       minHeight : '50px',
@@ -39,6 +40,7 @@ const TicketContainer = ({
     }
   }
 
+  // Ticket Size Status Number Container Styles
   const statusNumContainerStyle = {
     'lg': {
       gap: '12px'
@@ -48,6 +50,7 @@ const TicketContainer = ({
     }
   }
 
+  // Tickets Status Dot Style
   const statusDotStyle = {
     'lg': {
       height  : '30px',

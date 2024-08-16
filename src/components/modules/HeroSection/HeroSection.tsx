@@ -1,9 +1,9 @@
 'use client';
 
-import Image from "next/image";
-import ResponsiveImage from '../../../elements/ResponsiveImage';
 import { motion, useAnimation } from "framer-motion"
 import { useEffect } from 'react';
+import Image from "next/image";
+import ResponsiveImage from '../../elements/ResponsiveImage';
 import useIsMobile from '@/functions/useIsMobile';
 
 

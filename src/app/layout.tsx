@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { ReactQueryProvider } from './ReactQueryProvider';
 import montserrat from '@/fonts/montserrat';
-import "./globals.css";
 import NavBar from '@/components/modules/NavBar/NavBar';
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dev Reed Steck",
