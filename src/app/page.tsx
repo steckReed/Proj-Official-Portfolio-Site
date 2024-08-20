@@ -1,23 +1,19 @@
 import { Box } from '@mui/material';
-import HeroSection from '../components/modules/Hero/HeroSection/HeroSection';
-import ProjectsCarousel from '../components/modules/ProjectsCarousel/ProjectsCarousel';
-import NavBar from '../components/modules/NavBar/NavBar';
+import DevelopmentVersionControl from '@/components/modules/DevelopmentVersionControl/DevelopmentVersionControl';
+import IdeasToWebApps from '@/components/modules/IdeasToWebApps/IdeasToWebApps';
+import MeAndProjects from '@/components/modules/MeAndProjects/MeAndProjects';
 
 export default function Home() {
   return (
-    <div style={{ minHeight: '100vh'}} >
+    <Box sx={{ display:'flex', flexDirection:'column',gap:'5.5vh' }}>
+      {/* Me & My Projects */}
+      <MeAndProjects />
 
-      <NavBar />
+      {/* Ideas to Web Apps (Vertical Carousel) */}
+      <IdeasToWebApps />
 
-      <Box sx={{ display: 'flex', minHeight:'100vh', flexWrap:'wrap', alignContent:'center', gap:'5.5vh', paddingBottom:'calc(2.5vh + 1rem)'}}>
-
-
-        <Box sx={{ width:'100%' }}>
-          <HeroSection />
-        </Box>
-        
-        <ProjectsCarousel />
-      </Box>
-    </div>
+      {/* Development & Version Control */}
+      <DevelopmentVersionControl />
+    </Box>
   );
 }

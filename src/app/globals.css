@@ -21,3 +21,61 @@ body {
     cursor: pointer;
   }
 }
+
+
+/* Rainbow Shadow */
+.block {
+  position: relative;
+  background: linear-gradient(0deg, #000, #262626);
+}
+
+.shadow {
+  &:before, &:after {
+    content:'';
+    position: absolute;
+    border-radius: 12px;
+    top:-1px;
+    left:-1px;
+    width:calc(100% + 2px);
+    height:calc(100% + 2px);
+    background: linear-gradient(
+      45deg, 
+      #fb0094, 
+      #0000ff, 
+      #00ff00, 
+      #ffff00, 
+      #ff0000, 
+      #fb0094, 
+      #0000ff, 
+      #00ff00, 
+      #ffff00, 
+      #ff0000
+    );
+    background-size: 400%;
+    z-index:-1;
+    animation: shadow 20s linear infinite;
+  }
+  
+  &:after {
+    top:6px;
+    left:0px;
+    width:calc(100% + 8px);
+    height:calc(100% + 8px);    
+    filter:blur(16px);
+    opacity:0.45;
+    border-radius: 12px;
+  }
+  
+}
+
+@keyframes shadow {
+  0% {
+    background-position: 0 0;
+  }
+  50.01% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

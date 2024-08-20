@@ -1,0 +1,14 @@
+headers{
+  letter-spacing: -0.5px to -2px;
+  line-height: calc(font-size(em) * 1.2x);
+}
+
+
+
+text{
+  line-height: calc(font-size(em) * 1.75);
+}
+
+buttons/small emphisised text{
+  letter-spacing: 0.5px;
+}
