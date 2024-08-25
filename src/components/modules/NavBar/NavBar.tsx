@@ -1,9 +1,10 @@
 'use client';
 
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const NavBar = () => {
   const animDelay = 1;
@@ -23,14 +24,29 @@ const NavBar = () => {
       zIndex: 999, 
       }}
     >
+
+      {/* GitHub */}
+      <motion.div
+        initial={{ opacity: 0, top: '-100px' }}
+        animate={{ opacity: 1, top: '0' }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.75, ease: 'easeInOut', delay: animDelay, type: 'spring', bounce: 0 }}
+
+        style={{ position: 'relative', alignSelf: 'center' }}
+      >
+        <Link href={'https://github.com/steckReed'} target='_blank'>
+          <GitHubIcon sx={{ fontSize: '1.75rem', color: '#202328' }} />
+        </Link>
+      </motion.div>
+
       {/* LinkedIn */}
       <motion.div
         initial     = {{ opacity: 0, top:'-100px' }}
         animate     = {{ opacity: 1, top:'0' }}
         exit        = {{ opacity: 0 }}
-        transition  = {{ duration: 0.75, ease: 'backInOut', delay: animDelay, type: 'spring', bounce:0 }}
+        transition  = {{ duration: 0.75, ease: 'easeInOut', delay: animDelay + 0.25, type: 'spring', bounce:0 }}
 
-        style={{ position: 'relative' }}
+        style={{ position: 'relative', alignSelf: 'center' }}
       >
         <Link href={'https://www.linkedin.com/in/reed-steck-993b48286/'} target='_blank'>
           <LinkedInIcon sx={{ fontSize: '2rem', color:'#0077b5' }} />
@@ -42,11 +58,11 @@ const NavBar = () => {
         initial     = {{ opacity: 0, top:'-100px' }}
         animate     = {{ opacity: 1, top:'0' }}
         exit        = {{ opacity: 0 }}
-        transition  = {{ duration: 0.75, ease: 'backInOut', delay: animDelay + 0.25, type: 'spring', bounce:0 }}
+        transition  = {{ duration: 0.75, ease: 'easeInOut', delay: animDelay + 0.50, type: 'spring', bounce:0 }}
         style={{
           position: 'relative',
           height:'min-content',
-          alignSelf:'center'
+          alignSelf: 'center'
         }}
       >
         <Link href="/files/steck-reed-resume.pdf" download="steck-reed-resume.pdf" target='_blank' style={{ color:'black', textDecoration:'none' }}>

@@ -1,23 +1,39 @@
+'use client'
 import { Box } from '@mui/material';
-import HeroSection from '../components/modules/Hero/HeroSection/HeroSection';
-import ProjectsCarousel from '../components/modules/ProjectsCarousel/ProjectsCarousel';
-import NavBar from '../components/modules/NavBar/NavBar';
+
+import InfiniteScroll from 'react-infinite-scroller';
+import DevelopmentVersionControl from '@/components/modules/DevelopmentVersionControl/DevelopmentVersionControl';
+import IdeasToWebApps from '@/components/modules/IdeasToWebApps/IdeasToWebApps';
+import MeAndProjects from '@/components/modules/MeAndProjects/MeAndProjects';
+import { useState } from 'react';
 
 export default function Home() {
+  const [items, setItems] = useState(Array.from({ length: 1 })); // Start with 1 set of components
+
+  const loadMore = () => {
+    setItems(prevItems => [...prevItems, {}]); // Each empty object represents a repetition of the components
+  };
+
+
   return (
-    <div style={{ minHeight: '100vh'}} >
+    <InfiniteScroll
+      pageStart={0}
+      loadMore={loadMore}
+      hasMore={true}
+      useWindow={true}
+    >
+      {items.map((_, index) => (        
+        <Box key={index} sx={{ display:'flex', flexDirection:'column',gap:'5.5vh' }}>
+          {/* Me & My Projects */}
+          <MeAndProjects />
 
-      <NavBar />
+          {/* Ideas to Web Apps (Vertical Carousel) */}
+          <IdeasToWebApps />
 
-      <Box sx={{ display: 'flex', minHeight:'100vh', flexWrap:'wrap', alignContent:'center', gap:'5.5vh', paddingBottom:'calc(2.5vh + 1rem)'}}>
-
-
-        <Box sx={{ width:'100%' }}>
-          <HeroSection />
+          {/* Development & Version Control */}
+          <DevelopmentVersionControl />
         </Box>
-        
-        <ProjectsCarousel />
-      </Box>
-    </div>
+      ))}
+    </InfiniteScroll>
   );
 }
