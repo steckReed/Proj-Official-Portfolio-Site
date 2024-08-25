@@ -264,7 +264,7 @@ const DevelopmentVersionControl = () => {
                 transition  = {{ duration: 0.75, ease: 'backInOut' }}
               >
                 <TicketContainer
-                  ticketNum = {'3'}
+                  ticketNum = {'2'}
                   status    = {'completed'}
                   text      = {'Charting Package'}
                 />
