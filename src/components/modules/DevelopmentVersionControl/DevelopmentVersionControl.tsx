@@ -54,6 +54,17 @@ const DevelopmentVersionControl = () => {
         },
       ],
     },
+    { 'id': 'center-branch-1',
+      'animStartOn': 'enter',
+
+      'initial': { opacity: 0 },
+      'animations': [
+        {
+          animate: { opacity: 1 },
+          transition: { duration: 0.65, ease: 'easeInOut', delay: 0, },
+        },
+      ],
+    },
     { 'id': 'left-branch-1',
       'animStartOn': 'leftBranch1',
 
@@ -152,23 +163,32 @@ const DevelopmentVersionControl = () => {
   // Animation Sequence Hook
   useAnimationSequence(scope, animate, animationSequence, startAnimOn);
 
+  /* Note for future self
+    First array is % of scrollYProgress
+    Second array is value const will be set to based on first array
 
+    Paths value (second array) is based on percentage 0-100%
+    Circle(X/Y) value (second array) is based on PX of svg
+  */
   // Left Branch 1
-  const leftBranch1_Path      = useTransform(scrollYProgress, [0.25, 0.95], [0, 1]);
-  const leftBranch1_CircleX   = useTransform(scrollYProgress, [0.25, 0.40, 0.42], [66, 0, 2]);
-  const leftBranch1_CircleY   = useTransform(scrollYProgress, [0.25, 0.40, 0.6], [14, 130, 320]);
+  const leftBranch1_Path      = useTransform(scrollYProgress, [0.25, 0.95]        ,[0, 1]);
+  const leftBranch1_CircleX   = useTransform(scrollYProgress, [0.25, 0.40, 0.42]  ,[66, 0, 2]);
+  const leftBranch1_CircleY   = useTransform(scrollYProgress, [0.25, 0.40, 0.6]   ,[14, 130, 320]);
 
+  // Center Branch 1
+  const centerBranch1_Path    = useTransform(scrollYProgress, [0, 1]        ,[0, 1]);
+  const centerBranch1_CircleY = useTransform(scrollYProgress, [0, 1]        ,[0, 877]);
 
   // Right Branch 1
-  const rightBranch1_Path     = useTransform(scrollYProgress, [0.15, 0.40], [0, 1]);
-  const rightBranch1_CircleX  = useTransform(scrollYProgress, [0.15, 0.25, 1.00], [12, 76, 76]);
-  const rightBranch1_CircleY  = useTransform(scrollYProgress, [0.15, 0.25, 0.29], [14, 84, 136]);
+  const rightBranch1_Path     = useTransform(scrollYProgress, [0.15, 0.40]        ,[0, 1]);
+  const rightBranch1_CircleX  = useTransform(scrollYProgress, [0.15, 0.25, 1.00]  ,[12, 76, 76]);
+  const rightBranch1_CircleY  = useTransform(scrollYProgress, [0.15, 0.25, 0.29]  ,[14, 84, 136]);
 
 
   // Right Branch 2
-  const rightBranch2_Path     = useTransform(scrollYProgress, [0.32, 0.85], [0, 1]);
-  const rightBranch2_CircleX  = useTransform(scrollYProgress, [0.32, 0.46, 1.00], [76, 140, 140]);
-  const rightBranch2_CircleY  = useTransform(scrollYProgress, [0.32, 0.46, 0.55], [0, 125, 230]);
+  const rightBranch2_Path     = useTransform(scrollYProgress, [0.32, 0.85]        ,[0, 1]);
+  const rightBranch2_CircleX  = useTransform(scrollYProgress, [0.32, 0.46, 1.00]  ,[76, 140, 140]);
+  const rightBranch2_CircleY  = useTransform(scrollYProgress, [0.32, 0.46, 0.55]  ,[0, 125, 230]);
 
   
   return(<>
@@ -306,13 +326,33 @@ const DevelopmentVersionControl = () => {
           
 
           {/* Main Branch */}
-          <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center',height:'100%', zIndex:1 }}>
-            {/* Branch Path */}
-            <motion.div style={{ height: mainBranchPath, width: '5px', backgroundColor: 'black',  borderRadius:'10px'}} />
+          <Box sx={{ position: 'sticky', top: '0vh', display: 'grid', flexDirection: 'column', height: 'min-content', alignItems:'center', zIndex:1 }}>
+            <motion.svg 
+              id='center-branch-1'
+              width="30" height="877" viewBox="0 0 6 877" fill="none" xmlns="http://www.w3.org/2000/svg"
+              style={{ zIndex: '1', overflow: 'initial' }}
+              initial={{ opacity: 0 }}
+            >
+              <motion.path
+                d="M3 3L2.99996 874" 
+                stroke="black" 
+                strokeWidth="5" 
+                strokeLinecap="round" 
+                style={{ pathLength: centerBranch1_Path }}
+              />
+              <motion.circle
+                cx="3"
+                cy={centerBranch1_CircleY}
+                r="10.5"
+                stroke="black"
+                strokeWidth="7"
+                fill="#F9F7F4" 
+              />
+            </motion.svg>
+
 
             {/* Branch Circle */}
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="14" r="10.5" stroke="black" stroke-width="7" />
             </svg>
           </Box>
 
