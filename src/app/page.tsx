@@ -17,28 +17,29 @@ export default function Home() {
 
 
   return (
-    // <InfiniteScroll
-    //   pageStart={0}
-    //   loadMore={loadMore}
-    //   hasMore={true}
-    //   useWindow={true}
-    // >
-    //   {items.map((_, index) => (        
+    <InfiniteScroll
+      pageStart={0}
+      loadMore={loadMore}
+      hasMore={true}
+      useWindow={true}
+    >
+      {items.map((_, index) => (        
         <Box 
-        // key={index} 
+        key={index} 
         sx={{ display:'flex', flexDirection:'column',gap:'5.5vh' }}>
           {/* Me & My Projects */}
-          {/* <MeAndProjects /> */}
+          <MeAndProjects />
 
           {/* Ideas to Web Apps (Vertical Carousel) */}
-          {/* <IdeasToWebApps /> */}
+          <IdeasToWebApps />
 
           {/* Development & Version Control */}
-          {/* <DevelopmentVersionControl /> */}
+          <DevelopmentVersionControl />
 
+          {/* About Me */}
           <AboutMe />
         </Box>
-    //   ))}
-    // </InfiniteScroll>
+      ))}
+    </InfiniteScroll>
   );
 }
