@@ -28,13 +28,13 @@ export default function Home() {
           <MeAndProjects />
 
           {/* Ideas to Web Apps (Vertical Carousel) */}
-          <IdeasToWebApps />
+          {/* <IdeasToWebApps /> */}
 
           {/* Development & Version Control */}
-          <DevelopmentVersionControl />
+          {/* <DevelopmentVersionControl /> */}
 
           {/* About Me */}
-          <AboutMe />
+          {/* <AboutMe /> */}
         </Box>
       ))}
     </InfiniteScroll>
