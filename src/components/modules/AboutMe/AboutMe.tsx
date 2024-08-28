@@ -17,7 +17,7 @@ const AboutMe = () => {
     <Box ref={scope} sx={{ display: 'flex', alignItems: 'center', minHeight: '1500px', gap: 'clamp(45px, 10vh, 125px)'}}>
 
       {/* Coffee Mug W/ Splashes Container */}
-      <Box sx={{ display: 'grid', position: 'sticky', top: '50%', transform:'translateY(-50%)'}}>
+      <Box sx={{ display: 'grid', position: 'sticky', top: '50%', transform:'translateY(-50%)', overflow:'hidden'}}>
 
         <Box sx={{ display: 'grid', width: '100vw', overflow: 'hidden'}}>
 
