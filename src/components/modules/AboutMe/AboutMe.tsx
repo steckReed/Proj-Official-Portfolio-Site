@@ -14,10 +14,10 @@ const AboutMe = () => {
 
 
   return(<>
-    <Box ref={scope} sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', minHeight: '1200px', gap: 'clamp(45px, 10vh, 125px)', paddingBottom: 'calc(2.5vh + 1rem)'}}>
+    <Box ref={scope} sx={{ display: 'flex', alignItems: 'center', minHeight: '1200px', gap: 'clamp(45px, 10vh, 125px)', paddingTop: 'calc(15vh + 1rem)'}}>
 
       {/* Coffee Mug W/ Splashes Container */}
-      <Box sx={{ display: 'grid', position: 'sticky', top: '10vh'}}>
+      <Box sx={{ display: 'grid', position: 'sticky', top: '50%', transform:'translateY(-50%)'}}>
 
         <Box sx={{ display: 'grid', width: '100vw', overflow: 'hidden'}}>
 

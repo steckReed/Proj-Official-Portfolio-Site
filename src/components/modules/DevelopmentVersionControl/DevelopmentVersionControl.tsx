@@ -176,8 +176,8 @@ const DevelopmentVersionControl = () => {
   const leftBranch1_CircleY   = useTransform(scrollYProgress, [0.25, 0.40, 0.6]   ,[14, 130, 320]);
 
   // Center Branch 1
-  const centerBranch1_Path    = useTransform(scrollYProgress, [0, 1]        ,[0, 1]);
-  const centerBranch1_CircleY = useTransform(scrollYProgress, [0, 1]        ,[0, 877]);
+  const centerBranch1_Path    = useTransform(scrollYProgress, [0, 1]              ,[0, 1]);
+  const centerBranch1_CircleY = useTransform(scrollYProgress, [0, 1]              ,[0, 877]);
 
   // Right Branch 1
   const rightBranch1_Path     = useTransform(scrollYProgress, [0.15, 0.40]        ,[0, 1]);
@@ -394,7 +394,10 @@ const DevelopmentVersionControl = () => {
                 width: 'max-content',
                 left: rightBranch1_CircleX,
                 top: rightBranch1_CircleY,
-                transform:'translate(calc(0% + 3.5vw), -50%)',
+                transform: (!isMobile)
+                  ? 'translate(calc(0% + 3.5vw), -50%)'
+                  : 'translate(-50%, calc(-135% - 1.5vh))',
+                zIndex:1
               }}
             >
               <TicketContainer
