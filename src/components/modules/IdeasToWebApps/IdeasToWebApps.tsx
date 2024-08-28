@@ -278,7 +278,7 @@ const IdeasToWebApps = () => {
 
 
           {/* Container for timeline components */}
-          <Box sx={{ position: 'sticky', top: '9vh', display: 'grid', gridTemplateColumns: (!isMobile) ?('unset') :('50px max-content'), rowGap: '50px', }}>
+          <Box sx={{ position: 'sticky', top: '9vh', display: 'grid', gridTemplateColumns: (!isMobile) ?('unset') :('10vw max-content'), columnGap: '1vw' }}>
 
             {/* Timeline guide */}
             <Box

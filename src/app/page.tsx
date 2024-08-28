@@ -25,10 +25,10 @@ export default function Home() {
       {items.map((_, index) => (        
         <Box key={index} sx={{ display:'flex', flexDirection:'column', gap:'5.5vh' }}>
           {/* Me & My Projects */}
-          <MeAndProjects />
+          {/* <MeAndProjects /> */}
 
           {/* Ideas to Web Apps (Vertical Carousel) */}
-          {/* <IdeasToWebApps /> */}
+          <IdeasToWebApps />
 
           {/* Development & Version Control */}
           {/* <DevelopmentVersionControl /> */}
