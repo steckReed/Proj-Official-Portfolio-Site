@@ -1,11 +1,10 @@
 'use client'
 import { Box } from '@mui/material';
-
+import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import DevelopmentVersionControl from '@/components/modules/DevelopmentVersionControl/DevelopmentVersionControl';
 import IdeasToWebApps from '@/components/modules/IdeasToWebApps/IdeasToWebApps';
 import MeAndProjects from '@/components/modules/MeAndProjects/MeAndProjects';
-import { useState } from 'react';
 import AboutMe from '@/components/modules/AboutMe/AboutMe';
 
 export default function Home() {
