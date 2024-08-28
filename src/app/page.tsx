@@ -1,11 +1,11 @@
 'use client'
 import { Box } from '@mui/material';
-
+import { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import DevelopmentVersionControl from '@/components/modules/DevelopmentVersionControl/DevelopmentVersionControl';
 import IdeasToWebApps from '@/components/modules/IdeasToWebApps/IdeasToWebApps';
 import MeAndProjects from '@/components/modules/MeAndProjects/MeAndProjects';
-import { useState } from 'react';
+import AboutMe from '@/components/modules/AboutMe/AboutMe';
 
 export default function Home() {
   const [items, setItems] = useState(Array.from({ length: 1 })); // Start with 1 set of components
@@ -23,7 +23,7 @@ export default function Home() {
       useWindow={true}
     >
       {items.map((_, index) => (        
-        <Box key={index} sx={{ display:'flex', flexDirection:'column',gap:'5.5vh' }}>
+        <Box key={index} sx={{ display:'flex', flexDirection:'column', gap:'5.5vh' }}>
           {/* Me & My Projects */}
           <MeAndProjects />
 
@@ -32,6 +32,9 @@ export default function Home() {
 
           {/* Development & Version Control */}
           <DevelopmentVersionControl />
+
+          {/* About Me */}
+          <AboutMe />
         </Box>
       ))}
     </InfiniteScroll>

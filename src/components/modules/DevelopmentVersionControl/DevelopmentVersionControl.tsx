@@ -193,11 +193,7 @@ const DevelopmentVersionControl = () => {
   
   return(<>
     <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: '0 auto', gap: 'clamp(45px, 10vh, 125px)', paddingBottom: 'calc(2.5vh + 1rem)' }}>
-      <Box ref={scope} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '4000px', height: '300vh', gap: 'clamp(45px, 8vh, 125px)'
-
-        // Temp style until dashboard is created
-        ,marginBottom:'clamp(45px, 8vh, 125px)' }}
-      >
+      <Box ref={scope} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', minHeight: '4000px', height: '300vh', gap: 'clamp(45px, 8vh, 125px)'}}>
         {/* Section Title */}
         <motion.div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
           <GitHubIcon sx={{ fontSize: 'clamp(175px, 45vw, 300px)', color: '#202328' }} />
