@@ -24,9 +24,7 @@ export default function Home() {
       useWindow={true}
     >
       {items.map((_, index) => (        
-        <Box 
-        key={index} 
-        sx={{ display:'flex', flexDirection:'column',gap:'5.5vh' }}>
+        <Box key={index} sx={{ display:'flex', flexDirection:'column', gap:'5.5vh' }}>
           {/* Me & My Projects */}
           <MeAndProjects />
 
