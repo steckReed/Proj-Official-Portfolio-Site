@@ -152,7 +152,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '11%'},
-            transition: { duration: 1.75, ease: 'easeInOut', delay: animDelay + 0.2 },
+            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.2 },
           }
         ],
       },
@@ -163,7 +163,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '7%'},
-            transition: { duration: 1.75, ease: 'easeInOut', delay: animDelay + 0.25 },
+            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.25 },
           }
         ],
       },
@@ -174,7 +174,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '15%'},
-            transition: { duration: 1.75, ease: 'easeInOut', delay: animDelay + 0.3 },
+            transition: { duration: 1.75, ease: 'backInOut', delay: animDelay + 0.3 },
           }
         ],
       },
@@ -185,7 +185,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '89%'},
-            transition: { duration: 3.5, ease: 'easeInOut', delay: animDelay + 0.35 },
+            transition: { duration: 3.75, ease: 'backInOut', delay: animDelay + 0.35 },
           }
         ],
       },
@@ -196,7 +196,7 @@ const IdeasToWebApps = () => {
         'animations': [
           {
             animate: { opacity: 1, width: '74%'},
-            transition: { duration: 3, ease: 'easeInOut', delay: animDelay + 0.4 },
+            transition: { duration: 3, ease: 'backInOut', delay: animDelay + 0.4 },
           }
         ],
       },
