@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ReactQueryProvider } from './ReactQueryProvider';
 import montserrat from '@/fonts/montserrat';
 import NavBar from '@/components/modules/NavBar/NavBar';
-import "./globals.css";
+import "./_globals.scss";
 
 export const metadata: Metadata = {
   title: "Dev Reed Steck",
