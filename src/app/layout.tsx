@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dev Reed Steck",
-  description: "My Personal Portfolio",
+  description: "Welcome to My Portfolio & Site",
   icons: {
     icon: '/favicon.ico',
   },
