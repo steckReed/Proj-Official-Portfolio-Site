@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import { ReactNode } from 'react';
-import styles from './_LegendContainer.module.scss'
 
 interface Props{
   title: string;
@@ -18,7 +17,7 @@ const LegendContainer = ({
 
   return (<>
     <Box 
-      className={styles['shadow']} 
+      className={'shadow'} 
       sx={{ 
         backgroundColor:'#F9F7F4',
         border:'4px solid #242424',

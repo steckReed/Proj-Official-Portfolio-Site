@@ -471,7 +471,7 @@ const DevelopmentVersionControl = () => {
           initial={{ opacity: 0, top: '-125px', transform: 'scale(0.75)' }}
           style={{ position:'relative' }}
         >
-          <div className='shadow'
+          <div className='rainbow-shadow'
             style={{
               display: 'flex',
               alignItems: 'center',
