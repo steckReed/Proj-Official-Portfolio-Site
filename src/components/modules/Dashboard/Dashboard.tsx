@@ -97,7 +97,7 @@ const Dashboard = () => {
               key={item.i}
               data-grid={{ ...item }}
               className={`shadow`}
-              style={{ display: "grid", borderRadius: '8px', backgroundColor:'#CFCEB7', border: '4px solid #262215'}}
+              style={{ display: "grid", borderRadius: '8px', backgroundColor:'#FAF8F5', border: '4px solid #262215'}}
             >
               {/* Draggable Header */}
               <Box className='custom-drag-handle' 
