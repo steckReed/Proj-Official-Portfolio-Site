@@ -1,6 +1,5 @@
 import { Box } from '@mui/material';
 import ChipCarousel from '@/components/elements/ChipCarousel/ChipCarousel';
-import ChipCarouselBak from '@/components/elements/ChipCarousel/ChipCarousel-bak';
  
 const MySkills = () => {
   const skillsData = [
@@ -12,7 +11,7 @@ const MySkills = () => {
   ];
 
   return (<>
-    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: '0 auto', gap: 'clamp(45px, 10vh, 125px)', paddingBottom: 'calc(2.5vh + 1rem)' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: '0 auto', gap: 'clamp(45px, 10vh, 125px)', paddingBottom: 'calc(3.5vh + 1rem)' }}>
 
       <Box sx={{ position: 'sticky', top: '9vh', display: 'grid', gap: '35px', }}>
         {/* Title */}
@@ -29,7 +28,6 @@ const MySkills = () => {
           My Skills
         </h1>
 
-
         <ChipCarousel
           rows        = {skillsData}
           directions  = {['left', 'right', 'left']}
@@ -37,30 +35,6 @@ const MySkills = () => {
           colors      = {['#00304B', '#A5501A', '#525415']}
         />
 
-        {/* <ChipCarouselBak data={skillsData[2]}/> */}
-
-        {/* Skills Container */}
-        {/* <motion.div 
-          style={{ display:'grid', maxWidth:'100vw' }}
-
-          onHoverStart={() => {
-            setMustFinish(true);
-            setDuration(SPEED_SLOW);
-          }}
-          onHoverEnd={() => {
-            setMustFinish(true);
-            setDuration(SPEED_NORMAL);
-          }}
-        >
-          <motion.div ref={ref} className={styles.parallaxRow} style={{ x: xTranslation, display: 'flex' }}>
-            {[...skillsData.row3, ...skillsData.row3, ...skillsData.row3].map((skill, skillIndex) => (
-              <div key={skillIndex} className={styles.skillItem}>
-                {skill}
-              </div>
-            ))}
-          </motion.div>
-
-        </motion.div> */}
       </Box>
     </Box>
   </>)
