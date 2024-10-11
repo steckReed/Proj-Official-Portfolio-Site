@@ -16,8 +16,8 @@ const ChipCarousel: React.FC<ChipCarouselProps> = ({
   colors,
   itemGap
 }) => {
-  const [screenWidth, setScreenWidth] = useState(0);
-  const [hovered, setHovered] = useState(false);
+  const [screenWidth, setScreenWidth]                     = useState(0);
+  const [hovered, setHovered]                             = useState(false);
   const [scrollSpeedMultiplier, setScrollSpeedMultiplier] = useState(1);
 
   // Set screenWidth
@@ -61,7 +61,7 @@ const ChipCarousel: React.FC<ChipCarouselProps> = ({
         gap: '15px',
         flexDirection: 'column',
         overflow: 'hidden',
-        maxWidth: '100vw'
+        width: '100vw'
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
