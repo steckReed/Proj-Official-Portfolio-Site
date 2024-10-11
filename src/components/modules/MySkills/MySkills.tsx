@@ -11,7 +11,7 @@ const MySkills = () => {
   ];
 
   return (<>
-    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: '0 auto', gap: 'clamp(45px, 10vh, 125px)', paddingBottom: 'calc(3.5vh + 1rem)' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', margin: '0 auto', gap: 'clamp(45px, 10vh, 125px)', paddingBottom: 'calc(4.5vh + 1rem)' }}>
 
       <Box sx={{ position: 'sticky', top: '9vh', display: 'grid', gap: '35px', }}>
         {/* Title */}
