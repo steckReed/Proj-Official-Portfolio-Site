@@ -6,6 +6,7 @@ import DevelopmentVersionControl from '@/components/modules/DevelopmentVersionCo
 import IdeasToWebApps from '@/components/modules/IdeasToWebApps/IdeasToWebApps';
 import MeAndProjects from '@/components/modules/MeAndProjects/MeAndProjects';
 import AboutMe from '@/components/modules/AboutMe/AboutMe';
+import MySkills from '@/components/modules/MySkills/MySkills';
 
 export default function Home() {
   const [items, setItems] = useState(Array.from({ length: 1 })); // Start with 1 set of components
@@ -26,6 +27,9 @@ export default function Home() {
         <Box key={index} sx={{ display:'flex', flexDirection:'column', gap:'5.5vh' }}>
           {/* Me & My Projects */}
           <MeAndProjects />
+
+          {/* My Skills */}
+          <MySkills/>
 
           {/* Ideas to Web Apps (Vertical Carousel) */}
           <IdeasToWebApps />
