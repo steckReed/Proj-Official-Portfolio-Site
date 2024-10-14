@@ -61,7 +61,7 @@ const ChipCarousel: React.FC<ChipCarouselProps> = ({
         gap: '15px',
         flexDirection: 'column',
         overflow: 'hidden',
-        width: '100vw'
+        maxWidth: '100vw'
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
