@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ChipCarouselRow from './ChipCarouselRow/ChipCarouselRow';
 import getScrollSpeedMultiplier from '@/functions/GetScrollSpeedMultiplier';
 
+
 interface ChipCarouselProps {
   rows        : Array<string[]>;
   directions  : Array<'left' | 'right'>;

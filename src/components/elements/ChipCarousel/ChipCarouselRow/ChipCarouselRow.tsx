@@ -1,4 +1,3 @@
-import getScrollSpeedMultiplier from '@/functions/GetScrollSpeedMultiplier';
 import { useMotionValue, motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 
