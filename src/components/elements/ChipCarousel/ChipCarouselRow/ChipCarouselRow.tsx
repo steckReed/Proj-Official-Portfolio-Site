@@ -1,3 +1,4 @@
+import getScrollSpeedMultiplier from '@/functions/GetScrollSpeedMultiplier';
 import { useMotionValue, motion } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 
@@ -5,29 +6,32 @@ interface ChipCarouselRowProps {
   screenWidth: number;
   skills: string[];
   direction: 'left' | 'right';
-  baseSpeed: number;
+  speed: {
+    hovered: number
+    base: number
+  };
   hovered: boolean;
   color: string;
   itemGap: number;
-  scrollSpeedMultiplier: number;
+  // scrollSpeedMultiplier: number;
 }
 
 const ChipCarouselRow: React.FC<ChipCarouselRowProps> = ({
   screenWidth,
   skills,
   direction,
-  baseSpeed,
+  speed,
   hovered,
   color,
   itemGap,
-  scrollSpeedMultiplier,
+  // scrollSpeedMultiplier,
 }) => {
   const [rowWidth, setRowWidth] = useState(screenWidth);
   const [numRepeats, setNumRepeats] = useState(1);
   const rowRef = useRef<HTMLDivElement>(null);
   const xTranslation = useMotionValue(-rowWidth);
   const positionFactor = (direction === 'left') ? (-1) : (1);
-  const finalSpeed = hovered ? (baseSpeed / 2) : (baseSpeed * scrollSpeedMultiplier); // Based on hover/still/scroll
+  const finalSpeed = hovered ?(speed['hovered']) :(speed['base']);
 
   // Get row width & determine how many times to repeat row len to fill screen
   useEffect(() => {
@@ -101,8 +105,8 @@ const ChipCarouselRow: React.FC<ChipCarouselRowProps> = ({
         </div>
 
         {/* Additional loops if required */}
-        {Array.from({ length: numRepeats }).map((_, repeatIndex) => (<>
-          <div style={{ display: 'flex', gap: `${itemGap}px` }}>
+        {Array.from({ length: numRepeats }).map((_, repeatIndex) => (
+          <div key={repeatIndex} style={{ display: 'flex', gap: `${itemGap}px` }} >
             {skills.map((skill, skillIndex) => (
               <div
                 key={skillIndex}
@@ -120,7 +124,7 @@ const ChipCarouselRow: React.FC<ChipCarouselRowProps> = ({
               </div>
             ))}
           </div>
-        </>))}
+        ))}
 
       </motion.div>
     </div>
